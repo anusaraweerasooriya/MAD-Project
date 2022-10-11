@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="app_theme_color">#FF3700B3</color>
+
+    <color name="diary_theme_color">#2A0944</color>
+    <color name="todo_theme_color">#3FA796</color>
+    <color name="notes_theme_color">#FEC260</color>
+    <color name="list_theme_color">#A10035</color>
+
 </resources>

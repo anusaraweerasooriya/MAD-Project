@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">EmpressNotes</string>
+    <string name="app_title">Empress Notes</string>
+    <string name="app_sub_title">All your notes made simple</string>
+    <string name="my_diary">My Diary</string>
+    <string name="my_to_do">My To-Do</string>
+    <string name="my_notes">My Notes</string>
+    <string name="my_lists">My Lists</string>
+    <string name="diary_tab_description">Diary tab description</string>
+    <string name="to_do_tab_description">To-Do tab description</string>
+    <string name="notes_tab_description">Notes tab description</string>
+    <string name="list_tab_description">List tab description</string>
 </resources>
