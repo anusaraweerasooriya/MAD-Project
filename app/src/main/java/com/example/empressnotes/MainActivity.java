@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         //onclick My Diary tab
+        layoutDiaryMain = findViewById(R.id.layoutDiaryMain);
+        layoutDiaryMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, MyDiary.class)
+                );
+            }
+        });
 
 
         //onclick My To-Do tab
