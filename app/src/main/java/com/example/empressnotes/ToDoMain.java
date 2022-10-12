@@ -17,7 +17,7 @@ public class ToDoMain extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //set action bar title
-        getSupportActionBar().setTitle("My To-Do");
+        getSupportActionBar().setTitle("Empress Notes");
 
         //set action bar Color
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#FF3700B3"));
