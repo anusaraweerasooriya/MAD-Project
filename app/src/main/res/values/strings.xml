@@ -2,6 +2,7 @@
     <string name="app_name">EmpressNotes</string>
     <string name="app_title">Empress Notes</string>
     <string name="app_sub_title">All your notes made simple</string>
+
     <string name="my_diary">My Diary</string>
     <string name="my_to_do">My To-Do</string>
     <string name="my_notes">My Notes</string>
@@ -10,5 +11,10 @@
     <string name="to_do_tab_description">To-Do tab description</string>
     <string name="notes_tab_description">Notes tab description</string>
     <string name="list_tab_description">List tab description</string>
+
+    //My Diary
     <string name="my_diary_">My Diary</string>
+    <string name="search_diary">Search Diary</string>
+
+
 </resources>
