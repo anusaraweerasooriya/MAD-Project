@@ -17,6 +17,10 @@
             android:name=".MyDiary"
             android:exported="false" />
         <activity
+            android:name=".ToDoMain"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>    <!--navigated to parent when back btn is clicked from action bar-->
+        <activity
             android:name=".FlashScreen"
             android:exported="true">
             <intent-filter>
