@@ -11,4 +11,8 @@
     <string name="notes_tab_description">Notes tab description</string>
     <string name="list_tab_description">List tab description</string>
     <string name="my_diary_">My Diary</string>
+
+    //My To-Do
+    <string name="text_task_count">Display Task Count</string>
+    <string name="search_task">Search task</string>
 </resources>
