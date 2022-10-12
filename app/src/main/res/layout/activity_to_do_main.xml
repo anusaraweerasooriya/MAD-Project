@@ -7,7 +7,7 @@
     tools:context=".ToDoMain">
 
     <TextView
-        android:id="@+id/textAllTasks"
+        android:id="@+id/textMyToDoTasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="false"
-        android:text="All Tasks"
+        android:text="@string/my_to_do"
         android:textColor="@color/todo_theme_color"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,8 +25,9 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="@dimen/_10sdp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@id/textAllTasks"
+        app:layout_constraintTop_toBottomOf="@id/textMyToDoTasks"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -37,7 +38,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Display Task Count"
+        android:text="@string/text_task_count"
         app:layout_constraintBottom_toTopOf="@id/layoutSearch"
         app:layout_constraintTop_toBottomOf="@id/divider"/>
 
@@ -63,13 +64,13 @@
             app:tint="@color/icons_color" />
 
         <EditText
-            android:id="@+id/inputSearch"
+            android:id="@+id/inputTaskSearch"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
             android:fontFamily="@font/poppins_regular"
-            android:hint="Search task"
+            android:hint="@string/search_task"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -105,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/imageAddNote"
+            android:id="@+id/imageHome"
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
             android:contentDescription="@string/app_name"
@@ -113,7 +114,7 @@
             app:tint="@color/icons_color" />
 
         <ImageView
-            android:id="@+id/imageAddWebLink"
+            android:id="@+id/imageCalendar"
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
             android:layout_marginStart="@dimen/_15sdp"
@@ -133,7 +134,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageAddNoteMain"
+        android:id="@+id/imageAddTaskMain"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_30sdp"
