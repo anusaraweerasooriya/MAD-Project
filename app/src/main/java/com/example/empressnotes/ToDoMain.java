@@ -20,7 +20,7 @@ public class ToDoMain extends AppCompatActivity {
         getSupportActionBar().setTitle("My To-Do");
 
         //set action bar Color
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#3FA796"));
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#FF3700B3"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
 
     }

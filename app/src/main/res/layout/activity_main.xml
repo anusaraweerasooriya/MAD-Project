@@ -73,7 +73,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/diary"
+                android:src="@drawable/ic_diary"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -119,7 +119,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/todo"
+                android:src="@drawable/ic_todo"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -141,7 +141,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/textMyNotes"
+                android:id="@+id/textAllTasks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -154,7 +154,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textMyNotes"
+                android:layout_below="@id/textAllTasks"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
                 android:text="@string/notes_tab_description"
@@ -165,7 +165,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/notes"
+                android:src="@drawable/ic_notes"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -211,7 +211,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/list"
+                android:src="@drawable/ic_list"
                 android:contentDescription="@string/app_name"/>
 
         </RelativeLayout>
