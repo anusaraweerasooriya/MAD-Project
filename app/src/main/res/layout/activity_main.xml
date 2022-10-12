@@ -17,7 +17,7 @@
         android:text="@string/app_title"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="25sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textSubtitle"
@@ -42,6 +42,7 @@
         app:cardElevation="5dp">
 
         <RelativeLayout
+            android:id="@+id/layoutDiaryMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/diary_theme_color"
@@ -72,7 +73,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/diary"
+                android:src="@drawable/ic_diary"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -87,6 +88,7 @@
         app:cardElevation="5dp" >
 
         <RelativeLayout
+            android:id="@+id/layoutToDoMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/todo_theme_color"
@@ -117,7 +119,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/todo"
+                android:src="@drawable/ic_todo"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -132,13 +134,14 @@
         app:cardElevation="5dp" >
 
         <RelativeLayout
+            android:id="@+id/layoutNotesMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/notes_theme_color"
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/textMyNotes"
+                android:id="@+id/textAllTasks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -151,7 +154,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textMyNotes"
+                android:layout_below="@id/textAllTasks"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
                 android:text="@string/notes_tab_description"
@@ -162,7 +165,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/notes"
+                android:src="@drawable/ic_notes"
                 android:contentDescription="@string/app_name" />
 
         </RelativeLayout>
@@ -177,6 +180,7 @@
         app:cardElevation="5dp" >
 
         <RelativeLayout
+            android:id="@+id/layoutListsMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/list_theme_color"
@@ -207,7 +211,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentEnd="true"
                 android:maxHeight="100dp"
-                android:src="@drawable/list"
+                android:src="@drawable/ic_list"
                 android:contentDescription="@string/app_name"/>
 
         </RelativeLayout>

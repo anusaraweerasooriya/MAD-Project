@@ -15,4 +15,7 @@
     <color name="notes_theme_color">#FEC260</color>
     <color name="list_theme_color">#A10035</color>
 
+    <color name="hint_text_color">#7B7B7B</color>
+    <color name="icons_color">#A4A4A4</color>
+
 </resources>
