@@ -18,6 +18,18 @@
 
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
-    <string name="search_task">Search task</string>
-    
+    <string name="text_search_task">Search task</string>
+    <string name="text_add_a_task">Add A Task</string>
+    <string name="text_task_title">Task Title*</string>
+    <string name="edt_add_task_title">Add task title</string>
+    <string name="text_task_description">Task Description*</string>
+    <string name="edt_add_a_description">Add a description</string>
+    <string name="text_date">Date</string>
+    <string name="edt_select_a_date">Select a date</string>
+    <string name="text_time">Time</string>
+    <string name="edt_select_time">Select time</string>
+    <string name="btn_add_url">Add URL</string>
+    <string name="btn_add_file">Add file</string>
+    <string name="btn_save_task">SAVE</string>
+
 </resources>

@@ -8,32 +8,22 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-public class ToDoMain extends AppCompatActivity {
-
-    public static final int REQUEST_CODE_ADD_TASK = 1;
+public class AddTaskActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_to_do_main);
+        setContentView(R.layout.activity_add_task);
 
         //set back button in action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //set action bar title
-        getSupportActionBar().setTitle("Empress Notes");
+        getSupportActionBar().setTitle("My To-Do");
 
         //set action bar Color
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#FF3700B3"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
-
-
-        //add new task btn
-        ImageView imageAddNoteMain = findViewById(R.id.imageAddTaskMain);
-        imageAddNoteMain.setOnClickListener(v -> startActivityForResult(
-                new Intent(getApplicationContext(), AddTaskActivity.class),
-                REQUEST_CODE_ADD_TASK
-        ));
 
     }
 }
