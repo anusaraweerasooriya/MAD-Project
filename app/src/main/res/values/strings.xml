@@ -19,5 +19,7 @@
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
     <string name="search_task">Search task</string>
-    
+    <string name="search_notes">Search Notes</string>
+
+
 </resources>
