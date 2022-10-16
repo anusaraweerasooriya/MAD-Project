@@ -19,6 +19,7 @@
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
     <string name="text_search_task">Search task</string>
+    //add-task
     <string name="text_add_a_task">Add A Task</string>
     <string name="text_task_title">Task Title*</string>
     <string name="edt_add_task_title">Add task title</string>
@@ -31,5 +32,6 @@
     <string name="btn_add_url">Add URL</string>
     <string name="btn_add_file">Add file</string>
     <string name="btn_save_task">SAVE</string>
+    //create-task
 
 </resources>

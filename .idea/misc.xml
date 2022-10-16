@@ -13,13 +13,17 @@
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_add_button.xml" value="0.18" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_search.xml" value="0.18" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.1895" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/btn_border.xml" value="0.121" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_add.xml" value="0.18" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.196" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_background_add_button.xml" value="0.2305" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_btn_border.xml" value="0.207" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_input_border.xml" value="0.2545" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/CustomToolBar.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_add_task.xml" value="0.264" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_add_task.xml" value="0.2190034762456547" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_task.xml" value="0.264" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_custom_tool_bar.xml" value="0.2" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.2" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.264" />

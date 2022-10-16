@@ -68,13 +68,14 @@
             android:textColor="@color/black"
             tools:ignore="MissingPrefix" />
 
+
         <EditText
             android:id="@+id/addTaskTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="5dp"
-            android:background="@drawable/todo_btn_border"
+            android:background="@drawable/todo_input_border"
             android:hint="@string/edt_add_task_title"
             android:textColorHint="@color/hint_text_color"
             android:minHeight="48dp"
@@ -100,7 +101,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="5dp"
-            android:background="@drawable/todo_btn_border"
+            android:background="@drawable/todo_input_border"
             android:hint="@string/edt_add_a_description"
             android:textColorHint="@color/hint_text_color"
             android:minHeight="48dp"
@@ -126,7 +127,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="5dp"
-            android:background="@drawable/todo_btn_border"
+            android:background="@drawable/todo_input_border"
             android:hint="@string/edt_select_a_date"
             android:textColorHint="@color/hint_text_color"
             android:minHeight="48dp"
@@ -152,7 +153,7 @@
             android:layout_height="48dp"
             android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="5dp"
-            android:background="@drawable/todo_btn_border"
+            android:background="@drawable/todo_input_border"
             android:hint="@string/edt_select_time"
             android:textColorHint="@color/hint_text_color"
             android:minHeight="48dp"
