@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ToDoMain">
+    tools:context=".activities.ToDoMain">
 
     <TextView
         android:id="@+id/textMyToDoTasks"

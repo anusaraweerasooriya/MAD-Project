@@ -1,10 +1,12 @@
-package com.example.empressnotes;
+package com.example.empressnotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import com.example.empressnotes.R;
 
 public class MyDiary extends AppCompatActivity {
 
