@@ -29,23 +29,15 @@
         <activity
             android:name=".activities.CreateTaskActivity"
             android:exported="false"
-            android:parentActivityName=".ToDoMain" />
+            android:parentActivityName=".activities.ToDoMain" />
         <activity
             android:name=".activities.MyNotes"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".activities.MyDiary"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".activities.ToDoMain"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" /> <!-- navigated to parent when back btn is clicked from action bar -->
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.MyList"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.FlashScreen"
             android:exported="true">
