@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.CreateADiary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <TextView
+                android:id="@+id/diaryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="@string/title"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintEnd_toEndOf="@+id/inputDiaryTitle"
+                app:layout_constraintStart_toStartOf="@id/viewDiaryTitleInputIndicator"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/viewDiaryTitleInputIndicator"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/diary_background_title_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/inputDiaryTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/inputDiaryTitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/inputDiaryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/diary_input_background"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/hint_diary_title"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/viewDiaryTitleInputIndicator"
+                app:layout_constraintTop_toBottomOf="@id/diaryTitle" />
+
+            <TextView
+                android:id="@+id/diaryBody"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Body"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintEnd_toEndOf="@+id/inputDiaryBody"
+                app:layout_constraintStart_toStartOf="@id/viewDiaryBodyInputIndicator"
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryTitle"/>
+
+            <View
+                android:id="@+id/viewDiaryBodyInputIndicator"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/diary_background_title_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/inputDiaryBody"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/inputDiaryBody"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/inputDiaryBody"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/diary_input_background"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Write your diary :)"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="@dimen/_100sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/viewDiaryBodyInputIndicator"
+                app:layout_constraintTop_toBottomOf="@id/diaryBody" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

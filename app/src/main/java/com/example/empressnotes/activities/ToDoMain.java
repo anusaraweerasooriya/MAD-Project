@@ -1,12 +1,12 @@
 package com.example.empressnotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ImageView;
+import com.example.empressnotes.R;
 
 public class ToDoMain extends AppCompatActivity {
 
@@ -37,3 +37,4 @@ public class ToDoMain extends AppCompatActivity {
 
     }
 }
+

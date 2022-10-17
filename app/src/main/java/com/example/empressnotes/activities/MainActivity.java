@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import com.example.empressnotes.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         });
-
+        
         //onclick My Notes tab
         layoutNotesMain = findViewById(R.id.layoutNotesMain);
         layoutNotesMain.setOnClickListener(new View.OnClickListener() {
@@ -67,3 +68,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+

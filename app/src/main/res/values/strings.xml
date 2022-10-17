@@ -15,11 +15,13 @@
     //My Diary
     <string name="my_diary_">My Diary</string>
     <string name="search_diary">Search Diary</string>
+    <string name="title">Title</string>
+    <string name="hint_diary_title">Enter diary Title</string>
 
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
-    <string name="text_search_task">Search task</string>
-    
+     <string name="text_search_task">Search task</string>
+
     <string name="search_notes">Search Notes</string>
     <string name="my_list">My List</string>
 
