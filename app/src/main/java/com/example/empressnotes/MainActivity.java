@@ -55,7 +55,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //onclick My Lists tab
-
+        layoutListsMain = findViewById(R.id.layoutListsMain);
+        layoutListsMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, MyList.class)
+                );
+            }
+        });
     }
 
 }
