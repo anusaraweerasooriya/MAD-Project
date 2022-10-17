@@ -18,17 +18,13 @@
             android:exported="false"
             android:parentActivityName=".ToDoMain" />
         <activity
-            android:name=".AddTaskActivity"
-            android:exported="false"
-            android:parentActivityName=".ToDoMain" />
-        <activity
             android:name=".MyDiary"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ToDoMain"
             android:exported="false"
-            android:parentActivityName=".MainActivity" /> <!-- navigated to parent when back btn is clicked from action bar -->
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlashScreen"
             android:exported="true">
