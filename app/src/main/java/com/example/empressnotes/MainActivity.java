@@ -44,7 +44,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //onclick My Notes tab
-
+        layoutNotesMain = findViewById(R.id.layoutNotesMain);
+        layoutNotesMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, MyNotes.class)
+                );
+            }
+        });
 
         //onclick My Lists tab
         layoutListsMain = findViewById(R.id.layoutListsMain);
