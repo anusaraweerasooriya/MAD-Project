@@ -16,11 +16,15 @@
         <activity
             android:name=".MyDiary"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ToDoMain"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>    <!--navigated to parent when back btn is clicked from action bar-->
+            android:parentActivityName=".MainActivity" /> <!-- navigated to parent when back btn is clicked from action bar -->
+        <activity
+            android:name=".MyList"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlashScreen"
             android:exported="true">
@@ -32,7 +36,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>
