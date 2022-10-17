@@ -91,15 +91,20 @@
 
         <ImageView
             android:id="@+id/imageListAddImage"
-            android:layout_width="@dimen/_23sdp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/_23sdp"
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_diary_image"
             app:tint="@color/icons_color" />
 
-
-
+        <ImageView
+            android:id="@+id/imageHome"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_home"
+            app:tint="@color/icons_color" />
 
 
     </LinearLayout>
