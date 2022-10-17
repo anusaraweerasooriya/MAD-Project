@@ -1,4 +1,4 @@
-package com.example.empressnotes;
+package com.example.empressnotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
