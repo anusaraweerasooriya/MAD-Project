@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
-
 import com.example.empressnotes.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,12 +43,29 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         });
-
+        
         //onclick My Notes tab
-
+        layoutNotesMain = findViewById(R.id.layoutNotesMain);
+        layoutNotesMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, MyNotes.class)
+                );
+            }
+        });
 
         //onclick My Lists tab
-
+        layoutListsMain = findViewById(R.id.layoutListsMain);
+        layoutListsMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(
+                        new Intent(MainActivity.this, MyList.class)
+                );
+            }
+        });
     }
 
 }
+

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.MyDiary">
+    tools:context=".activities.MyNotes">
 
     <TextView
-        android:id="@+id/textMyDiary"
+        android:id="@+id/my_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -17,8 +17,8 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="false"
-        android:text="@string/my_diary_"
-        android:textColor="@color/diary_theme_color"
+        android:text="@string/my_notes"
+        android:textColor="@color/notes_theme_color"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -27,7 +27,7 @@
         android:layout_height="2dp"
         android:layout_margin="@dimen/_10sdp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/textMyDiary"
+        app:layout_constraintTop_toBottomOf="@+id/my_notes"
         tools:ignore="MissingConstraints"/>
 
     <LinearLayout
@@ -42,7 +42,7 @@
         android:orientation="horizontal"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/textMyDiary">
+        app:layout_constraintTop_toBottomOf="@+id/my_notes">
 
         <ImageView
             android:layout_width="@dimen/_20sdp"
@@ -52,13 +52,13 @@
             app:tint="@color/icons_color"/>
 
         <EditText
-            android:id="@+id/inputDiarySearch"
+            android:id="@+id/inputNotesSearch"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
             android:fontFamily="@font/poppins_regular"
-            android:hint="@string/search_diary"
+            android:hint="@string/search_notes"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -97,13 +97,12 @@
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_30sdp"
-        android:background="@drawable/diary_background_add_button"
+        android:background="@drawable/notes_background_add_button"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

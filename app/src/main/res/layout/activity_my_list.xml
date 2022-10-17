@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activities.MyDiary">
+    tools:context=".activities.MyList">
 
     <TextView
         android:id="@+id/textMyDiary"
@@ -17,18 +17,11 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="false"
-        android:text="@string/my_diary_"
-        android:textColor="@color/diary_theme_color"
+        android:text="@string/my_list"
+        android:textColor="@color/list_theme_color"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/textMyDiary"
-        tools:ignore="MissingConstraints"/>
 
     <LinearLayout
         android:id="@+id/layoutDiarySearch"
@@ -42,7 +35,7 @@
         android:orientation="horizontal"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/textMyDiary">
+        app:layout_constraintTop_toBottomOf="@id/textMyDiary">
 
         <ImageView
             android:layout_width="@dimen/_20sdp"
@@ -58,7 +51,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
             android:fontFamily="@font/poppins_regular"
-            android:hint="@string/search_diary"
+            android:hint="Search Lists"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
@@ -69,6 +62,21 @@
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
+        app:layout_constraintTop_toBottomOf="@id/layoutDiarySearch"/>
+
+
 
     <LinearLayout
         android:id="@+id/diaryLayoutQuickActions"
@@ -82,13 +90,17 @@
 
 
         <ImageView
-            android:id="@+id/imageDiaryAddImage"
+            android:id="@+id/imageListAddImage"
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_diary_image"
             app:tint="@color/icons_color" />
+
+
+
+
 
     </LinearLayout>
 
@@ -97,13 +109,16 @@
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_30sdp"
-        android:background="@drawable/diary_background_add_button"
+        android:background="@drawable/list_background_add_button"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions"/>
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,16 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import com.example.empressnotes.R;
 
-
-public class MyDiary extends AppCompatActivity {
+public class MyList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_diary);
-
+        setContentView(R.layout.activity_my_list);
 
         //set back button in action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -25,7 +22,5 @@ public class MyDiary extends AppCompatActivity {
         //set action bar Color
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#FF3700B3"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
-
-
     }
 }
