@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateTaskActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_10sdp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/imageAddTask"
+                android:layout_width="wrap_content"
+                android:layout_height="129dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:srcCompat="@drawable/add_task"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/textAddTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="10dp"
+                android:text="New Task"
+                android:textColor="@color/todo_theme_color"
+                android:textSize="22sp"
+                tools:ignore="MissingPrefix"
+                app:layout_constraintTop_toBottomOf="@id/imageAddTask" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@id/textAddTask"/>
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Task Title*"
+                app:layout_constraintEnd_toEndOf="@id/editTextTitle"
+                app:layout_constraintStart_toStartOf="@id/viewInputIndicator1"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/viewInputIndicator1"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/todo_input_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextTitle" />
+
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@null"
+                android:ems="10"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Enter Task Title"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:minHeight="38dp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInputIndicator1"
+                app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Task Description*"
+                app:layout_constraintEnd_toEndOf="@id/editTextDescription"
+                app:layout_constraintStart_toStartOf="@id/viewInputIndicator2"
+                app:layout_constraintTop_toBottomOf="@id/editTextTitle"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/viewInputIndicator2"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/todo_input_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/editTextDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextDescription" />
+
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@null"
+                android:inputType="textMultiLine"
+                android:minHeight="68dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:hint="Enter Task Description"
+                android:textColorHint="@color/hint_text_color"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
+                app:layout_constraintTop_toBottomOf="@id/textDescription" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Date*"
+                app:layout_constraintEnd_toEndOf="@id/editTextDate"
+                app:layout_constraintStart_toStartOf="@id/viewInputIndicator3"
+                app:layout_constraintTop_toBottomOf="@id/editTextDescription"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/viewInputIndicator3"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/todo_input_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/editTextDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextDate" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@null"
+                android:inputType="date"
+                android:minHeight="38dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:hint="Select the Date"
+                android:textColorHint="@color/hint_text_color"
+                android:includeFontPadding="false"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInputIndicator3"
+                app:layout_constraintTop_toBottomOf="@id/textDate"/>
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Time"
+                app:layout_constraintEnd_toEndOf="@id/editTextTime"
+                app:layout_constraintStart_toStartOf="@id/viewInputIndicator4"
+                app:layout_constraintTop_toBottomOf="@id/editTextDate"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/viewInputIndicator4"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/todo_input_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextTime" />
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@null"
+                android:inputType="time"
+                android:minHeight="38dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:hint="Select Time"
+                android:textColorHint="@color/hint_text_color"
+                android:includeFontPadding="false"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
+                app:layout_constraintTop_toBottomOf="@id/textTime"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
