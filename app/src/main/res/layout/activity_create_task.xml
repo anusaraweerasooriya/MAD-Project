@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
 
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/imageAddTask"
                 android:layout_width="wrap_content"
                 android:layout_height="129dp"
@@ -26,7 +26,7 @@
                 app:srcCompat="@drawable/add_task"
                 android:contentDescription="@string/app_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"/>-->
 
             <TextView
                 android:id="@+id/textAddTask"
@@ -39,7 +39,8 @@
                 android:textColor="@color/todo_theme_color"
                 android:textSize="22sp"
                 tools:ignore="MissingPrefix"
-                app:layout_constraintTop_toBottomOf="@id/imageAddTask" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/divider"
@@ -237,6 +238,52 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
                 app:layout_constraintTop_toBottomOf="@id/textTime"/>
+
+            <TextView
+                android:id="@+id/textWebLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:text="Web Link"
+                app:layout_constraintEnd_toEndOf="@id/editTextWebLink"
+                app:layout_constraintStart_toStartOf="@id/viewInputIndicator5"
+                app:layout_constraintTop_toBottomOf="@id/editTextTime"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/_13ssp" />
+
+            <View
+                android:id="@+id/viewInputIndicator5"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/todo_input_indicator"
+                app:layout_constraintBottom_toBottomOf="@id/editTextWebLink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextWebLink" />
+
+            <EditText
+                android:id="@+id/editTextWebLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@null"
+                android:inputType="time"
+                android:minHeight="38dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:hint="Add a web link"
+                android:textColorHint="@color/hint_text_color"
+                android:includeFontPadding="false"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInputIndicator5"
+                app:layout_constraintTop_toBottomOf="@id/textWebLink"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
