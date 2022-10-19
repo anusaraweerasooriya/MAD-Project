@@ -20,9 +20,12 @@
 
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
-     <string name="text_search_task">Search task</string>
+    <string name="text_search_task">Search task</string>
 
+    //My Notes
     <string name="search_notes">Search Notes</string>
+
+    //My Lists
     <string name="my_list">My List</string>
 
 </resources>

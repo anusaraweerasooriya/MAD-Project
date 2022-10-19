@@ -1,9 +1,11 @@
-package com.example.empressnotes.adapters;
+package com.example.empressnotes.activities;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_DESCRIPTION = "description";
     private static final String COLUMN_TASK_DATE = "date";
     private static final String COLUMN_TASK_TIME = "time";
-    private static final String COLUMN_TASK_WEB_LINK = "web_link";
+    private static final String COLUMN_TASK_WEBLINK = "weblink";
 
     // my_notes table columns
 
@@ -68,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_TASK_DESCRIPTION + " TEXT, " +
                 COLUMN_TASK_DATE + " TEXT, " +
                 COLUMN_TASK_TIME + " TEXT, " +
-                COLUMN_TASK_WEB_LINK + " TEXT);";
+                COLUMN_TASK_WEBLINK + " TEXT);";
 
         sqLiteDatabase.execSQL(todo_query);
 
@@ -93,5 +95,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // My Lists
 
+    }
+
+    void createToDoTask(String title, String description, String date, String time, String weblink) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_TASK_TITLE, title);
+        cv.put(COLUMN_TASK_DESCRIPTION, description);
+        cv.put(COLUMN_TASK_DATE, date);
+        cv.put(COLUMN_TASK_TIME, time);
+        cv.put(COLUMN_TASK_WEBLINK, weblink);
+
+        long result = db.insert(TABLE_NAME2, null, cv);
+        if(result == -1) {
+            Toast.makeText(context, "Failed to create the task", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Task is created successfully!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

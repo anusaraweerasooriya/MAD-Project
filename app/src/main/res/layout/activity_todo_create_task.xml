@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CreateTaskActivity">
+    tools:context=".activities.ToDoCreateTask">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
 
-            <!--<ImageView
+            <ImageView
                 android:id="@+id/imageAddTask"
                 android:layout_width="wrap_content"
                 android:layout_height="129dp"
@@ -26,7 +26,7 @@
                 app:srcCompat="@drawable/add_task"
                 android:contentDescription="@string/app_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>-->
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textAddTask"
@@ -35,12 +35,24 @@
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_bold"
                 android:layout_marginTop="10dp"
-                android:text="New Task"
+                android:text="Add New Task"
                 android:textColor="@color/todo_theme_color"
                 android:textSize="22sp"
                 tools:ignore="MissingPrefix"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageAddTask" />
+
+            <TextView
+                android:id="@+id/textNewTaskInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Fill task details below"
+                app:layout_constraintBottom_toTopOf="@id/divider"
+                app:layout_constraintTop_toBottomOf="@id/textAddTask"/>
 
             <View
                 android:id="@+id/divider"
@@ -50,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintTop_toBottomOf="@id/textAddTask"/>
+                app:layout_constraintTop_toBottomOf="@id/textNewTaskInstruction"/>
 
             <TextView
                 android:id="@+id/textTitle"
@@ -133,7 +145,7 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
                 android:inputType="textMultiLine"
-                android:minHeight="68dp"
+                android:minHeight="38dp"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
@@ -239,51 +251,29 @@
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
                 app:layout_constraintTop_toBottomOf="@id/textTime"/>
 
-            <TextView
-                android:id="@+id/textWebLink"
-                android:layout_width="0dp"
+            <Button
+                android:id="@+id/buttonURL"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:includeFontPadding="false"
-                android:textColor="@color/black"
-                android:text="Web Link"
-                app:layout_constraintEnd_toEndOf="@id/editTextWebLink"
-                app:layout_constraintStart_toStartOf="@id/viewInputIndicator5"
-                app:layout_constraintTop_toBottomOf="@id/editTextTime"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/_13ssp" />
-
-            <View
-                android:id="@+id/viewInputIndicator5"
-                android:layout_width="@dimen/_5sdp"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:background="@drawable/todo_input_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/editTextWebLink"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/editTextWebLink" />
-
-            <EditText
-                android:id="@+id/editTextWebLink"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:background="@null"
-                android:inputType="time"
-                android:minHeight="38dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_13ssp"
-                android:hint="Add a web link"
-                android:textColorHint="@color/hint_text_color"
-                android:includeFontPadding="false"
-                android:paddingTop="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Add URL"
+                android:backgroundTint="@color/todo_theme_color"
+                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/viewInputIndicator5"
-                app:layout_constraintTop_toBottomOf="@id/textWebLink"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextTime" />
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Save Task"
+                android:backgroundTint="@color/todo_theme_color"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonURL" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
