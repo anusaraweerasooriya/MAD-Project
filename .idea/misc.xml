@@ -22,12 +22,24 @@
         <entry key="..\:/MAD-Project/app/src/main/res/drawable/diary_background_add_button.xml" value="0.1955" />
         <entry key="..\:/MAD-Project/app/src/main/res/drawable/list_background_add_button.xml" value="0.1955" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_creat_list.xml" value="0.2359375" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_create_adiary.xml" value="0.21354166666666666" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_create_task.xml" value="0.21354166666666666" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_fruits.xml" value="0.2359375" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_list_add.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_fruits.xml" value="0.2359375" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.23055555555555557" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_list.xml" value="0.264" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_lists.xml" value="0.264" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_vegetables.xml" value="0.25" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.2" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_vegetables.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
