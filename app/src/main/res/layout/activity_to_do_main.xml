@@ -11,9 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="false"
         android:text="@string/my_to_do"
@@ -24,11 +22,11 @@
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_margin="@dimen/_10sdp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@id/textMyToDoTasks"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textMyToDoTasks"
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/textTaskCount"
@@ -83,17 +81,12 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notesRecyclerView"
+        android:id="@+id/tasksRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:clipToPadding="false"
-        android:paddingStart="0dp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
-        app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
 
     <LinearLayout
         android:id="@+id/diaryLayoutQuickActions"
@@ -106,29 +99,12 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
-            android:id="@+id/imageHome"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/todo_ic_home"
-            app:tint="@color/icons_color" />
-
-        <ImageView
             android:id="@+id/imageCalendar"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/todo_ic_calendar"
-            app:tint="@color/icons_color" />
-
-        <ImageView
-            android:id="@+id/imageAddImage"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_todo"
             app:tint="@color/icons_color" />
 
     </LinearLayout>
