@@ -1,4 +1,4 @@
-package com.example.empressnotes.activities;
+package com.example.empressnotes.adapters;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -100,7 +100,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    void createToDoTask(String title, String description, String date, String time, String weblink) {
+    //=============================================MY TO-DO======================================================
+
+    //CREATE
+    public void createToDoTask(String title, String description, String date, String time, String weblink) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -118,7 +121,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    Cursor readToDoTasks() {
+    //READ
+    public Cursor readTaskData() {
         String query = "SELECT * FROM " + TABLE_NAME2;
         SQLiteDatabase db = this.getReadableDatabase();
 

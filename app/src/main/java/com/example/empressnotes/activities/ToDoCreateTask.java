@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.empressnotes.R;
+import com.example.empressnotes.adapters.DatabaseHelper;
 
 import java.util.Calendar;
 
@@ -95,6 +97,9 @@ public class ToDoCreateTask extends AppCompatActivity {
                             time_input.getText().toString().trim(),
                             weblink_btn.getText().toString().trim()
                     );
+
+                    Intent intent = new Intent(ToDoCreateTask.this, ToDoMain.class);
+                    startActivity(intent);
                 }
             }
         });
