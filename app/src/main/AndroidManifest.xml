@@ -15,7 +15,9 @@
         tools:targetApi="31">
         <activity
             android:name=".activities.ListAdd"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/my_list"
+            android:parentActivityName=".activities.MyList"/>
         <activity
             android:name=".activities.CreateADiary"
             android:exported="false"
