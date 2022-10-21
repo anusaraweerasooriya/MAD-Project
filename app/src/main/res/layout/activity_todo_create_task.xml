@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CreateTaskActivity">
+    tools:context=".activities.ToDoCreateTask">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,11 +35,24 @@
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_bold"
                 android:layout_marginTop="10dp"
-                android:text="New Task"
+                android:text="@string/text_add_new_task"
                 android:textColor="@color/todo_theme_color"
                 android:textSize="22sp"
                 tools:ignore="MissingPrefix"
-                app:layout_constraintTop_toBottomOf="@id/imageAddTask" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageAddTask" />
+
+            <TextView
+                android:id="@+id/textNewTaskInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/text_add_task_instruct"
+                app:layout_constraintBottom_toTopOf="@id/divider"
+                app:layout_constraintTop_toBottomOf="@id/textAddTask"/>
 
             <View
                 android:id="@+id/divider"
@@ -49,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintTop_toBottomOf="@id/textAddTask"/>
+                app:layout_constraintTop_toBottomOf="@id/textNewTaskInstruction"/>
 
             <TextView
                 android:id="@+id/textTitle"
@@ -58,7 +71,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="Task Title*"
+                android:text="@string/text_task_title"
                 app:layout_constraintEnd_toEndOf="@id/editTextTitle"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator1"
                 app:layout_constraintTop_toBottomOf="@id/divider"
@@ -85,7 +98,7 @@
                 android:background="@null"
                 android:ems="10"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Enter Task Title"
+                android:hint="@string/hint_task_title"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
@@ -106,7 +119,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="Task Description*"
+                android:text="@string/text_task_description"
                 app:layout_constraintEnd_toEndOf="@id/editTextDescription"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator2"
                 app:layout_constraintTop_toBottomOf="@id/editTextTitle"
@@ -132,11 +145,11 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
                 android:inputType="textMultiLine"
-                android:minHeight="68dp"
+                android:minHeight="38dp"
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
-                android:hint="Enter Task Description"
+                android:hint="@string/hint_task_description"
                 android:textColorHint="@color/hint_text_color"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
@@ -153,7 +166,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="Date*"
+                android:text="@string/text_date"
                 app:layout_constraintEnd_toEndOf="@id/editTextDate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator3"
                 app:layout_constraintTop_toBottomOf="@id/editTextDescription"
@@ -183,7 +196,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
-                android:hint="Select the Date"
+                android:hint="@string/hint_date"
                 android:textColorHint="@color/hint_text_color"
                 android:includeFontPadding="false"
                 android:paddingTop="@dimen/_8sdp"
@@ -199,7 +212,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="Time"
+                android:text="@string/text_time"
                 app:layout_constraintEnd_toEndOf="@id/editTextTime"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator4"
                 app:layout_constraintTop_toBottomOf="@id/editTextDate"
@@ -229,7 +242,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
-                android:hint="Select Time"
+                android:hint="@string/hint_time"
                 android:textColorHint="@color/hint_text_color"
                 android:includeFontPadding="false"
                 android:paddingTop="@dimen/_8sdp"
@@ -237,6 +250,32 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
                 app:layout_constraintTop_toBottomOf="@id/textTime"/>
+
+            <Button
+                android:id="@+id/buttonURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:drawableLeft="@drawable/todo_ic_url"
+                android:text="@string/btnText_add_url"
+                android:backgroundTint="@color/todo_theme_color"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextTime" />
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:backgroundTint="@color/app_theme_color"
+                android:drawableLeft="@drawable/ic_todo"
+                android:text="@string/btnText_save_task"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextTime" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

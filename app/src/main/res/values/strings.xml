@@ -20,9 +20,24 @@
 
     //My To-Do
     <string name="text_task_count">Display Task Count</string>
-     <string name="text_search_task">Search task</string>
+    <string name="text_search_task">Search task</string>
+    <string name="text_add_new_task">Add New Task</string>
+    <string name="text_add_task_instruct">Fill task details below</string>
+    <string name="text_task_title">Task Title*</string>
+    <string name="text_task_description">Task Description*</string>
+    <string name="text_date">Date*</string>
+    <string name="text_time">Time</string>
+    <string name="hint_task_title">Enter Task Title</string>
+    <string name="hint_task_description">Enter Task Description</string>
+    <string name="hint_date">Select the Date</string>
+    <string name="hint_time">Select Time</string>
+    <string name="btnText_add_url">Add URL</string>
+    <string name="btnText_save_task">Save Task</string>
 
+    //My Notes
     <string name="search_notes">Search Notes</string>
+
+    //My Lists
     <string name="my_list">My List</string>
 
 </resources>
