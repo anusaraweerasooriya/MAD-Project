@@ -70,6 +70,19 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/diaryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
+        app:layout_constraintTop_toBottomOf="@id/layoutDiarySearch"/>
+
     <LinearLayout
         android:id="@+id/diaryLayoutQuickActions"
         android:layout_width="match_parent"
@@ -93,9 +106,9 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageAddNoteMain"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
+        android:id="@+id/imageAddDiaryMain"
+        android:layout_width="@dimen/_46sdp"
+        android:layout_height="@dimen/_46sdp"
         android:layout_marginEnd="@dimen/_30sdp"
         android:background="@drawable/diary_background_add_button"
         android:contentDescription="@string/app_name"

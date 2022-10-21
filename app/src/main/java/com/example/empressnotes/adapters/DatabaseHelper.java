@@ -52,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -81,6 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // My Lists--------------------------------------
 
+
     }
 
     @Override
@@ -99,6 +101,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // My Lists
 
     }
+
+    //=========================================================================== MY DIARY ====================================================================
+    //Add a new diary----------------------------------------------
+    public void addDiary(String diaryTitle, String diaryDateTime, String diaryBody){
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+
+        cv.put(COLUMN_DIARY_TITLE, diaryTitle);
+        cv.put(COLUMN_DIARY_BODY, diaryBody);
+        cv.put(COLUMN_DIARY_DATETIME, diaryDateTime);
+
+        long result = dbRef.insert(TABLE_NAME1, null, cv);
+        if (result==-1){
+            Toast.makeText(context, "Failed To insert Diary", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context, "Diary Added Successfully", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    // Read all the diaries----------------------------------------
+    public Cursor readDiaryData() {
+        String diary_query = "SELECT * FROM " + TABLE_NAME1;
+        SQLiteDatabase dbRef = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (dbRef != null) {
+            cursor = dbRef.rawQuery(diary_query, null);
+        }
+        return cursor;
+    }
+
+
 
     //=============================================MY TO-DO======================================================
 
@@ -132,5 +169,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+    
+    
+     //=============================================MY NOTES======================================================
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+      //=============================================MY LISTS======================================================
+      
+      
+      
+      
+
 
 }

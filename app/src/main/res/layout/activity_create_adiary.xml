@@ -14,10 +14,36 @@
         android:clipToPadding="false"
         android:paddingBottom="@dimen/_10sdp">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/diaryAddAnimation"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_150sdp"
+                app:lottie_rawRes="@raw/diary_add_animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/diaryTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <TextView
+                android:id="@+id/diaryDateTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorAdd"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toTopOf="@id/diaryTitle"
+                app:layout_constraintTop_toBottomOf="@id/diaryAddAnimation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
                 android:id="@+id/diaryTitle"
@@ -30,8 +56,8 @@
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/poppins_bold"
                 app:layout_constraintEnd_toEndOf="@+id/inputDiaryTitle"
-                app:layout_constraintStart_toStartOf="@id/viewDiaryTitleInputIndicator"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/diaryDateTime"
+                app:layout_constraintStart_toStartOf="@id/viewDiaryTitleInputIndicator" />
 
             <View
                 android:id="@+id/viewDiaryTitleInputIndicator"
@@ -58,6 +84,7 @@
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
+                android:minHeight="48dp"
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
@@ -103,6 +130,7 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@drawable/diary_input_background"
                 android:fontFamily="@font/poppins_regular"
+                android:gravity="top"
                 android:hint="Write your diary :)"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
@@ -119,6 +147,16 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/viewDiaryBodyInputIndicator"
                 app:layout_constraintTop_toBottomOf="@id/diaryBody" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/diaryCreateSubmitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_100sdp"
+                app:lottie_rawRes="@raw/submit_button"
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

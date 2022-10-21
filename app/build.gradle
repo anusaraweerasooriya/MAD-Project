@@ -48,4 +48,8 @@ dependencies {
 
     //Rounded Imageview
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //Lottie animations
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
