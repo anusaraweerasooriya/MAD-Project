@@ -2,6 +2,7 @@ package com.example.empressnotes.activities;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -43,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_DATE = "date";
     private static final String COLUMN_TASK_TIME = "time";
     private static final String COLUMN_TASK_WEBLINK = "weblink";
+    private static final String COLUMN_TASK_STATUS = "status";
 
     // my_notes table columns
 
@@ -70,7 +72,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_TASK_DESCRIPTION + " TEXT, " +
                 COLUMN_TASK_DATE + " TEXT, " +
                 COLUMN_TASK_TIME + " TEXT, " +
-                COLUMN_TASK_WEBLINK + " TEXT);";
+                COLUMN_TASK_WEBLINK + " TEXT, " +
+                COLUMN_TASK_STATUS + " TEXT DEFAULT 'UPCOMING');";
 
         sqLiteDatabase.execSQL(todo_query);
 
@@ -114,4 +117,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Task is created successfully!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    Cursor readToDoTasks() {
+        String query = "SELECT * FROM " + TABLE_NAME2;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
 }

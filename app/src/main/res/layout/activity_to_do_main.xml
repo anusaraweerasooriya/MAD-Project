@@ -83,15 +83,12 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notesRecyclerView"
+        android:id="@+id/tasksRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_25sdp"
         android:layout_marginEnd="@dimen/_25sdp"
-        android:clipToPadding="false"
-        android:paddingStart="0dp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
+        android:paddingTop="?attr/actionBarSize"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
 
