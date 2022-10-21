@@ -25,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Tables
     private static final String TABLE_NAME1 = "my_diary";
     private static final String TABLE_NAME2 = "my_todo";
+    private static final String TABLE_NAME4 = "my_list";
 
 
     // my_diary table columns
@@ -39,7 +40,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // my_notes table columns
 
     // my_lists table columns
-
+    private static final String COLUMN_List_ID = "id";
+    private static final String COLUMN_List_Name = "name";
+    private static final String COLUMN_List_Quantity = "quantity";
 
 
     @Override
@@ -60,7 +63,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // My Notes--------------------------------------
 
         // My Lists--------------------------------------
+        String my_list_query = " CREATE TABLE " + TABLE_NAME4 +
+                "(" + COLUMN_List_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_List_Name + " TEXT, " +
+                COLUMN_List_Quantity + " INTEGER);" ;
 
+        sqLiteDatabase.execSQL(my_list_query);
     }
 
     @Override
@@ -75,6 +83,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // My Notes
 
         // My Lists
+        sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME4);
+        onCreate(sqLiteDatabase);
 
     }
 }

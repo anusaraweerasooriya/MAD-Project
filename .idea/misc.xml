@@ -3,63 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/background_search.xml" value="0.191" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_add_button.xml" value="0.1045" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_search.xml" value="0.1" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_title_indicator.xml" value="0.19" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_input_background.xml" value="0.191" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/todo_background_add_button.xml" value="0.1045" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_adiary.xml" value="0.3333333333333333" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/todo_background_add_button.xml" value="0.1045" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_main.xml" value="0.11684782608695653" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_diary.xml" value="0.3333333333333333" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_to_do_main.xml" value="0.1828125" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_add_button.xml" value="0.18" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_search.xml" value="0.18" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.1895" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/btn_border.xml" value="0.121" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/diary_background_add_button.xml" value="0.1125" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/diary_background_search.xml" value="0.1125" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_add.xml" value="0.18" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_home.xml" value="0.1125" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.196" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_background_add_button.xml" value="0.2305" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_btn_border.xml" value="0.207" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_input_border.xml" value="0.2545" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/CustomToolBar.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_add_task.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_task.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_custom_tool_bar.xml" value="0.2" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.2" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.15172101449275363" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
         <entry key="..\:/MAD-Project/app/src/main/res/drawable/background_search.xml" value="0.2555" />
         <entry key="..\:/MAD-Project/app/src/main/res/drawable/diary_background_add_button.xml" value="0.1955" />
         <entry key="..\:/MAD-Project/app/src/main/res/drawable/list_background_add_button.xml" value="0.1955" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_creat_list.xml" value="0.2359375" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_create_adiary.xml" value="0.21354166666666666" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_create_task.xml" value="0.21354166666666666" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_fruits.xml" value="0.2359375" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_list_add.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.23055555555555557" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_list.xml" value="0.264" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_lists.xml" value="0.264" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.25" />
         <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_vegetables.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.2" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/diary_background_add_button.xml" value="0.253" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/notes_background_add_button.xml" value="0.253" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

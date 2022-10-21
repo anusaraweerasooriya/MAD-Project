@@ -14,10 +14,13 @@
         android:theme="@style/Theme.EmpressNotes"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ListAdd"
+            android:exported="false" />
+        <activity
             android:name=".activities.CreateADiary"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.MyDiary"
             android:exported="false"
