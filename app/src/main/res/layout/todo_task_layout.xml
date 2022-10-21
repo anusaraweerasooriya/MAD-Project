@@ -34,7 +34,7 @@
                     android:layout_gravity="center"
                     android:text="Sep"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/taskDay"
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:textSize="14sp"
+                    android:textSize="17sp"
                     tools:text="Task description here" />
 
                 <TextView
@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:textSize="14sp"
+                    android:textSize="17sp"
                     tools:text="link" />
 
                 <LinearLayout
@@ -119,7 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         tools:text="2.00" />
 
                     <TextView

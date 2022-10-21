@@ -72,7 +72,7 @@ public class ToDoCreateTask extends AppCompatActivity {
                         String time = hour + ":" + minutes;
                         time_input.setText(time);
                     }
-                }, hour, minutes, true);
+                }, hour, minutes, false);
                 timePickerDialog.show();
             }
         });
