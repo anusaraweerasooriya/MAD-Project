@@ -217,22 +217,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
              Toast.makeText(context, "Note added successfully!", Toast.LENGTH_SHORT).show();
          }
      }
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+
+    public Cursor readAllNotes() {
+        String query = "SELECT * FROM " + TABLE_NAME3;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
      
       //=============================================MY LISTS======================================================
       
