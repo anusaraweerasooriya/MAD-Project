@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,7 +34,7 @@ public class MyDiary extends AppCompatActivity {
         setContentView(R.layout.activity_my_diary);
 
         recyclerView = findViewById(R.id.diaryRecyclerView);
-        add_diary_button = findViewById(R.id.imageAddDiaryMain);
+        add_diary_button = findViewById(R.id.imageAddNotesMain);
 
         add_diary_button.setOnClickListener(new View.OnClickListener() {
             @Override

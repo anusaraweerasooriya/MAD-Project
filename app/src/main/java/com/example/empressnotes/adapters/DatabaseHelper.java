@@ -28,8 +28,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Tables
     private static final String TABLE_NAME1 = "my_diary";
     private static final String TABLE_NAME2 = "my_todo";
+    private static final String TABLE_NAME3 = "my_notes";
     private static final String TABLE_NAME4 = "my_list";
-
 
     // my_diary table columns
     private static final String COLUMN_DIARY_ID = "id";
@@ -48,6 +48,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_STATUS = "status";
 
     // my_notes table columns
+    private static final String COLUMN_NOTES_ID = "id";
+    private static final String COLUMN_NOTES_TITLE = "noteTitle";
+    private static final String COLUMN_NOTES_BODY = "note";
+    private static final String COLUMN_NOTES_DATE = "date";
+    private static final String COLUMN_NOTES_TIME = "time";
+    private static final String COLUMN_NOTES_IMAGEPATH = "imagePath";
+    private static final String COLUMN_NOTES_COLOR = "color";
 
     // my_lists table columns
     private static final String COLUMN_List_ID = "id";
@@ -83,8 +90,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
       
 
         // My Notes--------------------------------------
+        String notes_query = " CREATE TABLE " + TABLE_NAME3 +
+                "(" + COLUMN_NOTES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NOTES_TITLE + " TEXT, " +
+                COLUMN_NOTES_BODY + " TEXT);";
 
-      
+        sqLiteDatabase.execSQL(notes_query);
+
+
         // My Lists--------------------------------------
         String my_list_query = " CREATE TABLE " + TABLE_NAME4 +
                 "(" + COLUMN_List_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -108,6 +121,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
 
         // My Notes
+        sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME3);
+        onCreate(sqLiteDatabase);
 
         // My Lists
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME4);
@@ -185,7 +200,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     
     
      //=============================================MY NOTES======================================================
-     
+
+    //Add Note
+     public void addNote(String title, String note) {
+         SQLiteDatabase db = this.getWritableDatabase();
+         ContentValues cv = new ContentValues();
+
+         cv.put(COLUMN_NOTES_TITLE, title);
+         cv.put(COLUMN_NOTES_BODY, note);
+
+
+         long result = db.insert(TABLE_NAME3, null, cv);
+         if(result == -1) {
+             Toast.makeText(context, "Failed to add note", Toast.LENGTH_SHORT).show();
+         }else {
+             Toast.makeText(context, "Note added successfully!", Toast.LENGTH_SHORT).show();
+         }
+     }
      
      
      

@@ -37,6 +37,9 @@
 
     //My Notes
     <string name="search_notes">Search Notes</string>
+    <string name="hint_note_title">Enter Title</string>
+    <string name="hint_Note">Enter Your Note Here</string>
+    <string name="btnText_addNote">Save</string>
 
     //My Lists
     <string name="my_list">My List</string>
