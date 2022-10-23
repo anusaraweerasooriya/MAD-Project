@@ -29,38 +29,16 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/textNewTaskInstruction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:fontFamily="@font/poppins_regular"
-                android:text="@string/text_add_task_instruct"
-                app:layout_constraintBottom_toTopOf="@id/divider"
-                app:layout_constraintTop_toBottomOf="@id/imageAddTask"/>
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintTop_toBottomOf="@id/textNewTaskInstruction"/>
-
-            <TextView
                 android:id="@+id/textTaskTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="@string/text_task_title"
-                app:layout_constraintEnd_toEndOf="@id/editTextTaskTitle"
+                android:text="Task Title"
+                app:layout_constraintEnd_toEndOf="@id/editTextTaskTitleUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator1"
-                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/imageAddTask"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/_13ssp" />
 
@@ -70,12 +48,12 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/todo_background_input_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/editTextTaskTitle"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTaskTitleUpdate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/editTextTaskTitle" />
+                app:layout_constraintTop_toTopOf="@id/editTextTaskTitleUpdate" />
 
             <EditText
-                android:id="@+id/editTextTaskTitle"
+                android:id="@+id/editTextTaskTitleUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -105,10 +83,10 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="@string/text_task_description"
-                app:layout_constraintEnd_toEndOf="@id/editTextTaskDescription"
+                android:text="Task Description"
+                app:layout_constraintEnd_toEndOf="@id/editTextTaskDescriptionUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator2"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskTitle"
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTitleUpdate"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/_13ssp" />
 
@@ -118,12 +96,12 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/todo_background_input_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/editTextTaskDescription"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTaskDescriptionUpdate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/editTextTaskDescription" />
+                app:layout_constraintTop_toTopOf="@id/editTextTaskDescriptionUpdate" />
 
             <EditText
-                android:id="@+id/editTextTaskDescription"
+                android:id="@+id/editTextTaskDescriptionUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -152,10 +130,10 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="@string/text_date"
-                app:layout_constraintEnd_toEndOf="@id/editTextTaskDate"
+                android:text="Date"
+                app:layout_constraintEnd_toEndOf="@id/editTextTaskDateUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator3"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskDescription"
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskDescriptionUpdate"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/_13ssp" />
 
@@ -165,12 +143,12 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/todo_background_input_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/editTextTaskDate"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTaskDateUpdate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/editTextTaskDate" />
+                app:layout_constraintTop_toTopOf="@id/editTextTaskDateUpdate" />
 
             <EditText
-                android:id="@+id/editTextTaskDate"
+                android:id="@+id/editTextTaskDateUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -198,10 +176,10 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:text="@string/text_time"
-                app:layout_constraintEnd_toEndOf="@id/editTextTaskTime"
+                android:text="Time"
+                app:layout_constraintEnd_toEndOf="@id/editTextTaskTimeUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator4"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskDate"
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskDateUpdate"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/_13ssp" />
 
@@ -211,12 +189,12 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/todo_background_input_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/editTextTaskTime"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTaskTimeUpdate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/editTextTaskTime" />
+                app:layout_constraintTop_toTopOf="@id/editTextTaskTimeUpdate" />
 
             <EditText
-                android:id="@+id/editTextTaskTime"
+                android:id="@+id/editTextTaskTimeUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -262,30 +240,17 @@
             </LinearLayout>-->
 
             <Button
-                android:id="@+id/buttonTaskURL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:drawableLeft="@drawable/todo_ic_url"
-                android:text="@string/btnText_add_url"
-                android:backgroundTint="@color/todo_theme_color"
-                android:textAllCaps="false"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskTime" />
-
-            <Button
-                android:id="@+id/buttonSaveTask"
+                android:id="@+id/buttonUpdateTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:backgroundTint="@color/app_theme_color"
                 android:drawableLeft="@drawable/ic_todo"
-                android:text="@string/btnText_save"
+                android:text="Update Task"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskTime" />
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTimeUpdate" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

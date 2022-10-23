@@ -2,14 +2,21 @@ package com.example.empressnotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Patterns;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -17,24 +24,24 @@ import com.example.empressnotes.R;
 import com.example.empressnotes.adapters.DatabaseHelper;
 
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 public class ToDoCreateTask extends AppCompatActivity {
 
     EditText title_input, description_input, date_input, time_input;
-    Button weblink_btn, save_btn;
+    Button save_btn, url_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_create_task);
 
-        title_input = findViewById(R.id.editTextTitle);
-        description_input = findViewById(R.id.editTextDescription);
-        date_input = findViewById(R.id.editTextDate);
-        time_input = findViewById(R.id.editTextTime);
-        weblink_btn = findViewById(R.id.buttonURL);
-        save_btn = findViewById(R.id.buttonSave);
-
+        title_input = findViewById(R.id.editTextTaskTitle);
+        description_input = findViewById(R.id.editTextTaskDescription);
+        date_input = findViewById(R.id.editTextTaskDate);
+        time_input = findViewById(R.id.editTextTaskTime);
+        save_btn = findViewById(R.id.buttonSaveTask);
+        url_btn = findViewById(R.id.buttonTaskURL);
 
         date_input.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +50,7 @@ public class ToDoCreateTask extends AppCompatActivity {
                 final int year = calendar.get(Calendar.YEAR);
                 final int month = calendar.get(Calendar.MONTH);
                 final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
                         ToDoCreateTask.this, new DatePickerDialog.OnDateSetListener() {
@@ -77,6 +85,7 @@ public class ToDoCreateTask extends AppCompatActivity {
             }
         });
 
+
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,8 +103,7 @@ public class ToDoCreateTask extends AppCompatActivity {
                     myDB.createToDoTask(title_input.getText().toString().trim(),
                             description_input.getText().toString().trim(),
                             date_input.getText().toString().trim(),
-                            time_input.getText().toString().trim(),
-                            weblink_btn.getText().toString().trim()
+                            time_input.getText().toString().trim()
                     );
 
                     Intent intent = new Intent(ToDoCreateTask.this, ToDoMain.class);
@@ -105,6 +113,74 @@ public class ToDoCreateTask extends AppCompatActivity {
         });
 
     }
+
+
+
+    /*
+    // OnClick function of Add URL button
+    url_btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    });
+
+    // Fetch URL display layout
+    LinearLayout layout_url;
+    TextView text_url;
+    AlertDialog dialog_add_url;
+
+    layout_url = findViewById(R.id.layoutTaskUrl);
+    text_url = findViewById(R.id.textTaskUrl);
+
+    // Show popup dialog box to add URL
+    private void showAddTaskUrlDialog() {
+        if(dialog_add_url == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ToDoCreateTask.this);
+            View view = LayoutInflater.from(this).inflate(
+                    R.layout.todo_add_url_layout,
+                    (ViewGroup) findViewById(R.id.layoutAddTaskUrl)
+            );
+            builder.setView(view);
+
+            dialog_add_url = builder.create();
+            if(dialog_add_url.getWindow() != null) {
+                dialog_add_url.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+            }
+
+            final EditText inputUrl = view.findViewById(R.id.editTextTaskUrl);
+            inputUrl.requestFocus();
+
+            // Confirm add URL
+            view.findViewById(R.id.textAddTaskUrlBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(inputUrl.getText().toString().trim().isEmpty()) {
+                        // Notify user that URL is empty
+                        Toast.makeText(ToDoCreateTask.this, "Enter URL", Toast.LENGTH_SHORT).show();
+                    }else if(!Patterns.WEB_URL.matcher(inputUrl.getText().toString()).matches()) {
+                        // Display error if user enter invalid URL
+                        Toast.makeText(ToDoCreateTask.this, "Please Enter Valid URL", Toast.LENGTH_SHORT).show();
+                    }else {
+                        // Display the submitted valid url in the text view
+                        text_url.setText(inputUrl.getText().toString());
+                        layout_url.setVisibility(View.VISIBLE);
+                        dialog_add_url.dismiss();
+                    }
+                }
+            });
+
+            // Cancel add URL
+            view.findViewById(R.id.textCancelTaskUrlBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog_add_url.dismiss();
+                }
+            });
+        }
+        dialog_add_url.show();
+    }
+    */
 
 
 }

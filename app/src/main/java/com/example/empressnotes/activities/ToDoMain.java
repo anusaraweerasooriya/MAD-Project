@@ -1,12 +1,18 @@
 package com.example.empressnotes.activities;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -23,7 +29,7 @@ public class ToDoMain extends AppCompatActivity {
     ImageView add_button;
 
     DatabaseHelper myDB;
-    ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_weblink, task_status;
+    ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_status;
     ToDoAdapter toDoAdapter;
 
     @Override
@@ -48,12 +54,11 @@ public class ToDoMain extends AppCompatActivity {
         task_description = new ArrayList<>();
         task_date = new ArrayList<>();
         task_time = new ArrayList<>();
-        task_weblink = new ArrayList<>();
         task_status = new ArrayList<>();
 
         storeTaskDataInArrays();
 
-        toDoAdapter = new ToDoAdapter(ToDoMain.this, task_id, task_title, task_description, task_date, task_time, task_weblink, task_status);
+        toDoAdapter = new ToDoAdapter(ToDoMain.this, task_id, task_title, task_description, task_date, task_time, task_status);
         recyclerView.setAdapter(toDoAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ToDoMain.this));
 
@@ -70,12 +75,52 @@ public class ToDoMain extends AppCompatActivity {
                 task_description.add(cursor.getString(2));
                 task_date.add(cursor.getString(3));
                 task_time.add(cursor.getString(4));
-                task_weblink.add(cursor.getString(5));
-                task_status.add(cursor.getString(6));
+                task_status.add(cursor.getString(5));
             }
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.todo_delete_all_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.delete_all_todo) {
+            confirmDeleteAllDialog();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    void confirmDeleteAllDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All Tasks");
+        builder.setMessage("Are you sure you want to delete all ToDo tasks ?");
+
+        // If user confirm delete action
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DatabaseHelper taskDB = new DatabaseHelper(ToDoMain.this);
+                taskDB.deleteAllTasks();
+                //refresh and return back to to-do home page
+                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // If user cancel delete action
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
+    }
 
 }
 

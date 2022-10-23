@@ -3,12 +3,10 @@ package com.example.empressnotes.adapters;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -44,7 +42,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_DESCRIPTION = "description";
     private static final String COLUMN_TASK_DATE = "date";
     private static final String COLUMN_TASK_TIME = "time";
-    private static final String COLUMN_TASK_WEBLINK = "weblink";
     private static final String COLUMN_TASK_STATUS = "status";
 
     // my_notes table columns
@@ -76,7 +73,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_TASK_DESCRIPTION + " TEXT, " +
                 COLUMN_TASK_DATE + " TEXT, " +
                 COLUMN_TASK_TIME + " TEXT, " +
-                COLUMN_TASK_WEBLINK + " TEXT, " +
                 COLUMN_TASK_STATUS + " TEXT DEFAULT 'UPCOMING');";
 
         sqLiteDatabase.execSQL(todo_query);
@@ -152,8 +148,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //=============================================MY TO-DO======================================================
 
-    //CREATE
-    public void createToDoTask(String title, String description, String date, String time, String weblink) {
+    // CREATE A TO-DO TASK
+    public void createToDoTask(String title, String description, String date, String time) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -161,7 +157,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TASK_DESCRIPTION, description);
         cv.put(COLUMN_TASK_DATE, date);
         cv.put(COLUMN_TASK_TIME, time);
-        cv.put(COLUMN_TASK_WEBLINK, weblink);
 
         long result = db.insert(TABLE_NAME2, null, cv);
         if(result == -1) {
@@ -171,7 +166,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    //READ
+    // READ ALL TO-DO TASKS
     public Cursor readTaskData() {
         String query = "SELECT * FROM " + TABLE_NAME2;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -181,6 +176,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    // UPDATE A TO-DO TASK
+    public void updateTaskData(String task_id, String title, String description, String date, String time) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_TASK_TITLE, title);
+        cv.put(COLUMN_TASK_DESCRIPTION, description);
+        cv.put(COLUMN_TASK_DATE, date);
+        cv.put(COLUMN_TASK_TIME, time);
+
+        long result = db.update(TABLE_NAME2, cv, "id=?", new String[] {task_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to update task", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Task updated successfully", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    // DELETE ONE TO-DO TASK
+    public void deleteTask(String task_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME2, "id=?", new String[] {task_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to delete task", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Task deleted successfully", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    // DELETE ALL TO-DO TASKS
+    public void deleteAllTasks() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME2);
     }
     
     
