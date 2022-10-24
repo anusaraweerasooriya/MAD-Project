@@ -37,7 +37,7 @@
 
     //My Notes
     <string name="search_notes">Search Sticky Notes</string>
-    <string name="hint_note_title">Enter Title</string>
+    <string name="hint_note_title">Enter Note Title</string>
     <string name="hint_Note">Enter Your Note Here</string>
     <string name="btnText_addNote">Save</string>
     <string name="btnText_editNote">Edit</string>
@@ -46,6 +46,7 @@
     //My Lists
     <string name="my_list">My List</string>
     <string name="label_noData">No Data</string>
+
 
 
 </resources>

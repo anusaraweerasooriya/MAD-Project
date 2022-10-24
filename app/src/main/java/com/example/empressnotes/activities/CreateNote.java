@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.empressnotes.R;
@@ -15,7 +16,7 @@ import com.example.empressnotes.adapters.DatabaseHelper;
 public class CreateNote extends AppCompatActivity {
 
     EditText noteTitle_input, note_input;
-    Button noteAdd_button;
+    ImageView noteAdd_button;
 
 
     @Override
