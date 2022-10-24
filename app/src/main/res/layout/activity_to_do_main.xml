@@ -90,8 +90,8 @@
 
     <ImageView
         android:id="@+id/imageAddTaskMain"
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/todo_background_add_button"

@@ -257,7 +257,8 @@
                     android:autoLink="web"
                     android:fontFamily="@font/poppins_regular"
                     android:includeFontPadding="false"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/black"/>
             </LinearLayout>
 
             <Button

@@ -7,11 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -104,7 +107,7 @@ public class ToDoUpdateTask extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void confirmDeleteDialog() {
+    /*void confirmDeleteDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete Task");
         builder.setMessage("Are you sure you want to delete task " + title + " ?");
@@ -129,6 +132,41 @@ public class ToDoUpdateTask extends AppCompatActivity {
             }
         });
         builder.create().show();
+    }*/
+
+    void confirmDeleteDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoUpdateTask.this);
+        View view = LayoutInflater.from(this).inflate(
+                R.layout.todo_delete_task_layout,
+                (ViewGroup) findViewById(R.id.layoutTaskDelete)
+        );
+        builder.setView(view);
+        AlertDialog deleteTaskDialog = builder.create();
+        if (deleteTaskDialog.getWindow() != null) {
+            deleteTaskDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+
+        // If user confirm delete action
+        view.findViewById(R.id.textDeleteTaskBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper myDelete = new DatabaseHelper(ToDoUpdateTask.this);
+                myDelete.deleteTask(id);
+                // Return back to to-do home page
+                Intent intent = new Intent(ToDoUpdateTask.this, ToDoMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // If user cancel delete action
+        view.findViewById(R.id.textCancelDeleteTaskBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteTaskDialog.dismiss();
+            }
+        });
+        deleteTaskDialog.show();
     }
+
 
 }

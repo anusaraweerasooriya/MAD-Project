@@ -40,11 +40,14 @@
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_list_add.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.1381340579710145" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.2328125" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.2" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_to_do_update_task.xml" value="0.1" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_todo_create_task.xml" value="0.4" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_todo_create_task.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_add_url_layout.xml" value="0.264" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_delete_all_layout.xml" value="0.2328125" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_delete_task_layout.xml" value="0.2328125" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.3753943217665615" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/todo_delete_all_menu.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/todo_delete_task_menu.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/todo_menu.xml" value="0.1" />

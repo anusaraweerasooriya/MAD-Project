@@ -6,17 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.empressnotes.R;
 import com.example.empressnotes.adapters.DatabaseHelper;
@@ -104,10 +105,10 @@ public class ToDoMain extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void confirmDeleteAllDialog() {
+    /*void confirmDeleteAllDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete All Tasks");
-        builder.setMessage("Are you sure you want to delete all ToDo tasks ?");
+        builder.setMessage("Are you sure you want to delete all To-Do tasks ?");
 
         // If user confirm delete action
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
@@ -129,7 +130,42 @@ public class ToDoMain extends AppCompatActivity {
             }
         });
         builder.create().show();
+    }*/
+
+    void confirmDeleteAllDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoMain.this);
+        View view = LayoutInflater.from(this).inflate(
+                R.layout.todo_delete_all_layout,
+                (ViewGroup) findViewById(R.id.layoutTaskDeleteAll)
+        );
+        builder.setView(view);
+        AlertDialog deleteAllDialog = builder.create();
+        if (deleteAllDialog.getWindow() != null) {
+            deleteAllDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+
+        // If user confirm delete action
+        view.findViewById(R.id.textDeleteAllTaskBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper myDelete = new DatabaseHelper(ToDoMain.this);
+                myDelete.deleteAllTasks();
+                // Refresh and return back to to-do home page
+                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // If user cancel delete action
+        view.findViewById(R.id.textCancelDeleteAllTaskBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteAllDialog.dismiss();
+            }
+        });
+        deleteAllDialog.show();
     }
+
 
 }
 
