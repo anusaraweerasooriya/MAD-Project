@@ -1,5 +1,6 @@
 package com.example.empressnotes.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,9 +50,17 @@ public class MyNotes extends AppCompatActivity {
 
         storeNotesInArrays();
 
-        notesAdapter = new NotesAdapter(MyNotes.this, note_id, note_title, note_body);
+        notesAdapter = new NotesAdapter(MyNotes.this, MyNotes.this, note_id, note_title, note_body);
         notes_recyclerView.setAdapter(notesAdapter);
         notes_recyclerView.setLayoutManager(new LinearLayoutManager(MyNotes.this));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     void storeNotesInArrays() {

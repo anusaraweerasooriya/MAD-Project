@@ -229,6 +229,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void editNote(String row_id, String title, String note){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NOTES_TITLE , title);
+        cv.put(COLUMN_NOTES_BODY, note);
+
+        long result = db.update(TABLE_NAME3, cv, "id=?", new String[] {row_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to edit note", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Note edited successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
      
       //=============================================MY LISTS======================================================
       

@@ -43,5 +43,6 @@
 
     //My Lists
     <string name="my_list">My List</string>
+    <string name="btnText_editNote">Edit</string>
 
 </resources>

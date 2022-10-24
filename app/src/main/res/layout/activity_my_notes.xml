@@ -88,15 +88,6 @@
         android:padding="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/imageCalendar"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/todo_ic_calendar"
-            app:tint="@color/icons_color" />
-
     </LinearLayout>
 
 
