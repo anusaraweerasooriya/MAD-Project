@@ -42,6 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TASK_DESCRIPTION = "description";
     private static final String COLUMN_TASK_DATE = "date";
     private static final String COLUMN_TASK_TIME = "time";
+    private static final String COLUMN_TASK_URL = "url";
     private static final String COLUMN_TASK_STATUS = "status";
 
     // my_notes table columns
@@ -73,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_TASK_DESCRIPTION + " TEXT, " +
                 COLUMN_TASK_DATE + " TEXT, " +
                 COLUMN_TASK_TIME + " TEXT, " +
+                COLUMN_TASK_URL + " TEXT, " +
                 COLUMN_TASK_STATUS + " TEXT DEFAULT 'UPCOMING');";
 
         sqLiteDatabase.execSQL(todo_query);
@@ -149,7 +151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //=============================================MY TO-DO======================================================
 
     // CREATE A TO-DO TASK
-    public void createToDoTask(String title, String description, String date, String time) {
+    public void createToDoTask(String title, String description, String date, String time, String url) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -157,6 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TASK_DESCRIPTION, description);
         cv.put(COLUMN_TASK_DATE, date);
         cv.put(COLUMN_TASK_TIME, time);
+        cv.put(COLUMN_TASK_URL, url);
 
         long result = db.insert(TABLE_NAME2, null, cv);
         if(result == -1) {
@@ -193,6 +196,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed to update task", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(context, "Task updated successfully", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    // UPDATE A TASK AS COMPLETED
+    public void taskCompleted(String task_id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_TASK_STATUS, "COMPLETED");
+
+        long result = db.update(TABLE_NAME2, cv, "id=?", new String[] {task_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to complete task", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Task completion successfully", Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/delete_todo_task"
-        android:title="Delete Task"
+        android:title="@string/menu_delete_task"
         android:icon="@drawable/todo_ic_delete"
         app:showAsAction="always" />
 

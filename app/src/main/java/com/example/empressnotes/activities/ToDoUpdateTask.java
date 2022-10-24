@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.empressnotes.R;
@@ -22,7 +23,7 @@ import com.example.empressnotes.adapters.DatabaseHelper;
 public class ToDoUpdateTask extends AppCompatActivity {
 
     EditText title_input, description_input, date_input, time_input;
-    Button update_btn;
+    ImageView update_btn;
 
     String id, title, description, date, time;
 

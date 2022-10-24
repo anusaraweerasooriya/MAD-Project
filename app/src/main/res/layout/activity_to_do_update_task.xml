@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/_40sdp"
         android:clipToPadding="false"
-        android:paddingBottom="@dimen/_10sdp" >
+        android:paddingBottom="@dimen/_10sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,14 +33,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
                 android:includeFontPadding="false"
-                android:textColor="@color/black"
                 android:text="Task Title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="@id/editTextTaskTitleUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator1"
-                app:layout_constraintTop_toBottomOf="@+id/imageAddTask"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/_13ssp" />
+                app:layout_constraintTop_toBottomOf="@+id/imageAddTask" />
 
             <View
                 android:id="@+id/viewInputIndicator1"
@@ -56,8 +56,8 @@
                 android:id="@+id/editTextTaskTitleUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
                 android:ems="10"
@@ -74,21 +74,22 @@
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator1"
-                app:layout_constraintTop_toBottomOf="@id/textTaskTitle" />
+                app:layout_constraintTop_toBottomOf="@id/textTaskTitle"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textTaskDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
                 android:includeFontPadding="false"
-                android:textColor="@color/black"
                 android:text="Task Description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="@id/editTextTaskDescriptionUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator2"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskTitleUpdate"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/_13ssp" />
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTitleUpdate" />
 
             <View
                 android:id="@+id/viewInputIndicator2"
@@ -104,38 +105,39 @@
                 android:id="@+id/editTextTaskDescriptionUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
-                android:inputType="textMultiLine"
-                android:minHeight="38dp"
                 android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_13ssp"
                 android:hint="@string/hint_task_description"
-                android:textColorHint="@color/hint_text_color"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="38dp"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
-                app:layout_constraintTop_toBottomOf="@id/textTaskDescription" />
+                app:layout_constraintTop_toBottomOf="@id/textTaskDescription"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textTaskDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
                 android:includeFontPadding="false"
-                android:textColor="@color/black"
                 android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="@id/editTextTaskDateUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator3"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskDescriptionUpdate"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/_13ssp" />
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskDescriptionUpdate" />
 
             <View
                 android:id="@+id/viewInputIndicator3"
@@ -151,37 +153,38 @@
                 android:id="@+id/editTextTaskDateUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/hint_date"
+                android:includeFontPadding="false"
                 android:inputType="date"
                 android:minHeight="38dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_13ssp"
-                android:hint="@string/hint_date"
-                android:textColorHint="@color/hint_text_color"
-                android:includeFontPadding="false"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator3"
-                app:layout_constraintTop_toBottomOf="@id/textTaskDate"/>
+                app:layout_constraintTop_toBottomOf="@id/textTaskDate"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textTaskTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
                 android:includeFontPadding="false"
-                android:textColor="@color/black"
                 android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="@id/editTextTaskTimeUpdate"
                 app:layout_constraintStart_toStartOf="@id/viewInputIndicator4"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskDateUpdate"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/_13ssp" />
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskDateUpdate" />
 
             <View
                 android:id="@+id/viewInputIndicator4"
@@ -197,23 +200,24 @@
                 android:id="@+id/editTextTaskTimeUpdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/hint_time"
+                android:includeFontPadding="false"
                 android:inputType="time"
                 android:minHeight="38dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_13ssp"
-                android:hint="@string/hint_time"
-                android:textColorHint="@color/hint_text_color"
-                android:includeFontPadding="false"
                 android:paddingTop="@dimen/_8sdp"
                 android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
-                app:layout_constraintTop_toBottomOf="@id/textTaskTime"/>
+                app:layout_constraintTop_toBottomOf="@id/textTaskTime"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <!--add Url dialog box
             <LinearLayout
@@ -239,7 +243,7 @@
                     android:textSize="@dimen/_13ssp" />
             </LinearLayout>-->
 
-            <Button
+            <!--<Button
                 android:id="@+id/buttonUpdateTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -250,11 +254,24 @@
                 android:text="Update Task"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextTaskTimeUpdate" />
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTimeUpdate" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <ImageView
+        android:id="@+id/buttonUpdateTask"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/todo_background_add_button"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

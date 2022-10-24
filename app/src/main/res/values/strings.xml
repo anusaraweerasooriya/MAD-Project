@@ -19,6 +19,7 @@
     <string name="hint_diary_title">Enter diary Title</string>
 
     //My To-Do
+    <string name="label_add_task">Add Task</string>
     <string name="text_task_count">Display Task Count</string>
     <string name="text_search_task">Search task</string>
     <string name="text_add_task_instruct">Fill details below to add a task to your TODO</string>
@@ -32,7 +33,8 @@
     <string name="hint_time">Select Time</string>
     <string name="btnText_save">Save Task</string>
     <string name="btnText_add_url">Add URL</string>
-    <string name="label_add_task">Add Task</string>
+    <string name="menu_delete_task">Delete Task</string>
+    <string name="menu_delete_all">Delete All</string>
 
 
     //My Notes

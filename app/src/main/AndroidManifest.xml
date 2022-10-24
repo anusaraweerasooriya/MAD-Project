@@ -37,7 +37,7 @@
         <activity
             android:name=".activities.ToDoMain"
             android:exported="false"
-            android:label="@string/app_name"
+            android:label="@string/my_to_do"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.ToDoCreateTask"

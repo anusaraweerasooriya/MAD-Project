@@ -31,6 +31,11 @@ public class ToDoCreateTask extends AppCompatActivity {
     EditText title_input, description_input, date_input, time_input;
     Button save_btn, url_btn;
 
+    // Fetch URL display layout
+    LinearLayout layout_url;
+    TextView text_url;
+    AlertDialog dialog_add_url;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,9 @@ public class ToDoCreateTask extends AppCompatActivity {
         time_input = findViewById(R.id.editTextTaskTime);
         save_btn = findViewById(R.id.buttonSaveTask);
         url_btn = findViewById(R.id.buttonTaskURL);
+
+        layout_url = findViewById(R.id.layoutTaskUrl);
+        text_url = findViewById(R.id.textTaskUrl);
 
         date_input.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +93,13 @@ public class ToDoCreateTask extends AppCompatActivity {
             }
         });
 
+        // OnClick function of Add URL button
+        url_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAddTaskUrlDialog();
+            }
+        });
 
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +118,8 @@ public class ToDoCreateTask extends AppCompatActivity {
                     myDB.createToDoTask(title_input.getText().toString().trim(),
                             description_input.getText().toString().trim(),
                             date_input.getText().toString().trim(),
-                            time_input.getText().toString().trim()
+                            time_input.getText().toString().trim(),
+                            text_url.getText().toString().trim()
                     );
 
                     Intent intent = new Intent(ToDoCreateTask.this, ToDoMain.class);
@@ -115,23 +131,6 @@ public class ToDoCreateTask extends AppCompatActivity {
     }
 
 
-
-    /*
-    // OnClick function of Add URL button
-    url_btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        }
-    });
-
-    // Fetch URL display layout
-    LinearLayout layout_url;
-    TextView text_url;
-    AlertDialog dialog_add_url;
-
-    layout_url = findViewById(R.id.layoutTaskUrl);
-    text_url = findViewById(R.id.textTaskUrl);
 
     // Show popup dialog box to add URL
     private void showAddTaskUrlDialog() {
@@ -180,7 +179,6 @@ public class ToDoCreateTask extends AppCompatActivity {
         }
         dialog_add_url.show();
     }
-    */
 
 
 }

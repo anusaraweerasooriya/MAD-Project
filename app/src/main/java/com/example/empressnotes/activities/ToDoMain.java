@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.empressnotes.R;
@@ -26,10 +27,11 @@ import java.util.ArrayList;
 public class ToDoMain extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ImageView add_button;
+    ImageView add_button, empty_img;
+    TextView empty_txt;
 
     DatabaseHelper myDB;
-    ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_status;
+    ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_url, task_status;
     ToDoAdapter toDoAdapter;
 
     @Override
@@ -39,6 +41,8 @@ public class ToDoMain extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.tasksRecyclerView);
         add_button = findViewById(R.id.imageAddTaskMain);
+        empty_img = findViewById(R.id.imageTaskEmpty);
+        empty_txt = findViewById(R.id.textTaskEmpty);
 
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +58,12 @@ public class ToDoMain extends AppCompatActivity {
         task_description = new ArrayList<>();
         task_date = new ArrayList<>();
         task_time = new ArrayList<>();
+        task_url = new ArrayList<>();
         task_status = new ArrayList<>();
 
         storeTaskDataInArrays();
 
-        toDoAdapter = new ToDoAdapter(ToDoMain.this, task_id, task_title, task_description, task_date, task_time, task_status);
+        toDoAdapter = new ToDoAdapter(ToDoMain.this, task_id, task_title, task_description, task_date, task_time, task_url, task_status);
         recyclerView.setAdapter(toDoAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ToDoMain.this));
 
@@ -67,7 +72,8 @@ public class ToDoMain extends AppCompatActivity {
     void storeTaskDataInArrays() {
         Cursor cursor = myDB.readTaskData();
         if(cursor.getCount() == 0) {
-            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+            empty_img.setVisibility(View.VISIBLE);
+            empty_txt.setVisibility(View.VISIBLE);
         }else{
             while (cursor.moveToNext()) {
                 task_id.add(cursor.getString(0));
@@ -75,8 +81,11 @@ public class ToDoMain extends AppCompatActivity {
                 task_description.add(cursor.getString(2));
                 task_date.add(cursor.getString(3));
                 task_time.add(cursor.getString(4));
-                task_status.add(cursor.getString(5));
+                task_url.add(cursor.getString(5));
+                task_status.add(cursor.getString(6));
             }
+            empty_img.setVisibility(View.GONE);
+            empty_txt.setVisibility(View.GONE);
         }
     }
 

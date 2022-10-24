@@ -237,7 +237,7 @@
                 app:layout_constraintStart_toEndOf="@id/viewInputIndicator4"
                 app:layout_constraintTop_toBottomOf="@id/textTaskTime"/>
 
-            <!--add Url dialog box
+            // add Url dialog box
             <LinearLayout
                 android:id="@+id/layoutTaskUrl"
                 android:layout_width="match_parent"
@@ -247,8 +247,7 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/viewInputIndicator2">
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTime">
 
                 <TextView
                     android:id="@+id/textTaskUrl"
@@ -259,15 +258,16 @@
                     android:fontFamily="@font/poppins_regular"
                     android:includeFontPadding="false"
                     android:textSize="@dimen/_13ssp" />
-            </LinearLayout>-->
+            </LinearLayout>
 
             <Button
                 android:id="@+id/buttonTaskURL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:drawableLeft="@drawable/todo_ic_url"
+                android:drawableTint="@color/white"
                 android:text="@string/btnText_add_url"
                 android:backgroundTint="@color/todo_theme_color"
                 android:textAllCaps="false"
@@ -278,7 +278,7 @@
                 android:id="@+id/buttonSaveTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:backgroundTint="@color/app_theme_color"
                 android:drawableLeft="@drawable/ic_todo"
