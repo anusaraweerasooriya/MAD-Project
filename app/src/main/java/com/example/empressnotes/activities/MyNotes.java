@@ -1,15 +1,22 @@
 package com.example.empressnotes.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.empressnotes.R;
@@ -21,7 +28,8 @@ import java.util.ArrayList;
 
 public class MyNotes extends AppCompatActivity {
     RecyclerView notes_recyclerView;
-    ImageView add_notes_button;
+    ImageView add_notes_button, empty_imageview;
+    TextView no_data;
 
     DatabaseHelper myDB;
     ArrayList<String> note_id, note_title, note_body;
@@ -34,6 +42,8 @@ public class MyNotes extends AppCompatActivity {
 
         notes_recyclerView = findViewById(R.id.notesRecyclerView);
         add_notes_button = findViewById(R.id.imageAddNotesMain);
+        empty_imageview = findViewById(R.id.imageEmptyNoteData);
+        no_data = findViewById(R.id.lblNoData);
 
         add_notes_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +76,55 @@ public class MyNotes extends AppCompatActivity {
     void storeNotesInArrays() {
         Cursor cursor = myDB.readAllNotes();
         if(cursor.getCount() == 0) {
-            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+            empty_imageview.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
         }else{
             while (cursor.moveToNext()) {
                 note_id.add(cursor.getString(0));
                 note_title.add(cursor.getString(1));
                 note_body.add(cursor.getString(2));
             }
+            empty_imageview.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.notes_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.delete_all){
+            confirmDialog();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    void confirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All?");
+        builder.setMessage("Are you sure you want to delete all notes");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DatabaseHelper myDB = new DatabaseHelper(MyNotes.this);
+                myDB.deleteAllNotes();
+
+                Intent intent = new Intent(MyNotes.this, MyNotes.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
     }
 }

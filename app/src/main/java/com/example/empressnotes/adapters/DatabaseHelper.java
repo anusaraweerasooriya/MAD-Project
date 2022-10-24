@@ -244,6 +244,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void deleteNote(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME3, "id=?", new String[] {row_id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to delete note", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Note deleted successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void deleteAllNotes(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME3);
+    }
      
       //=============================================MY LISTS======================================================
       

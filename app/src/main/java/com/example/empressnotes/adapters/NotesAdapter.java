@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,6 +24,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     private Context context;
     private ArrayList note_id, note_title, note_body;
     Activity activity;
+
+    Animation note_translate_anim;
 
     //constructor
     public NotesAdapter(Activity activity, Context context, ArrayList note_id, ArrayList note_title, ArrayList note_body) {
@@ -73,6 +77,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             txt_note_title = itemView.findViewById(R.id.txt_NoteTitle);
             txt_note_body = itemView.findViewById(R.id.txt_NoteNody);
             notes_raw = itemView.findViewById(R.id.notesRaw);
+
+            //Animate Recyclerview
+            note_translate_anim = AnimationUtils.loadAnimation(context, R.anim.note_translate_anim);
+            notes_raw.setAnimation(note_translate_anim);
         }
     }
 }

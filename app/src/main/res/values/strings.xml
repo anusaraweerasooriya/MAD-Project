@@ -5,7 +5,7 @@
 
     <string name="my_diary">My Diary</string>
     <string name="my_to_do">My To-Do</string>
-    <string name="my_notes">My Notes</string>
+    <string name="my_notes">My Sticky Notes</string>
     <string name="my_lists">My Lists</string>
     <string name="diary_tab_description">Diary tab description</string>
     <string name="to_do_tab_description">To-Do tab description</string>
@@ -36,13 +36,16 @@
 
 
     //My Notes
-    <string name="search_notes">Search Notes</string>
+    <string name="search_notes">Search Sticky Notes</string>
     <string name="hint_note_title">Enter Title</string>
     <string name="hint_Note">Enter Your Note Here</string>
     <string name="btnText_addNote">Save</string>
+    <string name="btnText_editNote">Edit</string>
+    <string name="btnText_deleteNote">Delete</string>
 
     //My Lists
     <string name="my_list">My List</string>
-    <string name="btnText_editNote">Edit</string>
+    <string name="label_noData">No Data</string>
+
 
 </resources>
