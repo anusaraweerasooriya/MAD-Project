@@ -12,6 +12,7 @@
         android:backgroundTint="@color/colorDiaryLayoutBackground"
         app:cardCornerRadius="@dimen/_15sdp"
         app:cardUseCompatPadding="true"
+        android:elevation="@dimen/_20sdp"
         app:contentPadding="5dp">
 
         <LinearLayout
@@ -31,7 +32,7 @@
 
                 <!--android:fontFamily="@font/source_serif_black"-->
                 <TextView
-                    android:id="@+id/taskMonth"
+                    android:id="@+id/diaryDate"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:text="21"
@@ -39,14 +40,14 @@
 
                 <!--android:fontFamily="@font/source_serif_black_italic"-->
                 <TextView
-                    android:id="@+id/taskDay"
+                    android:id="@+id/diaryDay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Monday"
                     android:textSize="@dimen/_14ssp" />
 
                 <TextView
-                    android:id="@+id/taskYear"
+                    android:id="@+id/diaryMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
@@ -107,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:lines="2"
+                    android:lines="3"
                     android:text="Diary Body"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />

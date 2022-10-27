@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".activities.CreateADiary">
+    tools:context=".activities.UpdateDiary">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -74,9 +74,8 @@
                     tools:ignore="MissingConstraints" />
 
             </LinearLayout>
-
             <TextView
-                android:id="@+id/diaryDateTime"
+                android:id="@+id/diaryDateTime2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
@@ -85,13 +84,13 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:textColor="@color/colorAdd"
                 android:textSize="@dimen/_10ssp"
-                app:layout_constraintBottom_toTopOf="@id/diaryTitle"
+                app:layout_constraintBottom_toTopOf="@id/diaryTitle2"
                 app:layout_constraintTop_toBottomOf="@id/layoutHorizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
-                android:id="@+id/diaryTitle"
+                android:id="@+id/diaryTitle2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
@@ -100,24 +99,24 @@
                 android:text="@string/title"
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="@font/poppins_bold"
-                app:layout_constraintEnd_toEndOf="@+id/inputDiaryTitle"
-                app:layout_constraintTop_toBottomOf="@id/diaryDateTime"
-                app:layout_constraintStart_toStartOf="@id/viewDiaryTitleInputIndicator" />
+                app:layout_constraintEnd_toEndOf="@+id/inputDiaryTitle2"
+                app:layout_constraintTop_toBottomOf="@id/diaryDateTime2"
+                app:layout_constraintStart_toStartOf="@id/viewDiaryTitleInputIndicator2" />
 
             <View
-                android:id="@+id/viewDiaryTitleInputIndicator"
+                android:id="@+id/viewDiaryTitleInputIndicator2"
                 android:layout_width="@dimen/_5sdp"
                 android:layout_height="0dp"
                 android:elevation="4dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/diary_background_title_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/inputDiaryTitle"
+                app:layout_constraintBottom_toBottomOf="@id/inputDiaryTitle2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/inputDiaryTitle"
+                app:layout_constraintTop_toTopOf="@id/inputDiaryTitle2"
                 app:layout_constraintVertical_bias="0.0" />
 
             <EditText
-                android:id="@+id/inputDiaryTitle"
+                android:id="@+id/inputDiaryTitle2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
@@ -140,11 +139,11 @@
                 android:textSize="@dimen/_15ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/viewDiaryTitleInputIndicator"
-                app:layout_constraintTop_toBottomOf="@id/diaryTitle" />
+                app:layout_constraintStart_toEndOf="@id/viewDiaryTitleInputIndicator2"
+                app:layout_constraintTop_toBottomOf="@id/diaryTitle2" />
 
             <TextView
-                android:id="@+id/diaryBody"
+                android:id="@+id/diaryBody2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
@@ -153,24 +152,24 @@
                 android:text="Body"
                 android:textSize="@dimen/_15ssp"
                 android:fontFamily="@font/poppins_bold"
-                app:layout_constraintEnd_toEndOf="@+id/inputDiaryBody"
-                app:layout_constraintStart_toStartOf="@id/viewDiaryBodyInputIndicator"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryTitle"/>
+                app:layout_constraintEnd_toEndOf="@+id/inputDiaryBody2"
+                app:layout_constraintStart_toStartOf="@id/viewDiaryBodyInputIndicator2"
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryTitle2"/>
 
             <View
-                android:id="@+id/viewDiaryBodyInputIndicator"
+                android:id="@+id/viewDiaryBodyInputIndicator2"
                 android:layout_width="@dimen/_5sdp"
                 android:elevation="4dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/diary_background_title_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/inputDiaryBody"
+                app:layout_constraintBottom_toBottomOf="@id/inputDiaryBody2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/inputDiaryBody"
+                app:layout_constraintTop_toTopOf="@id/inputDiaryBody2"
                 app:layout_constraintVertical_bias="0.0" />
 
             <EditText
-                android:id="@+id/inputDiaryBody"
+                android:id="@+id/inputDiaryBody2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:elevation="4dp"
@@ -194,11 +193,11 @@
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@id/viewDiaryBodyInputIndicator"
-                app:layout_constraintTop_toBottomOf="@id/diaryBody" />
+                app:layout_constraintStart_toEndOf="@id/viewDiaryBodyInputIndicator2"
+                app:layout_constraintTop_toBottomOf="@id/diaryBody2" />
 
             <ImageView
-                android:id="@+id/imageDiary"
+                android:id="@+id/imageDiary2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
@@ -207,11 +206,11 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"/>
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody2"/>
 
 
             <ImageView
-                android:id="@+id/diaryAddImage"
+                android:id="@+id/diaryAddImage2"
                 android:layout_width="@dimen/_45sdp"
                 android:layout_height="@dimen/_45sdp"
                 android:text="Add Image"
@@ -224,10 +223,10 @@
                 android:src="@drawable/ic_diary_image"
                 android:background="@drawable/diary_image_background"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageDiary"/>
+                app:layout_constraintTop_toBottomOf="@id/imageDiary2"/>
 
             <ImageView
-                android:id="@+id/diaryCreateSubmitButton"
+                android:id="@+id/diaryCreateSubmitButton2"
                 android:elevation="4dp"
                 android:layout_width="@dimen/_45sdp"
                 android:layout_height="@dimen/_45sdp"
@@ -237,30 +236,17 @@
                 android:src="@drawable/ic_done"
                 android:background="@drawable/diary_submit_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody" />
-
-            <TextView
-                android:id="@+id/wordCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="9dp"
-                android:text="0"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toTopOf="@+id/inputDiaryBody"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="@dimen/_15sdp"
-                tools:layout_editor_absoluteX="328dp" />
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody2" />
 
 
             <!--            <com.airbnb.lottie.LottieAnimationView-->
-<!--                android:id="@+id/diaryCreateSubmitButton"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="@dimen/_160sdp"-->
-<!--                app:lottie_rawRes="@raw/submit_button"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"/>-->
+            <!--                android:id="@+id/diaryCreateSubmitButton"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="@dimen/_160sdp"-->
+            <!--                app:lottie_rawRes="@raw/submit_button"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"/>-->
 
 
 
@@ -274,4 +260,3 @@
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-

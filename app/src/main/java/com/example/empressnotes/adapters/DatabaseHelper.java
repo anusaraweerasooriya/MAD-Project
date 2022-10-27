@@ -130,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //=========================================================================== MY DIARY ====================================================================
     //Add a new diary----------------------------------------------
-    public void addDiary(String diaryTitle, String diaryDateTime, String diaryBody) {
+    public void addDiary(String diaryTitle, String diaryDateTime, String diaryBody, String imagePath){
 
         SQLiteDatabase dbRef = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -138,6 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_DIARY_TITLE, diaryTitle);
         cv.put(COLUMN_DIARY_BODY, diaryBody);
         cv.put(COLUMN_DIARY_DATETIME, diaryDateTime);
+        cv.put(COLUMN_DIARY_IMAGE_PATH, imagePath);
 
         long result = dbRef.insert(TABLE_NAME1, null, cv);
         if (result == -1) {
@@ -159,6 +160,53 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    //Update diary----------------------------------------------
+    public void updateDiary(String row_id, String title, String body, String date, String image) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_DIARY_TITLE, title);
+        cv.put(COLUMN_DIARY_BODY, body);
+        cv.put(COLUMN_DIARY_DATETIME, date);
+        cv.put(COLUMN_DIARY_IMAGE_PATH, image);
+
+        long result = dbRef.update(TABLE_NAME1, cv, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to update diary !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Diary updated successfully!", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+    //Delete a row of diary--------------------------------------
+    public void deleteDiaryRow(String row_id) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        long result = dbRef.delete(TABLE_NAME1, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to delete diary!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully deleted the diary!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    //Delete all diaries--------------------------------------
+    public void deleteAllDiaries() {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        dbRef.execSQL("DELETE FROM " + TABLE_NAME1);
+
+    }
+
+
+
+
 
 
     //=============================================MY TO-DO======================================================

@@ -74,49 +74,48 @@
         android:id="@+id/diaryRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:clipToPadding="false"
-        android:paddingStart="0dp"
-        android:paddingEnd="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutDiarySearch"/>
 
-    <LinearLayout
-        android:id="@+id/diaryLayoutQuickActions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2F2D2E"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="@dimen/_15sdp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-
-        <ImageView
-            android:id="@+id/imageDiaryAddImage"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_diary_image"
-            app:tint="@color/icons_color" />
-
-    </LinearLayout>
-
     <ImageView
-        android:id="@+id/imageAddNotesMain"
-        android:layout_width="@dimen/_46sdp"
-        android:layout_height="@dimen/_46sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
+        android:id="@+id/imageAddDiaryMain"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/diary_background_add_button"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions"/>
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/imageDiaryEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_220sdp"
+        app:srcCompat="@drawable/ic_empty"
+        tools:layout_editor_absoluteY="350dp"
+        android:contentDescription="@string/app_name"
+        android:alpha="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/diaryEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:alpha="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageDiaryEmpty" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
