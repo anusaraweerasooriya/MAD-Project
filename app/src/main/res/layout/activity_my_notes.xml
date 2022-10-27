@@ -74,45 +74,33 @@
         android:id="@+id/notesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/LayoutQuickActions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
-
-    <LinearLayout
-        android:id="@+id/LayoutQuickActions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/quickActionBar"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="@dimen/_15sdp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-    </LinearLayout>
 
 
     <ImageView
         android:id="@+id/imageAddNotesMain"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/notes_background_add_button"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@id/LayoutQuickActions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/LayoutQuickActions"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageEmptyNoteData"
-        android:layout_width="141dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_empty"
+        app:srcCompat="@drawable/ic_empty_main"
         android:alpha="0.1"
         android:visibility="gone"/>
 

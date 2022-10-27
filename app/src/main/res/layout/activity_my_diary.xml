@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_220sdp"
-        app:srcCompat="@drawable/ic_empty"
+        app:srcCompat="@drawable/ic_empty_main"
         tools:layout_editor_absoluteY="350dp"
         android:contentDescription="@string/app_name"
         android:alpha="0.1"

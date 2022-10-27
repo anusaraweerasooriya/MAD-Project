@@ -375,10 +375,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Failed To insert List", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context, "List Added Successfully", Toast.LENGTH_SHORT).show();
+        }
+    }
             
     // Read all the lists----------------------------------------
-
     public Cursor readListData() {
+
         String list_query = "SELECT * FROM " + TABLE_NAME4;
         SQLiteDatabase dbRef = this.getReadableDatabase();
 
@@ -422,8 +424,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateList(String id) {
-    }
 
     //Delete all lists--------------------------------------
     public void deleteAllLists() {
