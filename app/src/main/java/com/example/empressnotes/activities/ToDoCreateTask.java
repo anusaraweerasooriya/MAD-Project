@@ -132,7 +132,7 @@ public class ToDoCreateTask extends AppCompatActivity {
 
 
 
-    // Show popup dialog box to add URL
+    // Show popup dialog box to ADD URL
     private void showAddTaskUrlDialog() {
         if(dialog_add_url == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(ToDoCreateTask.this);

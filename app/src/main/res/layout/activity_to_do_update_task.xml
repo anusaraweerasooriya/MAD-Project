@@ -219,6 +219,7 @@
                 app:layout_constraintTop_toBottomOf="@id/textTaskTime"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
+
             <!--add Url dialog box
             <LinearLayout
                 android:id="@+id/layoutTaskUrl"
@@ -255,6 +256,42 @@
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editTextTaskTimeUpdate" />-->
+
+            <ImageView
+                android:id="@+id/imageTaskUrlEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/todo_ic_edit"
+                android:layout_margin="@dimen/_10sdp"
+                android:backgroundTint="@color/icons_color"
+                app:layout_constraintBottom_toBottomOf="@id/editTextTaskUrlUpdate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editTextTaskUrlUpdate" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/editTextTaskUrlUpdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:autoLink="web"
+                android:background="@null"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Web-Link"
+                android:includeFontPadding="false"
+                android:inputType="time"
+                android:minHeight="38dp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:textColorHint="@color/hint_text_color"
+                android:textColorLink="@color/app_theme_color"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageTaskUrlEdit"
+                app:layout_constraintTop_toBottomOf="@id/editTextTaskTimeUpdate"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

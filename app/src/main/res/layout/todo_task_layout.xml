@@ -108,6 +108,7 @@
                     android:singleLine="true"
                     android:textSize="13sp"
                     android:autoLink="web"
+                    android:textColorLink="@color/app_theme_color"
                     tools:text="URL" />
 
                 <TextView

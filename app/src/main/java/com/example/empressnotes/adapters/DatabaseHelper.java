@@ -182,7 +182,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // UPDATE A TO-DO TASK
-    public void updateTaskData(String task_id, String title, String description, String date, String time) {
+    public void updateTaskData(String task_id, String title, String description, String date, String time, String url) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -190,6 +190,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TASK_DESCRIPTION, description);
         cv.put(COLUMN_TASK_DATE, date);
         cv.put(COLUMN_TASK_TIME, time);
+        cv.put(COLUMN_TASK_URL, url);
 
         long result = db.update(TABLE_NAME2, cv, "id=?", new String[] {task_id});
         if(result == -1) {

@@ -105,33 +105,6 @@ public class ToDoMain extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*void confirmDeleteAllDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete All Tasks");
-        builder.setMessage("Are you sure you want to delete all To-Do tasks ?");
-
-        // If user confirm delete action
-        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                DatabaseHelper taskDB = new DatabaseHelper(ToDoMain.this);
-                taskDB.deleteAllTasks();
-                //refresh and return back to to-do home page
-                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
-                startActivity(intent);
-            }
-        });
-
-        // If user cancel delete action
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        builder.create().show();
-    }*/
-
     void confirmDeleteAllDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(ToDoMain.this);
         View view = LayoutInflater.from(this).inflate(

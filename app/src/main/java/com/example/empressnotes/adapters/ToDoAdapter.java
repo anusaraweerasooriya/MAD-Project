@@ -85,6 +85,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
                 intent.putExtra("description", String.valueOf(task_description.get(position)));
                 intent.putExtra("date", String.valueOf(task_date.get(position)));
                 intent.putExtra("time", String.valueOf(task_time.get(position)));
+                intent.putExtra("url", String.valueOf(task_url.get(position)));
                 context.startActivity(intent);
             }
         });
@@ -119,8 +120,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     // Fetch activity components
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txt_task_title, txt_task_description, txt_task_day, txt_task_month, txt_task_year,
-                txt_task_url, txt_task_time, txt_task_status;
+        TextView txt_task_title, txt_task_description, txt_task_day, txt_task_month, txt_task_year, txt_task_time,
+                txt_task_url, txt_task_status;
         RelativeLayout layoutTask;
         ImageView btn_options;
 
