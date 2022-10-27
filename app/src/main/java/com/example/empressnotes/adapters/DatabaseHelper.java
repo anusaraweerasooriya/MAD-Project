@@ -150,13 +150,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Update diary----------------------------------------------
-    public void updateDiary(String row_id, String title, String body, String date) {
+    public void updateDiary(String row_id, String title, String body, String date, String image) {
 
         SQLiteDatabase dbRef = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_DIARY_TITLE, title);
         cv.put(COLUMN_DIARY_BODY, body);
         cv.put(COLUMN_DIARY_DATETIME, date);
+        cv.put(COLUMN_DIARY_IMAGE_PATH, image);
 
         long result = dbRef.update(TABLE_NAME1, cv, "id=?", new String[]{row_id});
 

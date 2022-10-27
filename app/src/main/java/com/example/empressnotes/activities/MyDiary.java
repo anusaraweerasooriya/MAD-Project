@@ -37,7 +37,7 @@ public class MyDiary extends AppCompatActivity {
     TextView noDiaryData;
 
     DatabaseHelper diary_db;
-    ArrayList<String> diary_id, diary_title, diary_date, diary_body;
+    ArrayList<String> diary_id, diary_title, diary_date, diary_body, diary_image;
     DiaryAdapter diaryAdaptor;
 
 
@@ -64,10 +64,11 @@ public class MyDiary extends AppCompatActivity {
         diary_title = new ArrayList<>();
         diary_body = new ArrayList<>();
         diary_date = new ArrayList<>();
+        diary_image = new ArrayList<>();
 
         storeDiaryDataInArrays();
 
-        diaryAdaptor = new DiaryAdapter(MyDiary.this, this, diary_id, diary_title, diary_date, diary_body);
+        diaryAdaptor = new DiaryAdapter(MyDiary.this, this, diary_id, diary_title, diary_date, diary_body, diary_image);
         recyclerView.setAdapter(diaryAdaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(MyDiary.this));
 
@@ -86,6 +87,7 @@ public class MyDiary extends AppCompatActivity {
                 diary_title.add(cursor.getString(1));
                 diary_date.add(cursor.getString(2));
                 diary_body.add(cursor.getString(3));
+                diary_image.add(cursor.getString(4));
             }
             empty_diaryImageView.setVisibility(View.GONE);
             noDiaryData.setVisibility(View.GONE);

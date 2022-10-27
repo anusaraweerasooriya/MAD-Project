@@ -23,17 +23,18 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
 
     private Context context;
     Activity activity;
-    private ArrayList diary_id, diary_title, diary_date, diary_body;
+    private ArrayList diary_id, diary_title, diary_date, diary_body, diary_image;
     int position;
 
     //DiaryAdapter constructor
-    public DiaryAdapter(Activity activity, Context context, ArrayList diary_id, ArrayList diary_title, ArrayList diary_date, ArrayList diary_body) {
+    public DiaryAdapter(Activity activity, Context context, ArrayList diary_id, ArrayList diary_title, ArrayList diary_date, ArrayList diary_body, ArrayList diary_image) {
         this.activity = activity;
         this.context = context;
         this.diary_id = diary_id;
         this.diary_title = diary_title;
         this.diary_date = diary_date;
         this.diary_body = diary_body;
+        this.diary_image = diary_image;
     }
 
     @NonNull
@@ -75,6 +76,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
                 intent.putExtra("title", String.valueOf(diary_title.get(position)));
                 intent.putExtra("date", String.valueOf(diary_date.get(position)));
                 intent.putExtra("body", String.valueOf(diary_body.get(position)));
+                intent.putExtra("image",String.valueOf(diary_image.get(position)));
                 //intent.putExtra("id", String.valueOf(diary_id.get(position)));
                 activity.startActivityForResult(intent, 1);
             }
@@ -89,7 +91,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
     public class DiaryViewHolder extends RecyclerView.ViewHolder{
 
         TextView  text_diary_title, text_diary_date, text_diary_body,
-        text_diary_dayI, text_diary_day, text_diary_month ;
+        text_diary_dayI, text_diary_day, text_diary_month, text_diary_image ;
         LinearLayout layoutDiary;
 
 
@@ -102,6 +104,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
             text_diary_dayI= itemView.findViewById(R.id.diaryDate);
             text_diary_month = itemView.findViewById(R.id.diaryMonth);
             layoutDiary = itemView.findViewById(R.id.diary_pages_layout);
+
 
 
         }
