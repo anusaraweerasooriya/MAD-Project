@@ -38,13 +38,14 @@ public class CreateADiary extends AppCompatActivity {
 
     private EditText inputDiaryTitle, inputDiaryBody;
     private TextView diaryDateTime, wordCount;
-    private ImageView imageDiary, buttonDiarySave;
+    private ImageView imageDiary, buttonDiarySave, buttonImageSave;
 
     private String selectedDiaryImagePath;
-    private Uri selectedImageUri;
+    private Uri selectedImageUri, imageFilePath;
+    private Bitmap imageToStore;
 
-    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
-    private static final int REQUEST_CODE_SELECT_DIARY_IMAGE = 2;
+    private static final int REQUEST_CODE_STORAGE_PERMISSION = 10;
+    private static final int REQUEST_CODE_SELECT_DIARY_IMAGE = 100;
 
 
     @Override
@@ -58,6 +59,7 @@ public class CreateADiary extends AppCompatActivity {
         imageDiary = findViewById(R.id.imageDiary);
         wordCount = findViewById(R.id.wordCount);
         buttonDiarySave = findViewById(R.id.diaryCreateSubmitButton);
+        buttonImageSave = findViewById(R.id.diaryAddImage);
 
         // Calling word count method
         getWordCount();
@@ -67,7 +69,26 @@ public class CreateADiary extends AppCompatActivity {
                         .format(new Date())
         );
 
+        diaryDateTime.setVisibility(View.GONE);
+
+        try {
+            String date = String.valueOf(diaryDateTime);
+
+            String[] s = date.split(" ");
+            String day = s[0];
+            String dayI = s[1];
+            String month = s[2];
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         selectedDiaryImagePath = "";
+
+        uploadDiaryImage();
+
 
         buttonDiarySave.setOnClickListener(new View.OnClickListener() {
 
@@ -98,63 +119,64 @@ public class CreateADiary extends AppCompatActivity {
 
         });
 
-//        ImageView addImageDiary = findViewById(R.id.diaryAddImage);
-//        addImageDiary.setOnClickListener(new View.OnClickListener() {
+    }
+
+//    public void diaryImageUpload() {
+//        buttonDiarySave = findViewById(R.id.diaryCreateSubmitButton);
+//        buttonImageSave = findViewById(R.id.diaryAddImage);
+//
+//        buttonImageSave.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                if (ContextCompat.checkSelfPermission(
-//                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE
-//                ) != PackageManager.PERMISSION_GRANTED) {
-//                    ActivityCompat.requestPermissions(
-//                            CreateADiary.this,
-//                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
-//                            REQUEST_CODE_STORAGE_PERMISSION
-//                    );
-//                } else {
-//                    selectDiaryImage();
+//
+//                try {
+//                    Intent objectIntent = new Intent();
+//                    objectIntent.setType("image/*");
+//
+//                    objectIntent.setAction(Intent.ACTION_GET_CONTENT);
+//                    startActivityForResult(objectIntent,REQUEST_CODE_SELECT_DIARY_IMAGE);
+//
+//
+//                }catch (Exception e) {
+//
 //                }
+//
 //            }
 //        });
+//
+//    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        try {
+//            super.onActivityResult(requestCode, resultCode, data);
+//            if (requestCode==REQUEST_CODE_SELECT_DIARY_IMAGE && resultCode==RESULT_OK && data!=null && data.getData() != null) {
+//                imageFilePath = data.getData();
+//                imageToStore = MediaStore.Images.Media.getBitmap(getContentResolver(), imageFilePath);
+//
+//                imageDiary.setImageBitmap(imageToStore);
+//                imageDiary.setVisibility(View.VISIBLE);
+//
+//                selectedDiaryImagePath = getPathFromUri(imageFilePath);
+//
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+//
+//
+//    }
 
-    }
-
-    private void uploadDiaryImage(){
-        buttonDiarySave = findViewById(R.id.diaryCreateSubmitButton);
-        buttonDiarySave.setOnClickListener(new View.OnClickListener() {
+    public void uploadDiaryImage(){
+        buttonImageSave = findViewById(R.id.diaryAddImage);
+        buttonImageSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(
-                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(
-                            CreateADiary.this,
-                            new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
-                            REQUEST_CODE_STORAGE_PERMISSION
-                    );
-                } else {
-                    selectDiaryImage();
-                }
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, REQUEST_CODE_SELECT_DIARY_IMAGE);
             }
         });
-    }
-
-    private void selectDiaryImage() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, REQUEST_CODE_SELECT_DIARY_IMAGE);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE_STORAGE_PERMISSION && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                selectDiaryImage();
-            } else {
-                Toast.makeText(this, "Permission Denied!", Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
     @Override

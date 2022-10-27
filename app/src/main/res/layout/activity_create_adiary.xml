@@ -19,17 +19,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
+            <LinearLayout
+                android:id="@+id/layoutHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+                <LinearLayout
+                    android:id="@+id/diaryDateTopContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <!--android:fontFamily="@font/source_serif_black"-->
+                    <TextView
+                        android:id="@+id/diaryDate"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:text="21"
+                        android:textSize="@dimen/_35ssp" />
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/diaryAddAnimation"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_150sdp"
-                app:lottie_rawRes="@raw/diary_add_animation"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints" />
+                    <!--android:fontFamily="@font/source_serif_black_italic"-->
+                    <TextView
+                        android:id="@+id/diaryDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <TextView
+                        android:id="@+id/diaryMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="September"
+                        android:textSize="@dimen/_14ssp" />
+
+                </LinearLayout>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/diaryAddAnimation"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    app:lottie_rawRes="@raw/diary_add_animation"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/diaryDateTopContent"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/diaryDateTime"
                 android:layout_width="0dp"
@@ -41,7 +86,7 @@
                 android:textColor="@color/colorAdd"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toTopOf="@id/diaryTitle"
-                app:layout_constraintTop_toBottomOf="@id/diaryAddAnimation"
+                app:layout_constraintTop_toBottomOf="@id/layoutHorizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
