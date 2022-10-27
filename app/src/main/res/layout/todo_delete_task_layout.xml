@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutTaskDelete"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/background_dialog">
+
+    <ImageView
+        android:id="@+id/imageTaskDelete"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:src="@drawable/todo_ic_delete"
+        app:tint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textTaskTitleDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:includeFontPadding="false"
+        android:text="Delete Task"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageTaskDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageTaskDelete"
+        app:layout_constraintTop_toTopOf="@id/imageTaskDelete" />
+
+    <TextView
+        android:id="@+id/textTaskDelete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@null"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center_vertical"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:text="Are you sure you want to delete the current task."
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/dialog_box_text"
+        app:layout_constraintTop_toBottomOf="@id/imageTaskDelete"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textDeleteTaskBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:includeFontPadding="false"
+        android:padding="@dimen/_8sdp"
+        android:text="DELETE"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/no_option_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTaskDelete" />
+
+    <TextView
+        android:id="@+id/textCancelDeleteTaskBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:includeFontPadding="false"
+        android:padding="@dimen/_8sdp"
+        android:text="CANCEL"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/cancel_option_color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textDeleteTaskBtn"
+        app:layout_constraintTop_toBottomOf="@id/textTaskDelete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

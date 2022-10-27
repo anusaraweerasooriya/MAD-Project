@@ -14,17 +14,21 @@
         android:theme="@style/Theme.EmpressNotes"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ToDoUpdateTask"
+            android:exported="false"
+            android:parentActivityName=".activities.ToDoMain" />
+        <activity
             android:name=".activities.ListAdd"
             android:exported="false"
             android:label="@string/my_list"
-            android:parentActivityName=".activities.MyList"/>
+            android:parentActivityName=".activities.MyList" />
         <activity
             android:name=".activities.CreateADiary"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/my_diary"
-            android:parentActivityName=".activities.MyDiary"/>
+            android:parentActivityName=".activities.MyDiary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.MyDiary"
             android:exported="false"
@@ -33,12 +37,12 @@
         <activity
             android:name=".activities.ToDoMain"
             android:exported="false"
-            android:label="@string/app_name"
+            android:label="@string/my_to_do"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.ToDoCreateTask"
             android:exported="false"
-            android:label="@string/my_to_do"
+            android:label="@string/label_add_task"
             android:parentActivityName=".activities.ToDoMain" />
         <activity
             android:name=".activities.MyNotes"

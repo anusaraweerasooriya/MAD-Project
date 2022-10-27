@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="@color/colorDiarySearchBackground"/>
-    <corners android:radius="@dimen/_8sdp"/>
+    <solid android:color="@color/colorDiaryLayoutBackground"/>
+    <corners android:radius="@dimen/_15sdp"/>
 
 </shape>
