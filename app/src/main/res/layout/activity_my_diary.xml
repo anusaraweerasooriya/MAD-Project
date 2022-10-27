@@ -106,7 +106,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageAddDiaryMain"
+        android:id="@+id/imageAddNotesMain"
         android:layout_width="@dimen/_46sdp"
         android:layout_height="@dimen/_46sdp"
         android:layout_marginEnd="@dimen/_30sdp"

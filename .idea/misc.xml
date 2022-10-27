@@ -58,6 +58,19 @@
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/todo_option_menu.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/diary_background_add_button.xml" value="0.2595" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_add.xml" value="0.2595" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/ic_notes.xml" value="0.2595" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/notes_background_add_button.xml" value="0.2595" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/notes_background_save_button.xml" value="0.2595" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_todo_create_task.xml" value="0.264" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_update_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/notes_row.xml" value="0.536" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/notes_menu.xml" value="0.253125" />
       </map>
     </option>
   </component>
