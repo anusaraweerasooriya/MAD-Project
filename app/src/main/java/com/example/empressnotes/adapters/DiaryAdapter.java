@@ -25,7 +25,6 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
     Activity activity;
     private ArrayList diary_id, diary_title, diary_date, diary_body;
     int position;
-    private String diaryNo, diaryDay, diaryMonth;
 
     //DiaryAdapter constructor
     public DiaryAdapter(Activity activity, Context context, ArrayList diary_id, ArrayList diary_title, ArrayList diary_date, ArrayList diary_body) {

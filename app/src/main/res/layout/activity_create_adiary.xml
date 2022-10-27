@@ -10,9 +10,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
         android:clipToPadding="false"
-        android:paddingBottom="@dimen/_10sdp">
+        android:paddingBottom="@dimen/_5sdp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,17 +27,17 @@
                 app:lottie_rawRes="@raw/diary_add_animation"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/diaryTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                tools:ignore="MissingConstraints" />
             <TextView
                 android:id="@+id/diaryDateTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
                 android:includeFontPadding="false"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:textColor="@color/colorAdd"
                 android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toTopOf="@id/diaryTitle"
@@ -53,7 +53,7 @@
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
                 android:text="@string/title"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_15ssp"
                 android:fontFamily="@font/poppins_bold"
                 app:layout_constraintEnd_toEndOf="@+id/inputDiaryTitle"
                 app:layout_constraintTop_toBottomOf="@id/diaryDateTime"
@@ -63,6 +63,7 @@
                 android:id="@+id/viewDiaryTitleInputIndicator"
                 android:layout_width="@dimen/_5sdp"
                 android:layout_height="0dp"
+                android:elevation="4dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/diary_background_title_indicator"
                 app:layout_constraintBottom_toBottomOf="@id/inputDiaryTitle"
@@ -78,19 +79,20 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@drawable/diary_input_background"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/source_serif_black_italic"
                 android:hint="@string/hint_diary_title"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
                 android:minHeight="48dp"
+                android:elevation="4dp"
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text_color"
-                android:textSize="@dimen/_10ssp"
+                android:textSize="@dimen/_15ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/viewDiaryTitleInputIndicator"
@@ -104,7 +106,7 @@
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
                 android:text="Body"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_15ssp"
                 android:fontFamily="@font/poppins_bold"
                 app:layout_constraintEnd_toEndOf="@+id/inputDiaryBody"
                 app:layout_constraintStart_toStartOf="@id/viewDiaryBodyInputIndicator"
@@ -113,6 +115,7 @@
             <View
                 android:id="@+id/viewDiaryBodyInputIndicator"
                 android:layout_width="@dimen/_5sdp"
+                android:elevation="4dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/diary_background_title_indicator"
@@ -125,37 +128,94 @@
                 android:id="@+id/inputDiaryBody"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:elevation="4dp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@drawable/diary_input_background"
-                android:fontFamily="@font/poppins_regular"
+                android:fontFamily="@font/source_serif_semi_bold_italic"
                 android:gravity="top"
                 android:hint="Write your diary :)"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="textMultiLine"
-                android:minHeight="@dimen/_100sdp"
+                android:minHeight="@dimen/_150sdp"
                 android:paddingStart="@dimen/_5sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_text_color"
-                android:textSize="@dimen/_10ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/viewDiaryBodyInputIndicator"
                 app:layout_constraintTop_toBottomOf="@id/diaryBody" />
 
-            <com.airbnb.lottie.LottieAnimationView
+            <ImageView
+                android:id="@+id/imageDiary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"/>
+
+
+            <ImageView
+                android:id="@+id/diaryAddImage"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:text="Add Image"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/white"
+                android:elevation="4dp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_diary_image"
+                android:background="@drawable/diary_image_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageDiary"/>
+
+            <ImageView
                 android:id="@+id/diaryCreateSubmitButton"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_100sdp"
-                app:lottie_rawRes="@raw/submit_button"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"
+                android:elevation="4dp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_done"
+                android:background="@drawable/diary_submit_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody" />
+
+            <TextView
+                android:id="@+id/wordCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="9dp"
+                android:text="0"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toTopOf="@+id/inputDiaryBody"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_15sdp"
+                tools:layout_editor_absoluteX="328dp" />
+
+
+            <!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:id="@+id/diaryCreateSubmitButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/_160sdp"-->
+<!--                app:lottie_rawRes="@raw/submit_button"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"/>-->
 
 
 

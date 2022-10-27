@@ -21,10 +21,17 @@
     <color name="colorPrimaryDark">#B3DDFF</color>
     <color name="colorDiarySearchBackground">#9BB5CA</color>
     <color name="colorDiaryIndicator">#E861FF</color>
+    <color name="colorImageAddDiary">#B48BFF</color>
+    <color name="colorDiaryLayoutBackground">#CDB2FF</color>
+    <color name="colorDiaryLayoutBackgroundDate">#D6C5F1</color>
 
     
     <color name="hint_text_color">#7B7B7B</color>
     <color name="icons_color">#A4A4A4</color>
     <color name="quickActionBar">#2F2D2E</color>
+
+    <color name="dialog_box_text">#992F2D2E</color>
+    <color name="cancel_option_color">#FDBE3B</color>
+    <color name="no_option_color">#FF4842</color>
 
 </resources>
