@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CreateNote">
+
+    <View
+        android:id="@+id/viewInputIndicator1"
+        android:layout_width="@dimen/_5sdp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:background="@color/notes_theme_color"
+        app:layout_constraintBottom_toBottomOf="@id/inputNoteTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputNoteTitle" />
+
+    <EditText
+        android:id="@+id/inputNoteTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/hint_note_title"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_text_color"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/viewInputIndicator1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewInputIndicator2"
+        android:layout_width="@dimen/_5sdp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:background="@color/notes_theme_color"
+        app:layout_constraintBottom_toBottomOf="@id/inputNote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputNote" />
+
+
+    <EditText
+        android:id="@+id/inputNote"
+        android:layout_width="360dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@null"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/hint_Note"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:minHeight="38dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
+        app:layout_constraintTop_toBottomOf="@+id/inputNoteTitle" />
+
+    <ImageView
+        android:id="@+id/btnNoteAdd"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/notes_background_save_button"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_note_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNote" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

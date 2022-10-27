@@ -5,6 +5,8 @@
 
     <string name="my_diary">My Diary</string>
     <string name="my_to_do">My To-Do</string>
+    <string name="my_notes">My Sticky Notes</string>
+    <string name="my_to_do">My ToDo</string>
     <string name="my_notes">My Notes</string>
     <string name="my_lists">My Lists</string>
     <string name="diary_tab_description">Diary tab description</string>
@@ -19,10 +21,10 @@
     <string name="hint_diary_title">Enter diary Title</string>
 
     //My To-Do
+    <string name="label_add_task">Add Task</string>
     <string name="text_task_count">Display Task Count</string>
     <string name="text_search_task">Search task</string>
-    <string name="text_add_new_task">Add New Task</string>
-    <string name="text_add_task_instruct">Fill task details below</string>
+    <string name="text_add_task_instruct">Fill details below to add a task to your TODO</string>
     <string name="text_task_title">Task Title*</string>
     <string name="text_task_description">Task Description*</string>
     <string name="text_date">Date*</string>
@@ -31,14 +33,24 @@
     <string name="hint_task_description">Enter Task Description</string>
     <string name="hint_date">Select the Date</string>
     <string name="hint_time">Select Time</string>
+    <string name="btnText_save">Save Task</string>
     <string name="btnText_add_url">Add URL</string>
-    <string name="btnText_save_task">Save Task</string>
+    <string name="menu_delete_task">Delete Task</string>
+    <string name="menu_delete_all">Delete All</string>
 
 
     //My Notes
-    <string name="search_notes">Search Notes</string>
+    <string name="search_notes">Search Sticky Notes</string>
+    <string name="hint_note_title">Enter Note Title</string>
+    <string name="hint_Note">Enter Your Note Here</string>
+    <string name="btnText_addNote">Save</string>
+    <string name="btnText_editNote">Edit</string>
+    <string name="btnText_deleteNote">Delete</string>
 
     //My Lists
     <string name="my_list">My List</string>
+    <string name="label_noData">No Data</string>
+
+
 
 </resources>
