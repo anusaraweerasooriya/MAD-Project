@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -47,6 +45,7 @@ public class MyDiary extends AppCompatActivity {
         setContentView(R.layout.activity_my_diary);
 
         recyclerView = findViewById(R.id.diaryRecyclerView);
+
         add_diary_button = findViewById(R.id.imageAddDiaryMain);
         empty_diaryImageView = findViewById(R.id.imageDiaryEmpty);
         noDiaryData = findViewById(R.id.diaryEmpty);

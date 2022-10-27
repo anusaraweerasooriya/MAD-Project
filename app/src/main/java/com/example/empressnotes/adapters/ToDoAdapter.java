@@ -1,33 +1,48 @@
 package com.example.empressnotes.adapters;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.DialogTitle;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.empressnotes.R;
+import com.example.empressnotes.activities.ToDoMain;
+import com.example.empressnotes.activities.ToDoUpdateTask;
 
 import java.util.ArrayList;
 
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList task_id, task_title, task_description, task_date, task_time, task_weblink, task_status;
+    private ArrayList task_id, task_title, task_description, task_date, task_time, task_url, task_status;
+    int position;
 
     //constructor
     public ToDoAdapter(Context context, ArrayList task_id, ArrayList task_title, ArrayList task_description,
-                       ArrayList task_date, ArrayList task_time, ArrayList task_weblink, ArrayList task_status) {
+                       ArrayList task_date, ArrayList task_time, ArrayList task_url, ArrayList task_status) {
         this.context = context;
         this.task_id = task_id;
         this.task_title = task_title;
         this.task_description = task_description;
         this.task_date = task_date;
         this.task_time = task_time;
-        this.task_weblink = task_weblink;
+        this.task_url = task_url;
         this.task_status = task_status;
     }
 
@@ -40,17 +55,24 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ToDoAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.txt_task_title.setText(String.valueOf(task_title.get(position)));
         holder.txt_task_description.setText(String.valueOf(task_description.get(position)));
         holder.txt_task_time.setText(String.valueOf(task_time.get(position)));
-        holder.txt_task_weblink.setText(String.valueOf(task_weblink.get(position)));
+        holder.txt_task_url.setText(String.valueOf(task_url.get(position)));
         holder.txt_task_status.setText(String.valueOf(task_status.get(position)));
 
+        // Split date components and format month
         try {
-            String date = String.valueOf(task_date.get(position));
+            String dateInput = String.valueOf(task_date.get(position));
 
-            String[] s = date.split("/");
+            /*SimpleDateFormat inputFormat = new SimpleDateFormat("dd/mm/yyyy");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            Date date = inputFormat.parse(dateInput);
+            String dateOutput = outputFormat.format(date);*/
+
+            String[] s = dateInput.split("/");
             String day = s[0];
             String month = s[1];
             String year = s[2];
@@ -62,6 +84,22 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // Recyclerview onClickListener
+        holder.layoutTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ToDoUpdateTask.class);
+                intent.putExtra("id", String.valueOf(task_id.get(position)));
+                intent.putExtra("title", String.valueOf(task_title.get(position)));
+                intent.putExtra("description", String.valueOf(task_description.get(position)));
+                intent.putExtra("date", String.valueOf(task_date.get(position)));
+                intent.putExtra("time", String.valueOf(task_time.get(position)));
+                intent.putExtra("url", String.valueOf(task_url.get(position)));
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -69,10 +107,15 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         return task_id.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    // Fetch activity components
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
-        TextView txt_task_title, txt_task_description, txt_task_day, txt_task_month, txt_task_year,
-                txt_task_time, txt_task_weblink, txt_task_status;
+        private static final String TAG = "MyViewHolder";
+        TextView txt_task_title, txt_task_description, txt_task_day, txt_task_month, txt_task_year, txt_task_time,
+                txt_task_url, txt_task_status;
+        RelativeLayout layoutTask;
+        ImageView btn_options;
+        MenuItem item = itemView.findViewById(R.id.task_completed_option);
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,8 +125,96 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             txt_task_month = itemView.findViewById(R.id.taskMonth);
             txt_task_year = itemView.findViewById(R.id.taskYear);
             txt_task_time = itemView.findViewById(R.id.taskTime);
-            txt_task_weblink = itemView.findViewById(R.id.taskWeblink);
+            txt_task_url = itemView.findViewById(R.id.taskURL);
             txt_task_status = itemView.findViewById(R.id.taskStatus);
+
+            layoutTask = itemView.findViewById(R.id.layoutTask);
+            btn_options = itemView.findViewById(R.id.taskMoreOptions);
+
+            btn_options.setOnClickListener(this);
         }
+
+        // Popup menu to select more options of task
+        @Override
+        public void onClick(View view) {
+            showPopUpMenu(view);
+        }
+
+        private void showPopUpMenu(View view) {
+            PopupMenu menu = new PopupMenu(view.getContext(), view);
+            menu.inflate(R.menu.todo_option_menu);
+            menu.setOnMenuItemClickListener(this);
+            menu.show();
+        }
+
+        /*ToDoMain ob = new ToDoMain();*/
+
+
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.task_completed_option:
+                    /*Log.d(TAG, "onMenuItemClick: completed " + getBindingAdapterPosition());*/
+                    /*String id = String.valueOf(getBindingAdapterPosition() + 1);
+                    ob.taskCompletedDialog(id);*/
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        /*public void taskCompletedDialog(int taskId, int position) {
+            Dialog dialog = new Dialog(context, R.style.AppTheme);
+            dialog.setContentView(R.layout.dialog_completed_theme);
+            Button close = dialog.findViewById(R.id.closeButton);
+            close.setOnClickListener(view -> {
+                deleteTaskFromId(taskId, position);
+                dialog.dismiss();
+            });
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            dialog.show();
+        }*/
+
+
+
+
     }
+
+    // TASK COMPLETED OPTION
+    /*public void taskCompletedDialog(String id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoMain.class);
+        View view = LayoutInflater.from(this).inflate(
+                R.layout.todo_task_completed_layout,
+                (ViewGroup) findViewById(R.id.layoutTaskCompleted)
+        );
+        builder.setView(view);
+        AlertDialog taskCompletedDialog = builder.create();
+        if (taskCompletedDialog.getWindow() != null) {
+            taskCompletedDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+
+        // If user confirm action
+        view.findViewById(R.id.buttonTaskCompleted).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper taskDB = new DatabaseHelper(ToDoMain.this);
+                taskDB.taskCompleted(id);
+                // Refresh and return back to to-do home page
+                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // If user cancel action
+        view.findViewById(R.id.textCancelCompletedBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                taskCompletedDialog.dismiss();
+            }
+        });
+        taskCompletedDialog.show();
+    }*/
+
+
 }

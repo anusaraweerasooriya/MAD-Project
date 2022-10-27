@@ -31,7 +31,7 @@
         tools:ignore="MissingConstraints"/>
 
     <LinearLayout
-        android:id="@+id/layoutDiarySearch"
+        android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
@@ -70,30 +70,29 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/LayoutQuickActions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
+
     <LinearLayout
-        android:id="@+id/diaryLayoutQuickActions"
+        android:id="@+id/LayoutQuickActions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2F2D2E"
+        android:background="@color/quickActionBar"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-
-        <ImageView
-            android:id="@+id/imageDiaryAddImage"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_diary_image"
-            app:tint="@color/icons_color" />
-
     </LinearLayout>
 
+
     <ImageView
-        android:id="@+id/imageAddDiaryMain"
+        android:id="@+id/imageAddNotesMain"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_30sdp"
@@ -101,8 +100,33 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
+        app:layout_constraintBottom_toTopOf="@id/LayoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions"/>
+        app:layout_constraintTop_toTopOf="@id/LayoutQuickActions"/>
+
+    <ImageView
+        android:id="@+id/imageEmptyNoteData"
+        android:layout_width="141dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="252dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_empty"
+        android:alpha="0.1"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/lblNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="168dp"
+        android:text="@string/label_noData"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEmptyNoteData"
+        android:alpha="0.4"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ListAdd"
-    android:padding="@dimen/_30sdp">
+    android:padding="@dimen/_30sdp"
+    tools:context=".activities.ListAdd">
 
     <EditText
-        android:id="@+id/title_input"
+        android:id="@+id/title_input2"
         android:layout_width="317dp"
         android:layout_height="42dp"
         android:layout_marginTop="144dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/list_description"
+        android:id="@+id/list_description2"
         android:layout_width="317dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -33,22 +33,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_input"
+        app:layout_constraintTop_toBottomOf="@+id/title_input2"
         app:layout_constraintVertical_bias="0.06" />
 
     <Button
-        android:id="@+id/add_button"
+        android:id="@+id/update_button"
         android:layout_width="312dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/list_theme_color"
-        android:text="Add"
+        android:text="Update"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_description"
+        app:layout_constraintTop_toBottomOf="@+id/list_description2"
         app:layout_constraintVertical_bias="0.149"
         app:strokeColor="@color/list_theme_color" />
+
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="312dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/list_theme_color"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/update_button"
+        app:layout_constraintStart_toStartOf="@+id/update_button"
+        app:layout_constraintTop_toBottomOf="@+id/update_button"
+        app:strokeColor="@color/list_theme_color" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
