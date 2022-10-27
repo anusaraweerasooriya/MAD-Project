@@ -11,16 +11,16 @@
         android:id="@+id/textMyDiary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="false"
         android:text="@string/my_list"
+        android:textAlignment="center"
         android:textColor="@color/list_theme_color"
         android:textSize="@dimen/_20ssp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
@@ -42,7 +42,7 @@
             android:layout_height="@dimen/_20sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_search"
-            app:tint="@color/icons_color"/>
+            app:tint="@color/icons_color" />
 
         <EditText
             android:id="@+id/inputDiarySearch"
@@ -63,20 +63,19 @@
 
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
         android:clipToPadding="false"
         android:paddingStart="0dp"
         android:paddingEnd="@dimen/_12sdp"
         android:paddingBottom="@dimen/_12sdp"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
-        app:layout_constraintTop_toBottomOf="@id/layoutDiarySearch"/>
-
-
+        app:layout_constraintTop_toBottomOf="@id/layoutDiarySearch"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
         android:id="@+id/diaryLayoutQuickActions"
@@ -111,10 +110,61 @@
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toTopOf="@id/diaryLayoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions"/>
+        app:layout_constraintTop_toTopOf="@id/diaryLayoutQuickActions" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24"
+        tools:srcCompat="@tools:sample/avatars" />
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="128dp"
+        android:layout_height="29dp"
+        android:alpha="0.4"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <ImageView
+        android:id="@+id/list_empty"
+        android:layout_width="78dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42"
+        app:srcCompat="@drawable/ic_empty"
+        android:alpha="0.3"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No data"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_empty"
+        android:alpha="0.7"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

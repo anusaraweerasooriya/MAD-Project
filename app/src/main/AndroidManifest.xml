@@ -27,6 +27,9 @@
             android:exported="false"
             android:parentActivityName=".activities.ToDoMain" />
         <activity
+            android:name=".activities.ListUpdate"
+            android:exported="false" />
+        <activity
             android:name=".activities.ListAdd"
             android:exported="false"
             android:label="@string/my_list"

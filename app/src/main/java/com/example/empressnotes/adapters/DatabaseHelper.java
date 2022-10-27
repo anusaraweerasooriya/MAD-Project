@@ -22,7 +22,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     // Tables
     private static final String TABLE_NAME1 = "my_diary";
     private static final String TABLE_NAME2 = "my_todo";
@@ -56,9 +55,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // my_lists table columns
     private static final String COLUMN_List_ID = "id";
-    private static final String COLUMN_List_Name = "name";
+    private static final String COLUMN_List_Title = "title";
+    private static final String COLUMN_List_Description = "description";
     private static final String COLUMN_List_Quantity = "quantity";
-
 
 
     @Override
@@ -85,7 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_TASK_STATUS + " TEXT DEFAULT 'UPCOMING');";
 
         sqLiteDatabase.execSQL(todo_query);
-      
+
 
         // My Notes--------------------------------------
         String notes_query = " CREATE TABLE " + TABLE_NAME3 +
@@ -99,14 +98,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // My Lists--------------------------------------
         String my_list_query = " CREATE TABLE " + TABLE_NAME4 +
                 "(" + COLUMN_List_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_List_Name + " TEXT, " +
-                COLUMN_List_Quantity + " INTEGER);" ;
+                COLUMN_List_Title + " TEXT, " +
+                COLUMN_List_Description + " TEXT, " +
+                COLUMN_List_Quantity + " INTEGER);";
 
         sqLiteDatabase.execSQL(my_list_query);
 
     }
 
-  
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
@@ -130,20 +130,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //=========================================================================== MY DIARY ====================================================================
     //Add a new diary----------------------------------------------
-    public void addDiary(String diaryTitle, String diaryDateTime, String diaryBody){
+    public void addDiary(String diaryTitle, String diaryDateTime, String diaryBody) {
 
         SQLiteDatabase dbRef = this.getWritableDatabase();
-        ContentValues cv= new ContentValues();
+        ContentValues cv = new ContentValues();
 
         cv.put(COLUMN_DIARY_TITLE, diaryTitle);
         cv.put(COLUMN_DIARY_BODY, diaryBody);
         cv.put(COLUMN_DIARY_DATETIME, diaryDateTime);
 
         long result = dbRef.insert(TABLE_NAME1, null, cv);
-        if (result==-1){
+        if (result == -1) {
             Toast.makeText(context, "Failed To insert Diary", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Toast.makeText(context, "Diary Added Successfully", Toast.LENGTH_SHORT).show();
         }
 
@@ -162,7 +161,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
     //=============================================MY TO-DO======================================================
 
     // CREATE A TO-DO TASK
@@ -177,9 +175,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_TASK_URL, url);
 
         long result = db.insert(TABLE_NAME2, null, cv);
-        if(result == -1) {
+        if (result == -1) {
             Toast.makeText(context, "Failed to create the task", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             Toast.makeText(context, "Task is created successfully!", Toast.LENGTH_SHORT).show();
         }
     }
@@ -190,12 +188,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
-        if(db != null) {
+        if (db != null) {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
     }
-
+    
     // UPDATE A TO-DO TASK
     public void updateTaskData(String task_id, String title, String description, String date, String time, String url) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -231,7 +229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
-
+    
     // DELETE ONE TO-DO TASK
     public void deleteTask(String task_id) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -249,9 +247,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME2);
     }
-    
-    
-     //=============================================MY NOTES======================================================
+
+
+
+    //=============================================MY NOTES======================================================
 
     //Add Note
      public void addNote(String title, String note) {
@@ -310,12 +309,80 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME3);
     }
-     
-      //=============================================MY LISTS======================================================
-      
-      
-      
-      
 
+
+    //=============================================MY LISTS======================================================
+
+    // Add a new list----------------------------------------------
+    public void addList(String listTitle, String listDescription) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_List_Title, listTitle);
+        cv.put(COLUMN_List_Description, listDescription);
+
+        long result = dbRef.insert(TABLE_NAME4, null, cv);
+        if (result == -1) {
+            Toast.makeText(context, "Failed To insert List", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "List Added Successfully", Toast.LENGTH_SHORT).show();
+            
+    // Read all the lists----------------------------------------
+
+    public Cursor readListData() {
+        String list_query = "SELECT * FROM " + TABLE_NAME4;
+        SQLiteDatabase dbRef = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (dbRef != null) {
+            cursor = dbRef.rawQuery(list_query, null);
+        }
+        return cursor;
+    }
+
+
+    //Update list----------------------------------------------
+    public void updateList(String row_id, String title, String description) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_List_Title, title);
+        cv.put(COLUMN_List_Description, description);
+
+        long result = dbRef.update(TABLE_NAME4, cv, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to update list !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "List updated successfully!", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    //Delete a row of list--------------------------------------
+    public void deleteListRow(String row_id) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        long result = dbRef.delete(TABLE_NAME4, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to delete list!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully deleted the list!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void updateList(String id) {
+    }
+
+    //Delete all lists--------------------------------------
+    public void deleteAllLists() {
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        dbRef.execSQL("DELETE FROM " + TABLE_NAME4);
+
+    }
 
 }
+
