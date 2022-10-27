@@ -3,6 +3,15 @@
 
     <item
         android:id="@+id/task_completed_option"
+        android:icon="@drawable/todo_ic_completed"
         android:title="Completed"/>
+
+    <item
+        android:id="@+id/task_update_option"
+        android:title="Update"/>
+
+    <item
+        android:id="@+id/task_delete_option"
+        android:title="Delete"/>
 
 </menu>

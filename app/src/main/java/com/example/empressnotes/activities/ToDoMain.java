@@ -29,7 +29,7 @@ public class ToDoMain extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ImageView add_button, empty_img;
-    TextView empty_txt;
+    TextView count_txt, empty_txt;
 
     DatabaseHelper myDB;
     ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_url, task_status;
@@ -40,6 +40,7 @@ public class ToDoMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_main);
 
+        count_txt = findViewById(R.id.textTaskCount);
         recyclerView = findViewById(R.id.tasksRecyclerView);
         add_button = findViewById(R.id.imageAddTaskMain);
         empty_img = findViewById(R.id.imageTaskEmpty);
@@ -90,6 +91,8 @@ public class ToDoMain extends AppCompatActivity {
         }
     }
 
+
+    // DELETE ALL OPTION
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -138,6 +141,43 @@ public class ToDoMain extends AppCompatActivity {
         });
         deleteAllDialog.show();
     }
+
+
+    // TASK COMPLETED OPTION
+    public void taskCompletedDialog(String id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoMain.this);
+        View view = LayoutInflater.from(this).inflate(
+                R.layout.todo_task_completed_layout,
+                (ViewGroup) findViewById(R.id.layoutTaskCompleted)
+        );
+        builder.setView(view);
+        AlertDialog taskCompletedDialog = builder.create();
+        if (taskCompletedDialog.getWindow() != null) {
+            taskCompletedDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+
+        // If user confirm action
+        view.findViewById(R.id.buttonTaskCompleted).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper taskDB = new DatabaseHelper(ToDoMain.this);
+                taskDB.taskCompleted(id);
+                // Refresh and return back to to-do home page
+                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // If user cancel action
+        view.findViewById(R.id.textCancelCompletedBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                taskCompletedDialog.dismiss();
+            }
+        });
+        taskCompletedDialog.show();
+    }
+
 
 
 }

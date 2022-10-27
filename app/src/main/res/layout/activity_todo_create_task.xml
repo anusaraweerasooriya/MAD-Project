@@ -18,15 +18,18 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
 
-            <ImageView
-                android:id="@+id/imageAddTask"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/TodoAddAnimation"
                 android:layout_width="wrap_content"
-                android:layout_height="129dp"
-                android:layout_marginTop="@dimen/_20sdp"
-                app:srcCompat="@drawable/add_task"
-                android:contentDescription="@string/app_name"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:lottie_rawRes="@raw/todo_create_animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:layout_constraintBottom_toTopOf="@id/textNewTaskInstruction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/textNewTaskInstruction"
@@ -38,7 +41,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="@string/text_add_task_instruct"
                 app:layout_constraintBottom_toTopOf="@id/divider"
-                app:layout_constraintTop_toBottomOf="@id/imageAddTask"/>
+                app:layout_constraintTop_toBottomOf="@id/TodoAddAnimation"/>
 
             <View
                 android:id="@+id/divider"
