@@ -48,7 +48,9 @@
     //My Lists
     <string name="my_list">My List</string>
     <string name="label_noData">No Data</string>
-
+    <string name="new_sticky_note">New Sticky Note</string>
+    <string name="txt_word_count">Word count</string>
+    <string name="date_time">Date Time</string>
 
 
 </resources>

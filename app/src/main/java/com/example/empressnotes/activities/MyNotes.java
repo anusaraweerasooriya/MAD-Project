@@ -32,7 +32,7 @@ public class MyNotes extends AppCompatActivity {
     TextView no_data;
 
     DatabaseHelper myDB;
-    ArrayList<String> note_id, note_title, note_body;
+    ArrayList<String> note_id, note_title, note_body, note_datetime;
     NotesAdapter notesAdapter;
 
     @Override
@@ -57,10 +57,11 @@ public class MyNotes extends AppCompatActivity {
         note_id = new ArrayList<>();
         note_title = new ArrayList<>();
         note_body = new ArrayList<>();
+        note_datetime = new ArrayList<>();
 
         storeNotesInArrays();
 
-        notesAdapter = new NotesAdapter(MyNotes.this, MyNotes.this, note_id, note_title, note_body);
+        notesAdapter = new NotesAdapter(MyNotes.this, MyNotes.this, note_id, note_title, note_body, note_datetime);
         notes_recyclerView.setAdapter(notesAdapter);
         notes_recyclerView.setLayoutManager(new LinearLayoutManager(MyNotes.this));
     }
@@ -83,6 +84,7 @@ public class MyNotes extends AppCompatActivity {
                 note_id.add(cursor.getString(0));
                 note_title.add(cursor.getString(1));
                 note_body.add(cursor.getString(2));
+                note_datetime.add(cursor.getString(3));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
