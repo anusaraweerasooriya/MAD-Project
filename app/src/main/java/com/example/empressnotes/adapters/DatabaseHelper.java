@@ -296,6 +296,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME2);
     }
 
+    // SEARCH TASK
+    public Cursor searchTask(String text) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE " + COLUMN_TASK_TITLE + " LIKE '%"+text+"%'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        return cursor;
+    }
+
 
 
     //=============================================MY NOTES======================================================

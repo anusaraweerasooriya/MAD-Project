@@ -1,23 +1,20 @@
 package com.example.empressnotes.adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.DialogTitle;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,12 +23,16 @@ import com.example.empressnotes.activities.ToDoMain;
 import com.example.empressnotes.activities.ToDoUpdateTask;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> {
 
     private Context context;
     private ArrayList task_id, task_title, task_description, task_date, task_time, task_url, task_status;
-    int position;
 
     //constructor
     public ToDoAdapter(Context context, ArrayList task_id, ArrayList task_title, ArrayList task_description,
@@ -147,74 +148,26 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             menu.show();
         }
 
-        /*ToDoMain ob = new ToDoMain();*/
-
 
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.task_completed_option:
-                    /*Log.d(TAG, "onMenuItemClick: completed " + getBindingAdapterPosition());*/
-                    /*String id = String.valueOf(getBindingAdapterPosition() + 1);
-                    ob.taskCompletedDialog(id);*/
+                    String id = String.valueOf(getBindingAdapterPosition() + 1);
+                    ((ToDoMain)context).taskCompletedDialog(id);
                     return true;
                 default:
                     return false;
             }
         }
 
-        /*public void taskCompletedDialog(int taskId, int position) {
-            Dialog dialog = new Dialog(context, R.style.AppTheme);
-            dialog.setContentView(R.layout.dialog_completed_theme);
-            Button close = dialog.findViewById(R.id.closeButton);
-            close.setOnClickListener(view -> {
-                deleteTaskFromId(taskId, position);
-                dialog.dismiss();
-            });
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            dialog.show();
-        }*/
 
 
 
 
     }
 
-    // TASK COMPLETED OPTION
-    /*public void taskCompletedDialog(String id) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ToDoMain.class);
-        View view = LayoutInflater.from(this).inflate(
-                R.layout.todo_task_completed_layout,
-                (ViewGroup) findViewById(R.id.layoutTaskCompleted)
-        );
-        builder.setView(view);
-        AlertDialog taskCompletedDialog = builder.create();
-        if (taskCompletedDialog.getWindow() != null) {
-            taskCompletedDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        }
-
-        // If user confirm action
-        view.findViewById(R.id.buttonTaskCompleted).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseHelper taskDB = new DatabaseHelper(ToDoMain.this);
-                taskDB.taskCompleted(id);
-                // Refresh and return back to to-do home page
-                Intent intent = new Intent(ToDoMain.this, ToDoMain.class);
-                startActivity(intent);
-            }
-        });
-
-        // If user cancel action
-        view.findViewById(R.id.textCancelCompletedBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                taskCompletedDialog.dismiss();
-            }
-        });
-        taskCompletedDialog.show();
-    }*/
 
 
 }

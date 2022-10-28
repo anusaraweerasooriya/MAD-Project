@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/task_completed_option"
-        android:icon="@drawable/todo_ic_completed"
         android:title="Completed"/>
-
-    <item
-        android:id="@+id/task_update_option"
-        android:title="Update"/>
-
-    <item
-        android:id="@+id/task_delete_option"
-        android:title="Delete"/>
 
 </menu>
