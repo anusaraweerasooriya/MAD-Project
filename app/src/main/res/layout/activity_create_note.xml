@@ -20,12 +20,24 @@
                     android:layout_height="wrap_content"
                     android:animateLayoutChanges="true">
 
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/NoteAddAnimation"
+                            android:layout_width="239dp"
+                            android:layout_height="233dp"
+                            android:layout_marginEnd="96dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/notes_add"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteY="-4dp" />
+
                         <TextView
                             android:id="@+id/lbl_datetime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_marginBottom="4dp"
                             android:text="@string/date_time"
                             android:textSize="16sp"
                             android:textStyle="italic"
@@ -47,7 +59,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_12sdp"
-                            android:layout_marginTop="212dp"
+                            android:layout_marginTop="220dp"
                             android:layout_marginEnd="@dimen/_12sdp"
                             android:background="@null"
                             android:ems="10"

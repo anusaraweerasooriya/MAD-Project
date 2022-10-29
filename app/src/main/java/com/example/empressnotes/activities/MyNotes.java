@@ -11,11 +11,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -110,26 +113,35 @@ public class MyNotes extends AppCompatActivity {
     }
 
     void confirmDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete All?");
-        builder.setMessage("Are you sure you want to delete all notes");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                DatabaseHelper myDB = new DatabaseHelper(MyNotes.this);
-                myDB.deleteAllNotes();
+        AlertDialog.Builder builder = new AlertDialog.Builder(MyNotes.this);
+        View view = LayoutInflater.from(this).inflate(
+                R.layout.note_delete_all_layout,
+                (ViewGroup) findViewById(R.id.layoutNoteDeleteAll)
+        );
+        builder.setView(view);
+        AlertDialog deleteAllDialog = builder.create();
+        if (deleteAllDialog.getWindow() != null) {
+            deleteAllDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
 
+        // If user confirm delete action
+        view.findViewById(R.id.textDeleteAllNotesBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper diaryDB = new DatabaseHelper(MyNotes.this);
+                diaryDB.deleteAllNotes();
+                // Refresh and return back to to-do home page
                 Intent intent = new Intent(MyNotes.this, MyNotes.class);
                 startActivity(intent);
-                finish();
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        // If user cancel delete action
+        view.findViewById(R.id.textCancelDeleteAllNotesBtn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
+            public void onClick(View view) {
+                deleteAllDialog.dismiss();
             }
         });
-        builder.create().show();
+        deleteAllDialog.show();
     }
 }

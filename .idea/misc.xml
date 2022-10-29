@@ -55,15 +55,17 @@
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/edit_button.xml" value="0.2585" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/notes_background_save_button.xml" value="0.2595" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_adiary.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_note.xml" value="0.2" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_create_note.xml" value="0.4" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_list_update.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_my_notes.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_to_do_update_task.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_update_diary.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/activity_update_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/diary_delete_all_layout.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/diary_delete_diary_layout.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/diary_test.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/layout_miscellaneous.xml" value="0.264" />
+        <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/note_delete_all_layout.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/note_delete_note_layout.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/notes_row.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Sanduni Nimesha/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_delete_all_layout.xml" value="0.20208333333333334" />

@@ -26,9 +26,14 @@ import android.widget.Toast;
 import com.example.empressnotes.R;
 import com.example.empressnotes.adapters.DatabaseHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class UpdateNote extends AppCompatActivity {
     EditText noteTitle_input, note_input;
     ImageView noteEdit_button;
+    TextView noteDateTime;
 
     String id, title, note;
 
@@ -40,6 +45,12 @@ public class UpdateNote extends AppCompatActivity {
         noteTitle_input = findViewById(R.id.inputNoteTitleEdit);
         note_input = findViewById(R.id.inputNoteEdit);
         noteEdit_button = findViewById(R.id.btnNoteEdit);
+        noteDateTime = findViewById(R.id.lbl_editdatetime);
+
+        noteDateTime.setText(
+                new SimpleDateFormat("EEEE dd MMMM yyyy", Locale.getDefault())
+                        .format(new Date())
+        );
 
         getAndSetIntentData();
 
@@ -54,6 +65,7 @@ public class UpdateNote extends AppCompatActivity {
                 DatabaseHelper myDB = new DatabaseHelper(UpdateNote.this);
                 title = noteTitle_input.getText().toString().trim();
                 note = note_input.getText().toString().trim();
+
                 myDB.editNote(id, title, note);
 
                 Intent intent = new Intent(UpdateNote.this, MyNotes.class);

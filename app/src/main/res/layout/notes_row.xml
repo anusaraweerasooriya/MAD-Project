@@ -10,19 +10,19 @@
         android:id="@+id/notes_raw_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/_28sdp"
-        android:layout_margin="12dp">
+        app:cardCornerRadius="@dimen/_18sdp"
+        android:layout_margin="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="397dp"
-            android:layout_height="138dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:padding="8dp">
 
             <TextView
                 android:id="@+id/txt_datetime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="4dp"
                 android:text="@string/date_time"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
                 android:id="@+id/txt_NoteTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:text="Note Title"
                 android:textColor="#000000"
                 android:textSize="24sp"
@@ -42,20 +42,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.246" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/txt_NoteNody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:text="Note Body"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_NoteTitle"
-                app:layout_constraintVertical_bias="0.384" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/txt_NoteID"

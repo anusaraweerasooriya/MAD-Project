@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".activities.CreateNote">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/NoteeditAnimation"
+        android:layout_width="266dp"
+        android:layout_height="280dp"
+        android:layout_marginEnd="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/notes_theme"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-31dp" />
+
     <View
         android:id="@+id/viewInputIndicator"
         android:layout_width="@dimen/_5sdp"
@@ -22,7 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="224dp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:background="@null"
         android:ems="10"
@@ -52,6 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/inputNoteEdit" />
 
+
     <EditText
         android:id="@+id/inputNoteEdit"
         android:layout_width="360dp"
@@ -73,10 +86,9 @@
         android:textColorHint="@color/hint_text_color"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
         app:layout_constraintTop_toBottomOf="@+id/inputNoteTitleEdit" />
-
 
     <TextView
         android:id="@+id/lbl_word_count_edit"
@@ -87,6 +99,18 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/inputNoteEdit"
         app:layout_constraintEnd_toEndOf="@+id/inputNoteEdit" />
+
+    <TextView
+        android:id="@+id/lbl_editdatetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:text="@string/date_time"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNoteEdit" />
 
     <ImageView
         android:id="@+id/btnNoteEdit"
