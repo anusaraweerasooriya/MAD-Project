@@ -71,6 +71,7 @@ public class ToDoMain extends AppCompatActivity {
 
     }
 
+
     void storeTaskDataInArrays() {
         Cursor cursor = myDB.readTaskData();
         if(cursor.getCount() == 0) {
@@ -177,6 +178,11 @@ public class ToDoMain extends AppCompatActivity {
         });
         taskCompletedDialog.show();
     }
+
+
+
+
+
 
 
 

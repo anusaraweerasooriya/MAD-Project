@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,11 +17,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -222,12 +219,12 @@ public class ToDoUpdateTask extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.delete_todo_task) {
-            confirmDeleteDialog();
+            confirmDeleteDialog(id);
         }
         return super.onOptionsItemSelected(item);
     }
 
-    void confirmDeleteDialog() {
+    public void confirmDeleteDialog(String id) {
         AlertDialog.Builder builder = new AlertDialog.Builder(ToDoUpdateTask.this);
         View view = LayoutInflater.from(this).inflate(
                 R.layout.todo_delete_task_layout,
@@ -243,8 +240,8 @@ public class ToDoUpdateTask extends AppCompatActivity {
         view.findViewById(R.id.textDeleteTaskBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseHelper myDelete = new DatabaseHelper(ToDoUpdateTask.this);
-                myDelete.deleteTask(id);
+                DatabaseHelper taskDB = new DatabaseHelper(ToDoUpdateTask.this);
+                taskDB.deleteTask(id);
                 // Return back to to-do home page
                 Intent intent = new Intent(ToDoUpdateTask.this, ToDoMain.class);
                 startActivity(intent);

@@ -12,12 +12,13 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
-        app:contentPadding="5dp">
+        app:contentPadding="4dp"
+        android:backgroundTint="@color/task_card">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_8sdp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -34,7 +35,8 @@
                     android:layout_gravity="center"
                     android:text="Sep"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="19sp"
+                    android:fontFamily="@font/poppins_regular"/>
 
                 <TextView
                     android:id="@+id/taskDay"
@@ -42,8 +44,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="14"
-                    android:textColor="@color/todo_theme_color"
-                    android:textSize="22sp" />
+                    android:textColor="@color/app_theme_color"
+                    android:textSize="23sp"
+                    android:fontFamily="@font/poppins_bold"/>
 
                 <TextView
                     android:id="@+id/taskYear"
@@ -51,7 +54,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="2022"
-                    android:textSize="18sp" />
+                    android:textSize="19sp"
+                    android:fontFamily="@font/poppins_regular"/>
 
             </LinearLayout>
 
@@ -83,7 +87,8 @@
                         android:singleLine="true"
                         android:text="Title"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp" />
+                        android:textSize="19sp"
+                        android:fontFamily="@font/poppins_bold"/>
 
                     <ImageView
                         android:id="@+id/taskMoreOptions"
@@ -95,28 +100,30 @@
 
                 <TextView
                     android:id="@+id/taskDescription"
-                    android:layout_width="@dimen/_200sdp"
+                    android:layout_width="@dimen/_190sdp"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:textSize="15sp"
-                    tools:text="Task description here" />
+                    android:textSize="16sp"
+                    tools:text="Task description"
+                    android:fontFamily="@font/poppins_regular"/>
 
                 <TextView
                     android:id="@+id/taskURL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:textSize="13sp"
+                    android:textSize="16sp"
                     android:autoLink="web"
                     android:textColorLink="@color/app_theme_color"
-                    tools:text="URL" />
+                    tools:text="URL"
+                    android:fontFamily="@font/poppins_regular"/>
 
                 <TextView
                     android:id="@+id/taskTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:textSize="13sp"
+                    android:textSize="16sp"
                     tools:text="2.00" />
 
                 <TextView
@@ -126,7 +133,17 @@
                     android:gravity="end"
                     android:text="STATUS"
                     android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_regular"/>
+
+                <TextView
+                    android:id="@+id/taskDaysCalc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="x days more"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_regular"/>
 
             </LinearLayout>
 

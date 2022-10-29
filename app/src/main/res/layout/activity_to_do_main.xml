@@ -19,13 +19,60 @@
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/divider"
+    <!--<SearchView
+        android:id="@+id/searchTask"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/textTaskCount"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/background_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textMyToDoTasks"
+        android:queryHint="Search Task"
+        android:iconifiedByDefault="false" />-->
+
+        <LinearLayout
+            android:id="@+id/layoutSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/background_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textMyToDoTasks">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_search"
+                app:tint="@color/icons_color" />
+
+            <EditText
+                android:id="@+id/inputTaskSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@null"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/text_search_task"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hint_text_color"
+                android:textSize="@dimen/_13ssp"
+                tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textTaskCount"
@@ -38,45 +85,14 @@
         app:layout_constraintBottom_toTopOf="@id/divider"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
 
-    <LinearLayout
-        android:id="@+id/layoutSearch"
+    <View
+        android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:background="@drawable/background_search"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="@dimen/_10sdp"
-        android:paddingEnd="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@+id/textMyToDoTasks">
+        android:layout_height="2dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/textTaskCount"/>
 
-        <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_search"
-            app:tint="@color/icons_color" />
-
-        <EditText
-            android:id="@+id/inputTaskSearch"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:background="@null"
-            android:fontFamily="@font/poppins_regular"
-            android:hint="@string/text_search_task"
-            android:imeOptions="actionDone"
-            android:importantForAutofill="no"
-            android:includeFontPadding="false"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textColorHint="@color/hint_text_color"
-            android:textSize="@dimen/_13ssp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasksRecyclerView"
