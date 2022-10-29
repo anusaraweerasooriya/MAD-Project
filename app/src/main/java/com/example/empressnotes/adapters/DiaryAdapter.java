@@ -51,6 +51,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
         holder.text_diary_title.setText(String.valueOf(diary_id.get(position)));
         holder.text_diary_date.setText(String.valueOf(diary_date.get(position)));
         holder.text_diary_title.setText(String.valueOf(diary_title.get(position)));
+        holder.text_diary_body.setText(String.valueOf(diary_body.get(position)));
 
         try {
             String date = String.valueOf(diary_date.get(position));

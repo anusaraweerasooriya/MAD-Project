@@ -38,6 +38,7 @@ public class CreateADiary extends AppCompatActivity {
 
     private EditText inputDiaryTitle, inputDiaryBody;
     private TextView diaryDateTime, wordCount;
+    private TextView diaryDate, diaryDay, diaryMonth;
     private ImageView imageDiary, buttonDiarySave, buttonImageSave;
 
     private String selectedDiaryImagePath;
@@ -60,6 +61,9 @@ public class CreateADiary extends AppCompatActivity {
         wordCount = findViewById(R.id.wordCount);
         buttonDiarySave = findViewById(R.id.diaryCreateSubmitButton);
         buttonImageSave = findViewById(R.id.diaryAddImage);
+        diaryDate = findViewById(R.id.diaryDate);
+        diaryDay = findViewById(R.id.diaryDay);
+        diaryMonth = findViewById(R.id.diaryMonth);
 
         // Calling word count method
         getWordCount();
@@ -69,21 +73,24 @@ public class CreateADiary extends AppCompatActivity {
                         .format(new Date())
         );
 
-        diaryDateTime.setVisibility(View.GONE);
-
         try {
-            String date = String.valueOf(diaryDateTime);
+            String date = new SimpleDateFormat("EEEE dd MMMM yyyy", Locale.getDefault())
+                    .format(new Date());
 
             String[] s = date.split(" ");
             String day = s[0];
             String dayI = s[1];
             String month = s[2];
 
+            diaryDate.setText(dayI);
+            diaryDay.setText(day);
+            diaryMonth.setText(month);
 
-
-        } catch (Exception e) {
+      } catch (Exception e) {
             e.printStackTrace();
         }
+
+        diaryDateTime.setVisibility(View.GONE);
 
         selectedDiaryImagePath = "";
 

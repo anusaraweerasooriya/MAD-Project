@@ -38,8 +38,14 @@
                     <!--android:fontFamily="@font/source_serif_black"-->
                     <TextView
                         android:id="@+id/diaryDate"
-                        android:layout_width="60dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_width="65dp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:background="@drawable/diary_date_background"
                         android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/quickActionBar"
                         android:text="21"
                         android:textSize="@dimen/_35ssp" />
 
@@ -49,6 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Monday"
+                        android:textColor="@color/notes_theme_color"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView
@@ -237,7 +244,7 @@
                 android:src="@drawable/ic_done"
                 android:background="@drawable/diary_submit_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody" />
+                app:layout_constraintTop_toBottomOf="@id/imageDiary" />
 
             <TextView
                 android:id="@+id/wordCount"
