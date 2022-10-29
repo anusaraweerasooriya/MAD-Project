@@ -23,22 +23,24 @@ import com.example.empressnotes.R;
 import com.example.empressnotes.activities.UpdateNote;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList note_id, note_title, note_body, note_datetime;
+    private ArrayList note_id, note_title, note_body, note_datetime, note_color;
     Activity activity;
 
     Animation note_translate_anim;
 
     //constructor
-    public NotesAdapter(Activity activity, Context context, ArrayList note_id, ArrayList note_title, ArrayList note_body, ArrayList note_datetime) {
+    public NotesAdapter(Activity activity, Context context, ArrayList note_id, ArrayList note_title, ArrayList note_body, ArrayList note_datetime, ArrayList note_color) {
         this.activity = activity;
         this.context = context;
         this.note_id = note_id;
         this.note_title = note_title;
         this.note_body = note_body;
         this.note_datetime = note_datetime;
+        this.note_color = note_color;
     }
 
     @NonNull
@@ -55,7 +57,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         holder.txt_note_title.setText(String.valueOf(note_title.get(position)));
         holder.txt_note_body.setText(String.valueOf(note_body.get(position)));
         holder.txt_note_datetime.setText(String.valueOf(note_datetime.get(position)));
-
+        holder.color_note.setCardBackgroundColor(Color.parseColor(String.valueOf(note_color.get(position))));
         holder.notes_raw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

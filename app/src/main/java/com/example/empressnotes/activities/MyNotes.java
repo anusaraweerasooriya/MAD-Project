@@ -33,8 +33,7 @@ public class MyNotes extends AppCompatActivity {
     TextView no_data;
 
     DatabaseHelper myDB;
-    ArrayList<String> note_id, note_title, note_body, note_datetime;
-    ColorStateList note_color;
+    ArrayList<String> note_id, note_title, note_body, note_datetime, note_color;
     NotesAdapter notesAdapter;
 
     @Override
@@ -60,10 +59,11 @@ public class MyNotes extends AppCompatActivity {
         note_title = new ArrayList<>();
         note_body = new ArrayList<>();
         note_datetime = new ArrayList<>();
+        note_color = new ArrayList<>();
 
         storeNotesInArrays();
 
-        notesAdapter = new NotesAdapter(MyNotes.this, MyNotes.this, note_id, note_title, note_body, note_datetime);
+        notesAdapter = new NotesAdapter(MyNotes.this, MyNotes.this, note_id, note_title, note_body, note_datetime, note_color);
         notes_recyclerView.setAdapter(notesAdapter);
         notes_recyclerView.setLayoutManager(new LinearLayoutManager(MyNotes.this));
     }
@@ -87,6 +87,7 @@ public class MyNotes extends AppCompatActivity {
                 note_title.add(cursor.getString(1));
                 note_body.add(cursor.getString(2));
                 note_datetime.add(cursor.getString(3));
+                note_color.add(cursor.getString(4));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
