@@ -50,7 +50,4 @@ dependencies {
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
-    //Time Calculations
-    implementation 'joda-time:joda-time:2.10.14'
-
 }
