@@ -7,6 +7,38 @@
     android:padding="@dimen/_30sdp"
     tools:context=".activities.ListAdd">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/listUpdateAnimation"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_height="@dimen/_100sdp"
+        app:lottie_rawRes="@raw/list_animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/viewInputIndicator10"
+        android:layout_width="6dp"
+        android:layout_height="40dp"
+        android:background="@drawable/list_background_add_button"
+        app:layout_constraintBottom_toBottomOf="@+id/title_input2"
+        app:layout_constraintTop_toTopOf="@+id/title_input2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <View
+        android:id="@+id/viewInputIndicator11"
+        android:layout_width="6dp"
+        android:layout_height="40dp"
+        android:background="@drawable/list_background_add_button"
+        app:layout_constraintBottom_toBottomOf="@+id/list_description2"
+        app:layout_constraintTop_toTopOf="@+id/list_description2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
     <EditText
         android:id="@+id/title_input2"
         android:layout_width="317dp"

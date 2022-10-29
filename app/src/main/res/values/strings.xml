@@ -48,7 +48,16 @@
     //My Lists
     <string name="my_list">My List</string>
     <string name="label_noData">No Data</string>
-
+    <string name="new_sticky_note">New Sticky Note</string>
+    <string name="txt_word_count">Word count</string>
+    <string name="date_time">Date Time</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="are_you_sure_you_want_to_delete_this_note">Are you sure you want to delete this Note ?</string>
+    <string name="cancel">CANCEL</string>
+    <string name="delete">DELETE</string>
+    <string name="are_you_sure_you_want_to_delete_all_notes">Are you sure you want to delete all Notes ?</string>
 
 
 </resources>

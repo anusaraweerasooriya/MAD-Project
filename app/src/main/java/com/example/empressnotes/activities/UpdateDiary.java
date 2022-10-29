@@ -42,6 +42,7 @@ public class UpdateDiary extends AppCompatActivity {
     private String selectedDiaryImagePath;
     private Uri selectedImageUri, imageFilePath;
     private Bitmap imageToStore;
+    private TextView diaryDate, diaryDay, diaryMonth;
 
     private static final int REQUEST_CODE_SELECT_DIARY_IMAGE = 100;
 
@@ -56,6 +57,9 @@ public class UpdateDiary extends AppCompatActivity {
         updateButton = findViewById(R.id.diaryCreateSubmitButton2);
         buttonImageSave = findViewById(R.id.diaryAddImage2);
         imageDiary = findViewById(R.id.imageDiary2);
+        diaryDate = findViewById(R.id.diaryDate2);
+        diaryDay = findViewById(R.id.diaryDay2);
+        diaryMonth = findViewById(R.id.diaryMonth2);
 
         uploadDiaryImage();
 
@@ -159,6 +163,10 @@ public class UpdateDiary extends AppCompatActivity {
     }
 
     void getAndSetInsertDiaryData() {
+        diaryDate = findViewById(R.id.diaryDate2);
+        diaryDay = findViewById(R.id.diaryDay2);
+        diaryMonth = findViewById(R.id.diaryMonth2);
+
         if (getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
                 getIntent().hasExtra("date") && getIntent().hasExtra("body") && getIntent().hasExtra("image")) {
 
@@ -174,6 +182,24 @@ public class UpdateDiary extends AppCompatActivity {
             inputDiaryBody.setText(body);
             diaryDateTime.setText(date);
 
+            try {
+                String date = String.valueOf(diaryDateTime.getText());
+
+                String[] s = date.split(" ");
+                String day = s[0];
+                String dayI = s[1];
+                String month = s[2];
+
+                diaryDate.setText(dayI);
+                diaryDay.setText(day);
+                diaryMonth.setText(month);
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
             if (image != null ){
                 imageDiary = findViewById(R.id.imageDiary2);
                 imageDiary.setImageBitmap(BitmapFactory.decodeFile(image));
@@ -184,20 +210,6 @@ public class UpdateDiary extends AppCompatActivity {
             }
 
             diaryDateTime.setVisibility(View.GONE);
-
-            try {
-                String date = String.valueOf(diaryDateTime);
-
-                String[] s = date.split(" ");
-                String day = s[0];
-                String dayI = s[1];
-                String month = s[2];
-
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
 
         } else {
             Toast.makeText(this, "No diary data", Toast.LENGTH_SHORT).show();
