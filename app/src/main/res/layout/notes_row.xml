@@ -15,14 +15,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="397dp"
-            android:layout_height="126dp"
-            android:padding="12dp">
+            android:layout_height="138dp"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/txt_datetime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="24dp"
                 android:text="@string/date_time"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

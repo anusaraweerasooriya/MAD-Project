@@ -77,35 +77,6 @@
         app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
         app:layout_constraintTop_toBottomOf="@+id/inputNoteTitleEdit" />
 
-    <Button
-        android:id="@+id/btnNoteEdit"
-        android:layout_width="112dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/edit_button"
-        android:text="@string/btnText_editNote"
-        android:textAllCaps="false"
-        android:textColor="#FAFAFA"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNoteEdit" />
-
-    <Button
-        android:id="@+id/btnNoteDelete"
-        android:layout_width="104dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="84dp"
-        android:background="@drawable/delete_button"
-        android:text="@string/btnText_deleteNote"
-        android:textAllCaps="false"
-        android:textColor="#FAFAFA"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnNoteEdit"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/lbl_word_count_edit"
@@ -116,6 +87,19 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/inputNoteEdit"
         app:layout_constraintEnd_toEndOf="@+id/inputNoteEdit" />
+
+    <ImageView
+        android:id="@+id/btnNoteEdit"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/notes_background_save_button"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNoteEdit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
