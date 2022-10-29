@@ -27,6 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_NAME2 = "my_todo";
     private static final String TABLE_NAME3 = "my_notes";
     private static final String TABLE_NAME4 = "my_list";
+    private static final String TABLE_NAME5 = "my_sub_list";
 
     // my_diary table columns
     private static final String COLUMN_DIARY_ID = "id";
@@ -58,6 +59,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_List_Title = "title";
     private static final String COLUMN_List_Description = "description";
     private static final String COLUMN_List_Quantity = "quantity";
+
+    // my_sub_list table columns
+    private static final String COLUMN_my_sub_list_ID = "id";
+    private static final String COLUMN_my_sub_list_mainID = "m_id";
+    private static final String COLUMN_my_sub_list_Title = "title";
+    private static final String COLUMN_my_sub_list_Description = "description";
+    private static final String COLUMN_my_sub_list_Quantity = "quantity";
 
 
     @Override
@@ -104,6 +112,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(my_list_query);
 
+        //Sub List-----------------------------------------------
+        String my_sub_list_query = " CREATE TABLE " + TABLE_NAME5 +
+                "(" + COLUMN_my_sub_list_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_my_sub_list_mainID + " TEXT, " +
+                COLUMN_my_sub_list_Title + " TEXT, " +
+                COLUMN_my_sub_list_Description + " TEXT, " +
+                COLUMN_my_sub_list_Quantity + " INTEGER);";
+
+        sqLiteDatabase.execSQL(my_sub_list_query);
+
     }
 
 
@@ -124,6 +142,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // My Lists
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME4);
+        onCreate(sqLiteDatabase);
+
+        // My Sub Lists
+        sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME5);
         onCreate(sqLiteDatabase);
 
     }
@@ -377,11 +399,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "List Added Successfully", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    public void addSubList(String listTitle, String quantity,String mID) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_my_sub_list_Title, listTitle);
+        cv.put(COLUMN_my_sub_list_Quantity, quantity);
+        cv.put(COLUMN_my_sub_list_mainID, mID);
+
+        long result = dbRef.insert(TABLE_NAME5, null, cv);
+        if (result == -1) {
+            Toast.makeText(context, "Failed To insert List", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "List Added Successfully", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void CreateSUBLIST(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String my_sub_list_query = " CREATE TABLE " + TABLE_NAME5 +
+                "(" + COLUMN_my_sub_list_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_my_sub_list_mainID + " TEXT, " +
+                COLUMN_my_sub_list_Title + " TEXT, " +
+                COLUMN_my_sub_list_Description + " TEXT, " +
+                COLUMN_my_sub_list_Quantity + " INTEGER);";
+
+        sqLiteDatabase.execSQL(my_sub_list_query);
+
+    }
             
     // Read all the lists----------------------------------------
     public Cursor readListData() {
 
         String list_query = "SELECT * FROM " + TABLE_NAME4;
+        SQLiteDatabase dbRef = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (dbRef != null) {
+            cursor = dbRef.rawQuery(list_query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor readSubListData(String id) {
+        String list_query = "SELECT * FROM " + TABLE_NAME5+" WHERE m_id= "+id ;
         SQLiteDatabase dbRef = this.getReadableDatabase();
 
         Cursor cursor = null;
@@ -410,6 +476,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void updateSubList(String row_id, String title, String description) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_List_Title, title);
+        cv.put(COLUMN_List_Description, description);
+
+        long result = dbRef.update(TABLE_NAME5, cv, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to update list !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "List updated successfully!", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
     //Delete a row of list--------------------------------------
     public void deleteListRow(String row_id) {
 
@@ -424,6 +507,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void deleteSubListRow(String row_id) {
+
+        SQLiteDatabase dbRef = this.getWritableDatabase();
+        long result = dbRef.delete(TABLE_NAME5, "id=?", new String[]{row_id});
+
+        if (result == -1) {
+            Toast.makeText(context, "Failed to delete list!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully deleted the list!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void updateList(String id) {
+    }
+
 
     //Delete all lists--------------------------------------
     public void deleteAllLists() {
@@ -431,6 +530,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         dbRef.execSQL("DELETE FROM " + TABLE_NAME4);
 
     }
+
+    //get total item count
+    public Cursor getTotalItems(String id) {
+        SQLiteDatabase dbRef = this.getReadableDatabase();
+        String total_quantity = "SELECT " + "SUM( " + COLUMN_my_sub_list_Quantity +")" + "FROM " + TABLE_NAME5+" WHERE m_id= "+id ;
+
+        Cursor cursor = null;
+        if (dbRef != null) {
+            cursor = dbRef.rawQuery(total_quantity, null);
+        }
+        return cursor;
+    }
+
+
 
 }
 
