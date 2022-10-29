@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/task_completed_option"
-        android:title="Completed"/>
+        android:title="Completed" />
 
 </menu>

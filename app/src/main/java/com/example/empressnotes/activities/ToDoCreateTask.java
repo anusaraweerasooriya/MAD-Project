@@ -24,7 +24,6 @@ import com.example.empressnotes.R;
 import com.example.empressnotes.adapters.DatabaseHelper;
 
 import java.util.Calendar;
-import java.util.regex.Pattern;
 
 public class ToDoCreateTask extends AppCompatActivity {
 

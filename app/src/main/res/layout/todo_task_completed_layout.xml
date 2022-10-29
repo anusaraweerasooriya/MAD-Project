@@ -35,7 +35,7 @@
             android:text="You have completed the task successfully.."
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/buttonTaskCompleted"

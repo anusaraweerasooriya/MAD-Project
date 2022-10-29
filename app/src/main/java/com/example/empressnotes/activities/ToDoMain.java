@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -17,10 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.empressnotes.R;
@@ -28,8 +24,6 @@ import com.example.empressnotes.adapters.DatabaseHelper;
 import com.example.empressnotes.adapters.ToDoAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class ToDoMain extends AppCompatActivity {
 
@@ -148,6 +142,7 @@ public class ToDoMain extends AppCompatActivity {
         });
         deleteAllDialog.show();
     }
+
 
     // TASK COMPLETED OPTION
     public void taskCompletedDialog(String id) {

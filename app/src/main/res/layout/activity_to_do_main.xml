@@ -68,7 +68,7 @@
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textColorHint="@color/hint_text_color"
                 android:textSize="@dimen/_13ssp"
                 tools:ignore="TouchTargetSizeCheck" />

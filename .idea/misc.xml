@@ -33,6 +33,7 @@
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_background_dialogbox.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_ic_completed.xml" value="0.124" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_ic_create_task.xml" value="0.1995" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_ic_morebtn.xml" value="0.1695" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_ic_url.xml" value="0.182" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/todo_input_indicator.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/CustomToolBar.xml" value="0.264" />
@@ -52,7 +53,7 @@
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_delete_all_layout.xml" value="0.2328125" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_delete_task_layout.xml" value="0.2328125" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_completed_layout.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.3753943217665615" />
+        <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.4" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/menu_delete_diary.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/notes_menu.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/menu/todo_delete_all_menu.xml" value="0.264" />

@@ -4,20 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_theme_color"
+    android:background="@color/black"
     tools:context=".activities.FlashScreen">
 
-
-    <TextView
-        android:id="@+id/textEmpressNotes"
-        android:layout_width="@dimen/_150sdp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/app_title"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_25sdp" />
-
-
+    <VideoView
+        android:id="@+id/logoVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_120sdp"/>
 </RelativeLayout>

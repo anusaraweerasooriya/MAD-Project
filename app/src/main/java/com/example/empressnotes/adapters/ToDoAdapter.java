@@ -3,18 +3,17 @@ package com.example.empressnotes.adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,11 +21,13 @@ import com.example.empressnotes.R;
 import com.example.empressnotes.activities.ToDoMain;
 import com.example.empressnotes.activities.ToDoUpdateTask;
 
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 
 public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> {
@@ -55,6 +56,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         return new MyViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.txt_task_title.setText(String.valueOf(task_title.get(position)));
@@ -63,16 +65,10 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         holder.txt_task_url.setText(String.valueOf(task_url.get(position)));
         holder.txt_task_status.setText(String.valueOf(task_status.get(position)));
 
-        // Split date components and format month
         try {
             String dateInput = String.valueOf(task_date.get(position));
 
-            /*SimpleDateFormat inputFormat = new SimpleDateFormat("dd/mm/yyyy");
-            SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-            Date date = inputFormat.parse(dateInput);
-            String dateOutput = outputFormat.format(date);*/
-
+            // Split date components
             String[] s = dateInput.split("/");
             String day = s[0];
             String month = s[1];
@@ -82,9 +78,29 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             holder.txt_task_month.setText(month);
             holder.txt_task_year.setText(year);
 
+            // NUMBER OF DAYS CALCULATION
+//            Date taskDate = new SimpleDateFormat("dd-MM-yyyy").parse(dateInput);
+//            Date today = new Date();
+//            long diff =  today.getTime() - taskDate.getTime();
+//            int numOfDays = (int) (diff / (1000 * 60 * 60 * 24));
+//            holder.txt_days_calc.setText(numOfDays);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            long diff = sdf.parse(dateInput).getTime() -new Date().getTime();
+            long seconds = diff / 1000;
+            long minutes = seconds / 60;
+            long hours = minutes / 60;
+            int days = ((int) (long) hours / 24);
+            System.out.println("Task dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + dateInput);
+            System.out.println("Current dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + days);
+            System.out.println("Number of dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + days);
+            System.out.println("diff of dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + diff);
+            holder.txt_days_calc.setText(days);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         // Recyclerview onClickListener
         holder.layoutTask.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +116,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -111,12 +126,10 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
     // Fetch activity components
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
-        private static final String TAG = "MyViewHolder";
         TextView txt_task_title, txt_task_description, txt_task_day, txt_task_month, txt_task_year, txt_task_time,
-                txt_task_url, txt_task_status;
+                txt_task_url, txt_task_status, txt_days_calc;
         RelativeLayout layoutTask;
         ImageView btn_options;
-        MenuItem item = itemView.findViewById(R.id.task_completed_option);
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -128,6 +141,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             txt_task_time = itemView.findViewById(R.id.taskTime);
             txt_task_url = itemView.findViewById(R.id.taskURL);
             txt_task_status = itemView.findViewById(R.id.taskStatus);
+            txt_days_calc = itemView.findViewById(R.id.taskDaysCalc);
 
             layoutTask = itemView.findViewById(R.id.layoutTask);
             btn_options = itemView.findViewById(R.id.taskMoreOptions);
@@ -148,8 +162,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             menu.show();
         }
 
-
-
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
@@ -161,6 +173,8 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
                     return false;
             }
         }
+
+
 
 
 

@@ -273,9 +273,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(result == -1) {
             Toast.makeText(context, "Failed to complete task", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(context, "Task completion successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Task completion successful", Toast.LENGTH_SHORT).show();
         }
-
     }
     
     // DELETE ONE TO-DO TASK
@@ -288,7 +287,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Task deleted successfully", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     // DELETE ALL TO-DO TASKS
     public void deleteAllTasks() {
@@ -303,6 +301,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         return cursor;
+    }
+
+    // CALCULATE DATES
+    public void calDateCount(String date) {
+
     }
 
 
