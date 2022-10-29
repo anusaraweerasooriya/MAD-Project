@@ -108,13 +108,14 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/lbl_word_count"
+        android:id="@+id/lbl_word_count_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_word_count"
+        android:text=""
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/inputNoteEdit"
         app:layout_constraintEnd_toEndOf="@+id/inputNoteEdit" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_NOTES_TITLE = "noteTitle";
     private static final String COLUMN_NOTES_BODY = "note";
     private static final String COLUMN_NOTES_DATETIME = "datetime";
+    private static final String COLUMN_NOTES_COLOR = "color";
 
     // my_lists table columns
     private static final String COLUMN_List_ID = "id";
@@ -88,7 +89,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "(" + COLUMN_NOTES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NOTES_TITLE + " TEXT, " +
                 COLUMN_NOTES_BODY + " TEXT, " +
-                COLUMN_NOTES_DATETIME + " TEXT);";
+                COLUMN_NOTES_DATETIME + " TEXT, " +
+                COLUMN_NOTES_COLOR + " TEXT);";
 
         sqLiteDatabase.execSQL(notes_query);
 
@@ -299,13 +301,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //=============================================MY NOTES======================================================
 
     //Add Note
-     public void addNote(String title, String note, String datetime) {
+     public void addNote(String title, String note, String datetime, String color) {
          SQLiteDatabase db = this.getWritableDatabase();
          ContentValues cv = new ContentValues();
 
          cv.put(COLUMN_NOTES_TITLE, title);
          cv.put(COLUMN_NOTES_BODY, note);
          cv.put(COLUMN_NOTES_DATETIME, datetime);
+         cv.put(COLUMN_NOTES_COLOR, color);
 
          long result = db.insert(TABLE_NAME3, null, cv);
          if(result == -1) {

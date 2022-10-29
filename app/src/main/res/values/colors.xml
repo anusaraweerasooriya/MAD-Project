@@ -35,4 +35,9 @@
     <color name="no_option_color">#FF4842</color>
 
 
+    <color name="note_color_1">#FFFFFF</color>
+    <color name="note_color_2">#FDF4A6</color>
+    <color name="note_color_3">#98A7F8</color>
+    <color name="note_color_4">#FDA4A4</color>
+
 </resources>

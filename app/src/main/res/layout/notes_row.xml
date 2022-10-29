@@ -7,8 +7,10 @@
     android:id="@+id/notesRaw">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/notes_raw_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/note_color_2"
         android:layout_margin="12dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

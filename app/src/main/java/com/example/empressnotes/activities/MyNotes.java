@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +34,7 @@ public class MyNotes extends AppCompatActivity {
 
     DatabaseHelper myDB;
     ArrayList<String> note_id, note_title, note_body, note_datetime;
+    ColorStateList note_color;
     NotesAdapter notesAdapter;
 
     @Override

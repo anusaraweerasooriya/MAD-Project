@@ -51,6 +51,8 @@
     <string name="new_sticky_note">New Sticky Note</string>
     <string name="txt_word_count">Word count</string>
     <string name="date_time">Date Time</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pick_color">Pick Color</string>
 
 
 </resources>

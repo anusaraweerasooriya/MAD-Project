@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.empressnotes.R;
@@ -51,6 +55,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         holder.txt_note_title.setText(String.valueOf(note_title.get(position)));
         holder.txt_note_body.setText(String.valueOf(note_body.get(position)));
         holder.txt_note_datetime.setText(String.valueOf(note_datetime.get(position)));
+
         holder.notes_raw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +75,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
+        CardView color_note;
         TextView txt_note_id, txt_note_title, txt_note_body, txt_note_datetime;
         LinearLayout notes_raw;
 
@@ -80,6 +86,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             txt_note_body = itemView.findViewById(R.id.txt_NoteNody);
             txt_note_datetime = itemView.findViewById(R.id.txt_datetime);
             notes_raw = itemView.findViewById(R.id.notesRaw);
+            color_note = itemView.findViewById(R.id.notes_raw_color);
 
             //Animate Recyclerview
             note_translate_anim = AnimationUtils.loadAnimation(context, R.anim.note_translate_anim);
