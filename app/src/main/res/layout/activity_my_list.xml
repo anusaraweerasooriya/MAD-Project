@@ -122,15 +122,15 @@
         android:id="@+id/list_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_220sdp"
+        app:srcCompat="@drawable/ic_empty_main"
+        tools:layout_editor_absoluteY="350dp"
+        android:contentDescription="@string/app_name"
+        android:alpha="0.1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42"
-        app:srcCompat="@drawable/ic_empty_main"
-        android:alpha="0.1"
-        android:visibility="gone"/>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/no_data"

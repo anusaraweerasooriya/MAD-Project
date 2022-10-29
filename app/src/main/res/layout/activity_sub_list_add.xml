@@ -8,7 +8,7 @@
     tools:context=".activities.ListAdd">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/listAddAnimation"
+        android:id="@+id/sublistAddAnimation"
         android:layout_width="@dimen/_100sdp"
         android:layout_marginRight="@dimen/_30sdp"
         android:layout_height="@dimen/_100sdp"
@@ -20,25 +20,24 @@
         tools:ignore="MissingConstraints" />
 
     <View
-        android:id="@+id/viewInputIndicator"
-        android:layout_width="6dp"
-        android:layout_height="40dp"
-        android:background="@drawable/list_background_add_button"
-        app:layout_constraintBottom_toBottomOf="@+id/title_input"
-        app:layout_constraintTop_toTopOf="@+id/title_input"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp" />
-
-    <View
-        android:id="@+id/viewInputIndicator5"
-        android:layout_width="6dp"
-        android:layout_height="40dp"
+        android:id="@+id/viewInputIndicator7"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
         android:background="@drawable/list_background_add_button"
         app:layout_constraintBottom_toBottomOf="@+id/list_description"
         app:layout_constraintTop_toTopOf="@+id/list_description"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp" />
+        tools:layout_editor_absoluteX="0dp" />
+
+    <View
+        android:id="@+id/viewInputIndicator8"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
+        android:background="@drawable/list_background_add_button"
+        app:layout_constraintBottom_toBottomOf="@+id/title_input"
+        app:layout_constraintTop_toTopOf="@+id/title_input"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="3dp" />
 
     <EditText
         android:id="@+id/title_input"
@@ -46,7 +45,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="144dp"
         android:ems="10"
-        android:hint="Title"
+        android:hint="Item"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +58,7 @@
         android:layout_width="317dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="Description"
+        android:hint="Quantity"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
