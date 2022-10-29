@@ -546,13 +546,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //get total item count
     public Cursor getTotalItems(String id) {
-        SQLiteDatabase dbRef = this.getReadableDatabase();
-        String total_quantity = "SELECT " + "SUM( " + COLUMN_my_sub_list_Quantity +")" + "FROM " + TABLE_NAME5+" WHERE m_id= "+id ;
 
-        Cursor cursor = null;
-        if (dbRef != null) {
-            cursor = dbRef.rawQuery(total_quantity, null);
-        }
+        String total_quantity = "SELECT SUM( " + COLUMN_my_sub_list_Quantity + ") FROM " + TABLE_NAME5+" WHERE m_id= "+id ;
+        SQLiteDatabase dbRef = this.getReadableDatabase();
+        Cursor cursor = dbRef.rawQuery(total_quantity, null);
+
+
+
+
         return cursor;
     }
 

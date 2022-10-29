@@ -48,7 +48,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
     @Override
     public void onBindViewHolder(@NonNull DiaryViewHolder holder, @SuppressLint("RecyclerView") int position) {
         this.position = position;
-        holder.text_diary_title.setText(String.valueOf(diary_id.get(position)));
+        holder.text_id.setText(String.valueOf(diary_id.get(position)));
         holder.text_diary_date.setText(String.valueOf(diary_date.get(position)));
         holder.text_diary_title.setText(String.valueOf(diary_title.get(position)));
         holder.text_diary_body.setText(String.valueOf(diary_body.get(position)));
@@ -92,7 +92,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
     public class DiaryViewHolder extends RecyclerView.ViewHolder{
 
         TextView  text_diary_title, text_diary_date, text_diary_body,
-        text_diary_dayI, text_diary_day, text_diary_month, text_diary_image ;
+        text_diary_dayI, text_diary_day, text_diary_month, text_diary_image, text_id ;
         LinearLayout layoutDiary;
 
 
@@ -104,6 +104,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
             text_diary_day = itemView.findViewById(R.id.diaryDay);
             text_diary_dayI= itemView.findViewById(R.id.diaryDate);
             text_diary_month = itemView.findViewById(R.id.diaryMonth);
+            text_id = itemView.findViewById(R.id.textDiaryID);
             layoutDiary = itemView.findViewById(R.id.diary_pages_layout);
 
 

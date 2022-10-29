@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyListViewHold
         holder.text_list_id.setText(String.valueOf(list_id.get(position)));
         holder.getText_list_title.setText(String.valueOf(list_title.get(position)));
         holder.text_list_description.setText(String.valueOf(list_description.get(position)));
+
+        DatabaseHelper dbRef = new DatabaseHelper(context);
+        Cursor noOfItems = dbRef.getTotalItems(String.valueOf(list_id.get(position)));
+        noOfItems.moveToFirst();
+        int test = noOfItems.getInt(0);
+
+        holder.text_list_quantity.setText("Total Items: "+String.valueOf(test));
+
         holder.layoutListsMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +114,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyListViewHold
             getText_list_title = itemView.findViewById(R.id.list_title_txt);
             text_list_description = itemView.findViewById(R.id.list_description_txt);
             layoutListsMain = itemView.findViewById(R.id.layoutListsMain);
+            text_list_quantity = itemView.findViewById(R.id.noOfItems);
             ///Animation
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             layoutListsMain.setAnimation(translate_anim);
