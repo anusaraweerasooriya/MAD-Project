@@ -1,92 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.CreateNote">
 
-    <View
-        android:id="@+id/viewInputIndicator1"
-        android:layout_width="@dimen/_5sdp"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:background="@color/notes_theme_color"
-        app:layout_constraintBottom_toBottomOf="@id/inputNoteTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/inputNoteTitle" />
-
-    <EditText
-        android:id="@+id/inputNoteTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="268dp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:background="@null"
-        android:ems="10"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="@string/hint_note_title"
-        android:importantForAutofill="no"
-        android:includeFontPadding="false"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:paddingTop="@dimen/_8sdp"
-        android:paddingBottom="@dimen/_8sdp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/hint_text_color"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/viewInputIndicator1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/viewInputIndicator2"
-        android:layout_width="@dimen/_5sdp"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:background="@color/notes_theme_color"
-        app:layout_constraintBottom_toBottomOf="@id/inputNote"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/inputNote" />
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/_5sdp">
 
 
-    <EditText
-        android:id="@+id/inputNote"
-        android:layout_width="360dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:background="@null"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="@string/hint_Note"
-        android:importantForAutofill="no"
-        android:includeFontPadding="false"
-        android:inputType="textMultiLine"
-        android:minHeight="38dp"
-        android:paddingTop="@dimen/_8sdp"
-        android:paddingBottom="@dimen/_8sdp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/hint_text_color"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
-        app:layout_constraintTop_toBottomOf="@+id/inputNoteTitle" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true">
 
-    <ImageView
-        android:id="@+id/btnNoteAdd"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="28dp"
-        android:background="@drawable/notes_background_save_button"
-        android:contentDescription="@string/app_name"
-        android:padding="@dimen/_5sdp"
-        android:src="@drawable/ic_note_save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNote" />
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/NoteAddAnimation"
+                            android:layout_width="239dp"
+                            android:layout_height="233dp"
+                            android:layout_marginEnd="96dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/notes_add"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteY="-4dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/lbl_datetime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="@string/date_time"
+                            android:textSize="16sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toTopOf="@+id/inputNoteTitle"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <View
+                            android:id="@+id/viewInputIndicator1"
+                            android:layout_width="@dimen/_5sdp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:background="@color/notes_theme_color"
+                            app:layout_constraintBottom_toBottomOf="@id/inputNoteTitle"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/inputNoteTitle" />
+
+                        <EditText
+                            android:id="@+id/inputNoteTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="220dp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:background="@null"
+                            android:ems="10"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="@string/hint_note_title"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="text"
+                            android:minHeight="48dp"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hint_text_color"
+                            android:textSize="24sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@id/viewInputIndicator1"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/viewInputIndicator2"
+                            android:layout_width="@dimen/_5sdp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:background="@color/notes_theme_color"
+                            app:layout_constraintBottom_toBottomOf="@id/inputNote"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/inputNote" />
+
+
+                        <EditText
+                            android:id="@+id/inputNote"
+                            android:layout_width="360dp"
+                            android:layout_height="126dp"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:background="@null"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="top"
+                            android:hint="@string/hint_Note"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="textMultiLine"
+                            android:minHeight="38dp"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hint_text_color"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@id/viewInputIndicator2"
+                            app:layout_constraintTop_toBottomOf="@+id/inputNoteTitle" />
+
+                        <TextView
+                            android:id="@+id/lbl_word_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="16sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="@+id/inputNote"
+                            app:layout_constraintEnd_toEndOf="@+id/inputNote" />
+
+                        <ImageView
+                            android:id="@+id/btnNoteAdd"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="48dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/notes_background_save_button"
+                            android:contentDescription="@string/app_name"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_note_save"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/inputNote" />
+
+                        <TextView
+                            android:id="@+id/lbl_add_note"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="108dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/new_sticky_note"
+                            android:textColor="@color/notes_theme_color"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <include layout="@layout/layout_miscellaneous" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
