@@ -8,32 +8,32 @@
     tools:context=".activities.ListAdd">
 
     <View
-        android:id="@+id/viewInputIndicator10"
-        android:layout_width="6dp"
-        android:layout_height="40dp"
+        android:id="@+id/viewInputIndicator7"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
         android:background="@drawable/list_background_add_button"
-        app:layout_constraintBottom_toBottomOf="@+id/title_input2"
-        app:layout_constraintTop_toTopOf="@+id/title_input2"
+        app:layout_constraintBottom_toBottomOf="@+id/list_description"
+        app:layout_constraintTop_toTopOf="@+id/list_description"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <View
-        android:id="@+id/viewInputIndicator11"
-        android:layout_width="6dp"
-        android:layout_height="40dp"
+        android:id="@+id/viewInputIndicator8"
+        android:layout_width="5dp"
+        android:layout_height="30dp"
         android:background="@drawable/list_background_add_button"
-        app:layout_constraintBottom_toBottomOf="@+id/list_description2"
-        app:layout_constraintTop_toTopOf="@+id/list_description2"
+        app:layout_constraintBottom_toBottomOf="@+id/title_input"
+        app:layout_constraintTop_toTopOf="@+id/title_input"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="3dp" />
 
     <EditText
-        android:id="@+id/title_input2"
+        android:id="@+id/title_input"
         android:layout_width="317dp"
         android:layout_height="42dp"
         android:layout_marginTop="144dp"
         android:ems="10"
-        android:hint="Title"
+        android:hint="Item"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,49 +42,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/list_description2"
+        android:id="@+id/list_description"
         android:layout_width="317dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="Description"
+        android:hint="Quantity"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_input2"
+        app:layout_constraintTop_toBottomOf="@+id/title_input"
         app:layout_constraintVertical_bias="0.06" />
 
     <Button
-        android:id="@+id/update_button"
+        android:id="@+id/add_button"
         android:layout_width="312dp"
         android:layout_height="70dp"
         android:backgroundTint="@color/list_theme_color"
-        android:text="Update"
+        android:text="Add"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_description2"
+        app:layout_constraintTop_toBottomOf="@+id/list_description"
         app:layout_constraintVertical_bias="0.149"
         app:strokeColor="@color/list_theme_color" />
-
-
-    <Button
-        android:id="@+id/delete_button"
-        android:layout_width="312dp"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/list_theme_color"
-        android:text="Delete"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/update_button"
-        app:layout_constraintStart_toStartOf="@+id/update_button"
-        app:layout_constraintTop_toBottomOf="@+id/update_button"
-        app:strokeColor="@color/list_theme_color" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

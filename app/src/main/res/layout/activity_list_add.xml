@@ -4,8 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ListAdd"
-    android:padding="@dimen/_30sdp">
+    android:padding="@dimen/_30sdp"
+    tools:context=".activities.ListAdd">
+
+    <View
+        android:id="@+id/viewInputIndicator"
+        android:layout_width="6dp"
+        android:layout_height="40dp"
+        android:background="@drawable/list_background_add_button"
+        app:layout_constraintBottom_toBottomOf="@+id/title_input"
+        app:layout_constraintTop_toTopOf="@+id/title_input"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-1dp" />
+
+    <View
+        android:id="@+id/viewInputIndicator5"
+        android:layout_width="6dp"
+        android:layout_height="40dp"
+        android:background="@drawable/list_background_add_button"
+        app:layout_constraintBottom_toBottomOf="@+id/list_description"
+        app:layout_constraintTop_toTopOf="@+id/list_description"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-1dp" />
 
     <EditText
         android:id="@+id/title_input"

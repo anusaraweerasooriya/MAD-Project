@@ -33,6 +33,15 @@
             android:name=".activities.ListUpdate"
             android:exported="false" />
         <activity
+            android:name=".activities.MySubList"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SubListAdd"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SubListUpdate"
+            android:exported="false" />
+        <activity
             android:name=".activities.UpdateDiary"
             android:exported="false" />
         <activity

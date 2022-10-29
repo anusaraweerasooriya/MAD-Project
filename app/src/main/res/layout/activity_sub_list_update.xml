@@ -8,24 +8,24 @@
     tools:context=".activities.ListAdd">
 
     <View
-        android:id="@+id/viewInputIndicator10"
+        android:id="@+id/viewInputIndicator6"
         android:layout_width="6dp"
         android:layout_height="40dp"
         android:background="@drawable/list_background_add_button"
         app:layout_constraintBottom_toBottomOf="@+id/title_input2"
         app:layout_constraintTop_toTopOf="@+id/title_input2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintVertical_bias="0.238"
+        tools:layout_editor_absoluteX="3dp"
+        tools:ignore="MissingConstraints" />
 
     <View
-        android:id="@+id/viewInputIndicator11"
+        android:id="@+id/viewInputIndicator9"
         android:layout_width="6dp"
         android:layout_height="40dp"
         android:background="@drawable/list_background_add_button"
         app:layout_constraintBottom_toBottomOf="@+id/list_description2"
-        app:layout_constraintTop_toTopOf="@+id/list_description2"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/title_input2"
@@ -33,7 +33,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="144dp"
         android:ems="10"
-        android:hint="Title"
+        android:hint="Item"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="317dp"
         android:layout_height="43dp"
         android:ems="10"
-        android:hint="Description"
+        android:hint="Quantity"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -3,35 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/background_date_layout_view.xml" value="0.2545" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/background_dialog.xml" value="0.2545" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/background_search.xml" value="0.191" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_add_button.xml" value="0.1045" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_search.xml" value="0.1" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_background_title_indicator.xml" value="0.19" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_image_background.xml" value="0.258" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_input_background.xml" value="0.191" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/diary_submit_button.xml" value="0.258" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/ic_diary_image.xml" value="0.258" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/ic_done.xml" value="0.258" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/ic_empty.xml" value="0.1" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/layout_card_background.xml" value="0.2545" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/todo_background_add_button.xml" value="0.1045" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_adiary.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_adiary.xml" value="0.1" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_task.xml" value="0.14412360688956433" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_list_add.xml" value="0.29635416666666664" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_main.xml" value="0.11684782608695653" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_diary.xml" value="0.22" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_list.xml" value="0.29635416666666664" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_notes.xml" value="0.29635416666666664" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_to_do_main.xml" value="0.22" />
+        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_to_do_main.xml" value="0.1828125" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_todo_create_task.xml" value="0.29635416666666664" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_update_diary.xml" value="0.1" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_delete_all_layout.xml" value="0.30052083333333335" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_delete_diary_layout.xml" value="0.30052083333333335" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_pages_layout.xml" value="0.1" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/todo_task_layout.xml" value="0.14564336372847012" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/menu/menu_delete_diary.xml" value="0.1" />
+        <entry key="..\:/MAD-Project/app/src/main/res/drawable/ic_new_post.xml" value="0.171" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_create_adiary.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_flash_screen.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_list_add.xml" value="0.264" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_list_update.xml" value="0.264" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_main.xml" value="0.21510416666666668" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_diary.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_my_list.xml" value="0.2" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_sub_list_add.xml" value="0.4" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_sub_list_update.xml" value="0.2" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_to_do_main.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/activity_todo_create_task.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/diary_pages_layout.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/my_list_row.xml" value="0.264" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/my_sub_list_row.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/layout/todo_task_layout.xml" value="0.25" />
+        <entry key="..\:/MAD-Project/app/src/main/res/menu/my_menu.xml" value="0.25" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_add_button.xml" value="0.18" />
         <entry key="..\:/Users/Dilshi/AndroidStudioProjects/MAD-Project/app/src/main/res/drawable/background_search.xml" value="0.18" />

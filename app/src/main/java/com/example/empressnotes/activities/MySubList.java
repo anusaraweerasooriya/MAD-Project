@@ -1,16 +1,10 @@
 package com.example.empressnotes.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,32 +12,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.empressnotes.R;
 import com.example.empressnotes.adapters.DatabaseHelper;
-import com.example.empressnotes.adapters.DiaryAdapter;
-import com.example.empressnotes.adapters.ListAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.empressnotes.adapters.SubListAdapter;
 
 import java.util.ArrayList;
 
-public class MyList extends AppCompatActivity {
+public class MySubList extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ImageView add_button;
     ImageView list_empty;
-    TextView no_data;
-
+    TextView no_data, total_count;
+    String mID="";
     DatabaseHelper list_db;
-    ArrayList<String> list_id, list_title, list_description, total_count;
-    ListAdapter listAdapter;
+    ArrayList<String> list_id, list_title, list_quantity;
+    SubListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_list);
 
+        mID=getIntent().getStringExtra("id");
         recyclerView = findViewById(R.id.notesRecyclerView);
         add_button = findViewById(R.id.imageAddList);
         list_empty=findViewById(R.id.list_empty);
@@ -51,37 +47,35 @@ public class MyList extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MyList.this, ListAdd.class);
+                Intent intent = new Intent(MySubList.this, SubListAdd.class);
+                intent.putExtra("id",mID);
                 startActivity(intent);
             }
         });
 
-        list_db = new DatabaseHelper(MyList.this);
+        list_db = new DatabaseHelper(MySubList.this);
         list_id = new ArrayList<>();
         list_title = new ArrayList<>();
-        list_description = new ArrayList<>();
-        total_count = new ArrayList<>();
+        list_quantity = new ArrayList<>();
 
         storeListDataInArrays();
 
-        listAdapter = new ListAdapter(MyList.this, list_id, list_title, list_description);
+        listAdapter = new SubListAdapter(MySubList.this, list_id, list_title, list_quantity,mID);
         recyclerView.setAdapter(listAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MyList.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(MySubList.this));
 
     }
 
     void storeListDataInArrays() {
-        Cursor cursor = list_db.readListData();
+        Cursor cursor = list_db.readSubListData(mID);
         if (cursor.getCount()==0) {
             list_empty.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
         } else {
             while (cursor.moveToNext()) {
                 list_id.add(cursor.getString(0));
-                list_title.add(cursor.getString(1));
-                list_description.add(cursor.getString(2));
-
-
+                list_title.add(cursor.getString(2));
+                list_quantity.add(cursor.getString(4));
 
             }
 
@@ -113,11 +107,11 @@ public class MyList extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                DatabaseHelper listDB = new DatabaseHelper(MyList.this);
-                DatabaseHelper list_db = new DatabaseHelper(MyList.this);
+                DatabaseHelper listDB = new DatabaseHelper(MySubList.this);
+                DatabaseHelper list_db = new DatabaseHelper(MySubList.this);
                 list_db.deleteAllLists();
                 //refresh Activity
-                Intent intent = new Intent(MyList.this,MyList.class);
+                Intent intent = new Intent(MySubList.this, MySubList.class);
                 startActivity(intent);
                 finish();
 
