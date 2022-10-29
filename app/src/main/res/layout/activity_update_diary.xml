@@ -37,22 +37,24 @@
                     android:orientation="vertical">
                     <!--android:fontFamily="@font/source_serif_black"-->
                     <TextView
-                        android:id="@+id/diaryDate"
+                        android:id="@+id/diaryDate2"
                         android:layout_width="60dp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:background="@drawable/diary_date_background"
                         android:layout_height="60dp"
                         android:text="21"
                         android:textSize="@dimen/_35ssp" />
 
                     <!--android:fontFamily="@font/source_serif_black_italic"-->
                     <TextView
-                        android:id="@+id/diaryDay"
+                        android:id="@+id/diaryDay2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Monday"
                         android:textSize="@dimen/_14ssp" />
 
                     <TextView
-                        android:id="@+id/diaryMonth"
+                        android:id="@+id/diaryMonth2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_bold"
@@ -236,7 +238,7 @@
                 android:src="@drawable/ic_done"
                 android:background="@drawable/diary_submit_button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/inputDiaryBody2" />
+                app:layout_constraintTop_toBottomOf="@id/imageDiary2" />
 
 
             <!--            <com.airbnb.lottie.LottieAnimationView-->
