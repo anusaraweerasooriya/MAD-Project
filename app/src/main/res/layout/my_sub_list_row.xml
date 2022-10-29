@@ -63,8 +63,8 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="78dp"
+                android:id="@+id/noOfItems"
+                android:layout_width="108dp"
                 android:layout_height="19dp"
                 android:text="Total Items"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -32,6 +32,7 @@ public class MyDiary extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ImageView add_diary_button;
+    TextView textDiaryID;
     ImageView empty_diaryImageView;
     TextView noDiaryData;
 
@@ -75,6 +76,9 @@ public class MyDiary extends AppCompatActivity {
     }
 
     void storeDiaryDataInArrays() {
+
+        textDiaryID = findViewById(R.id.textDiaryID);
+
         Cursor cursor = diary_db.readDiaryData();
         if (cursor.getCount()==0) {
 
@@ -91,7 +95,6 @@ public class MyDiary extends AppCompatActivity {
             }
             empty_diaryImageView.setVisibility(View.GONE);
             noDiaryData.setVisibility(View.GONE);
-
         }
     }
 

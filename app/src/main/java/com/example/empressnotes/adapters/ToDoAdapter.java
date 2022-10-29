@@ -78,12 +78,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             holder.txt_task_month.setText(month);
             holder.txt_task_year.setText(year);
 
-            // NUMBER OF DAYS CALCULATION
-//            Date taskDate = new SimpleDateFormat("dd-MM-yyyy").parse(dateInput);
-//            Date today = new Date();
-//            long diff =  today.getTime() - taskDate.getTime();
-//            int numOfDays = (int) (diff / (1000 * 60 * 60 * 24));
-//            holder.txt_days_calc.setText(numOfDays);
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             long diff = sdf.parse(dateInput).getTime() -new Date().getTime();
@@ -91,11 +85,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             long minutes = seconds / 60;
             long hours = minutes / 60;
             int days = ((int) (long) hours / 24);
-            System.out.println("Task dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + dateInput);
-            System.out.println("Current dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + days);
-            System.out.println("Number of dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + days);
-            System.out.println("diff of dayssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss " + diff);
-            holder.txt_days_calc.setText(days);
+            holder.txt_days_calc.setText(String.valueOf(days)+" days more");
 
         } catch (Exception e) {
             e.printStackTrace();
