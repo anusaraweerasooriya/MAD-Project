@@ -112,7 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(my_list_query);
 
-        //Sub List-----------------------------------------------
+        // Sub List-----------------------------------------------
         String my_sub_list_query = " CREATE TABLE " + TABLE_NAME5 +
                 "(" + COLUMN_my_sub_list_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_my_sub_list_mainID + " TEXT, " +
@@ -144,7 +144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME4);
         onCreate(sqLiteDatabase);
 
-        // My Sub Lists
+        // Sub List
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME5);
         onCreate(sqLiteDatabase);
 
@@ -225,9 +225,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         dbRef.execSQL("DELETE FROM " + TABLE_NAME1);
 
     }
-
-
-
 
 
 
@@ -316,20 +313,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME2);
     }
 
-    // SEARCH TASK
-    public Cursor searchTask(String text) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE " + COLUMN_TASK_TITLE + " LIKE '%"+text+"%'";
-        Cursor cursor = db.rawQuery(query, null);
-
-        return cursor;
-    }
-
-    // CALCULATE DATES
-    public void calDateCount(String date) {
-
-    }
-
 
 
     //=============================================MY NOTES======================================================
@@ -352,6 +335,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
          }
      }
 
+     //Read notes
     public Cursor readAllNotes() {
         String query = "SELECT * FROM " + TABLE_NAME3;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -363,6 +347,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //Update notes
     public void editNote(String row_id, String title, String note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -378,6 +363,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //delete notes
     public void deleteNote(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME3, "id=?", new String[] {row_id});
@@ -533,10 +519,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateList(String id) {
-    }
-
-
     //Delete all lists--------------------------------------
     public void deleteAllLists() {
         SQLiteDatabase dbRef = this.getWritableDatabase();
@@ -550,9 +532,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String total_quantity = "SELECT SUM( " + COLUMN_my_sub_list_Quantity + ") FROM " + TABLE_NAME5+" WHERE m_id= "+id ;
         SQLiteDatabase dbRef = this.getReadableDatabase();
         Cursor cursor = dbRef.rawQuery(total_quantity, null);
-
-
-
 
         return cursor;
     }

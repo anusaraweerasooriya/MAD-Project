@@ -31,6 +31,7 @@ public class ToDoMain extends AppCompatActivity {
     ImageView add_button, empty_img;
     TextView count_txt, empty_txt;
 
+
     DatabaseHelper myDB;
     ArrayList<String> task_id, task_title, task_description, task_date, task_time, task_url, task_status;
     ToDoAdapter toDoAdapter;
@@ -40,7 +41,6 @@ public class ToDoMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_main);
 
-        count_txt = findViewById(R.id.textTaskCount);
         recyclerView = findViewById(R.id.tasksRecyclerView);
         add_button = findViewById(R.id.imageAddTaskMain);
         empty_img = findViewById(R.id.imageTaskEmpty);

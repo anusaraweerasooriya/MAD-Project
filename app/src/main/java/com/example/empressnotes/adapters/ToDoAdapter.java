@@ -78,7 +78,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
             holder.txt_task_month.setText(month);
             holder.txt_task_year.setText(year);
 
-
+            // CALCULATE NUMBER OF DAYS
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             long diff = sdf.parse(dateInput).getTime() -new Date().getTime();
             long seconds = diff / 1000;
