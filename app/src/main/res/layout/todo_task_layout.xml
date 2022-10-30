@@ -145,9 +145,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:text="n days more"
                     android:textSize="15sp"
                     android:textColor="@color/black"
+                    android:text=" "
                     android:fontFamily="@font/poppins_regular"/>
 
             </LinearLayout>
