@@ -81,7 +81,7 @@
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_marginVertical="@dimen/_10sdp"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/text_task_count"
+        android:text="Task count: 2"
         app:layout_constraintBottom_toTopOf="@id/divider"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
 
