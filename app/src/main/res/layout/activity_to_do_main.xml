@@ -74,24 +74,24 @@
                 tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textTaskCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:layout_marginVertical="@dimen/_10sdp"
         android:fontFamily="@font/poppins_regular"
-        android:text="@string/text_task_count"
+        android:text=" "
         app:layout_constraintBottom_toTopOf="@id/divider"
-        app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>-->
 
-    <View
+    <!--<View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_margin="@dimen/_10sdp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/textTaskCount"/>
+        app:layout_constraintTop_toBottomOf="@+id/textTaskCount"/>-->
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -101,7 +101,7 @@
         android:layout_marginHorizontal="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch" />
 
 
     <ImageView
