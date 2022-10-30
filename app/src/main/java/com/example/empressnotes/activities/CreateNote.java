@@ -58,6 +58,9 @@ public class CreateNote extends AppCompatActivity {
                 if (noteTitle_input.getText().toString().trim().isEmpty()) {
                     Toast.makeText(CreateNote.this, "Title can not be empty!", Toast.LENGTH_SHORT).show();
                     return;
+                } else if(note_input.getText().toString().trim().isEmpty()){
+                    Toast.makeText(CreateNote.this, "Note can not be empty!", Toast.LENGTH_SHORT).show();
+                    return;
                 } else {
                     DatabaseHelper myDB = new DatabaseHelper(CreateNote.this);
                     myDB.addNote(noteTitle_input.getText().toString().trim(),
