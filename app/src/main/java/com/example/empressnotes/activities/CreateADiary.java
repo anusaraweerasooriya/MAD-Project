@@ -117,7 +117,6 @@ public class CreateADiary extends AppCompatActivity {
                     );
 
 
-
                     Intent intent = new Intent(CreateADiary.this, MyDiary.class);
                     startActivity(intent);
 

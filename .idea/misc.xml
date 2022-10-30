@@ -20,15 +20,17 @@
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/layout_card_background.xml" value="0.2545" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/drawable/todo_background_add_button.xml" value="0.1045" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_adiary.xml" value="0.22" />
+        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_note.xml" value="0.30052083333333335" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_create_task.xml" value="0.14412360688956433" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_list_add.xml" value="0.29635416666666664" />
-        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_main.xml" value="0.11684782608695653" />
+        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_diary.xml" value="0.22" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_list.xml" value="0.29635416666666664" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_my_notes.xml" value="0.29635416666666664" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_to_do_main.xml" value="0.22" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_todo_create_task.xml" value="0.29635416666666664" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_update_diary.xml" value="0.22" />
+        <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/activity_update_note.xml" value="0.30052083333333335" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_delete_all_layout.xml" value="0.30052083333333335" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_delete_diary_layout.xml" value="0.30052083333333335" />
         <entry key="..\:/Android Projects7/EmpressNotes/app/src/main/res/layout/diary_pages_layout.xml" value="0.3333333333333333" />

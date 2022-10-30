@@ -67,8 +67,8 @@
 
     <EditText
         android:id="@+id/inputNoteEdit"
-        android:layout_width="360dp"
-        android:layout_height="126dp"
+        android:layout_width="356dp"
+        android:layout_height="246dp"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="@dimen/_12sdp"
