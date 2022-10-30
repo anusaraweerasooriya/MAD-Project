@@ -19,40 +19,52 @@
         <activity
             android:name=".activities.UpdateNote"
             android:exported="false"
+            android:label="Update note"
             android:parentActivityName=".activities.MyNotes"/>
         <activity
             android:name=".activities.CreateNote"
             android:exported="false"
-            android:label="@string/my_notes"
-            android:parentActivityName=".activities.CreateNote" />
+            android:label="Create a note"
+            android:parentActivityName=".activities.MyNotes" />
         <activity
             android:name=".activities.ToDoUpdateTask"
             android:exported="false"
+            android:label="Update task"
             android:parentActivityName=".activities.ToDoMain" />
         <activity
             android:name=".activities.ListUpdate"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Update list"
+            android:parentActivityName=".activities.MyList" />
         <activity
             android:name=".activities.MySubList"
-            android:exported="false" />
+            android:exported="false"
+            android:label="List items"
+            android:parentActivityName=".activities.MyList" />
         <activity
             android:name=".activities.SubListAdd"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Create list item"
+            android:parentActivityName=".activities.MySubList"/>
         <activity
             android:name=".activities.SubListUpdate"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Update list item"
+            android:parentActivityName=".activities.MySubList" />
         <activity
             android:name=".activities.UpdateDiary"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Update diary"
+            android:parentActivityName=".activities.MyDiary"/>
         <activity
             android:name=".activities.ListAdd"
             android:exported="false"
-            android:label="@string/my_list"
+            android:label="Create a list"
             android:parentActivityName=".activities.MyList" />
         <activity
             android:name=".activities.CreateADiary"
             android:exported="false"
-            android:label="@string/my_diary"
+            android:label="Create a diary"
             android:parentActivityName=".activities.MyDiary"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
@@ -64,12 +76,12 @@
         <activity
             android:name=".activities.ToDoMain"
             android:exported="false"
-            android:label="@string/my_to_do"
+            android:label="@string/app_name"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.ToDoCreateTask"
             android:exported="false"
-            android:label="@string/label_add_task"
+            android:label="Create a task"
             android:parentActivityName=".activities.ToDoMain" />
         <activity
             android:name=".activities.MyNotes"
